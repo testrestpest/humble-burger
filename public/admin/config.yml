@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "menu-items" # Used in routes, e.g., /admin/collections/menu-items
+    label: "Menu Items" # Used in the UI
+    folder: "content/menu" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { 
+          label: "Category", 
+          name: "category", 
+          widget: "select", 
+          options: ["burgers", "sides", "drinks", "desserts"] 
+        }
+      - { 
+          label: "Image", 
+          name: "image", 
+          widget: "image",
+          required: false
+        }
+      - { 
+          label: "Emoji", 
+          name: "emoji", 
+          widget: "string",
+          required: false,
+          hint: "Optional emoji to display (e.g., 🍔)"
+        }
+      - { 
+          label: "Featured", 
+          name: "featured", 
+          widget: "boolean", 
+          default: false 
+        }
+      - { 
+          label: "Available", 
+          name: "available", 
+          widget: "boolean", 
+          default: true 
+        }
+  
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "About Section Title", name: "aboutTitle", widget: "string" }
+          - { label: "About Section Content", name: "aboutContent", widget: "markdown" }
+      
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Text", name: "heroText", widget: "text" }
+          - { label: "Story Title", name: "storyTitle", widget: "string" }
+          - { label: "Story Content", name: "storyContent", widget: "markdown" }
+          - { label: "Values Title", name: "valuesTitle", widget: "string" }
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      
+      - label: "Contact Page"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - label: "Hours"
+            name: "hours"
+            widget: "list"
+            fields:
+              - { label: "Days", name: "days", widget: "string" }
+              - { label: "Time", name: "time", widget: "string" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "content/settings/general.md"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - { label: "Logo Text", name: "logoText", widget: "string" }
+          - { label: "Logo Emoji", name: "logoEmoji", widget: "string" }
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
