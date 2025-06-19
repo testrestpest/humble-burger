@@ -1,7 +1,7 @@
 .container {
-  width: 100%; /* Full width instead of max-width constraint */
+  width: 100vw; /* Full viewport width - NO restrictions */
   margin: 0;
-  padding: 0 3rem; /* More padding on sides */
+  padding: 0; /* Remove ALL padding constraints */
 }
 
 .header {
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 2rem 3rem; /* Move padding here instead of container */
   width: 100%;
 }
 
@@ -27,17 +27,17 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: white; /* White text for visibility over hero image */
+  color: white;
   font-weight: 700;
   font-size: 1.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
-  margin-left: 2rem; /* Push logo further to the left */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-left: 0; /* Remove margin so logo can be truly left-aligned */
 }
 
 .logo-image {
-  height: 100px; /* Even bigger logo */
+  height: 120px; /* MUCH BIGGER logo */
   width: auto;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) brightness(1.1); /* Stronger shadow for visibility */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) brightness(1.1);
 }
 
 .logo-icon {
@@ -62,9 +62,9 @@
 
 .nav {
   display: flex;
-  gap: 2rem; /* Spacing between all items including social icons */
+  gap: 2.5rem; /* Better spacing for bigger social icons */
   align-items: center;
-  margin-right: 2rem; /* Push nav more to the right for balance */
+  margin-right: 0; /* Remove margin constraint */
 }
 
 .nav-link {
@@ -119,21 +119,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   color: white;
   text-decoration: none;
-  border: 2px solid white;
-  border-radius: 50%;
   transition: all 0.3s ease;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  font-size: 1.1rem;
-  margin-left: 1rem; /* Add some space before social icons */
+  font-size: 1.5rem; /* Bigger icons */
+  margin-left: 1.5rem; /* More space before social icons */
+  padding: 0.5rem; /* Just for click area, no visual borders */
 }
 
 .social-link:hover {
-  background-color: white;
-  color: #333;
+  color: #f0f0f0; /* Slightly lighter white on hover, same as nav links */
   transform: translateY(-2px);
 }
 
@@ -172,21 +168,21 @@
   .nav-link:last-child {
     border-bottom: none;
   }
-
   .social-link {
     margin-left: 0;
     margin-top: 1rem;
+    font-size: 1.3rem; /* Slightly smaller on mobile but still bigger than before */
   }
 
   .logo {
-    margin-left: 0.5rem; /* Less margin on mobile */
+    margin-left: 0; /* Keep logo left-aligned on mobile too */
   }
 
   .logo-image {
-    height: 60px; /* Smaller on mobile */
+    height: 80px; /* Smaller on mobile but still bigger than before */
   }
 
   .header-content {
-    padding: 1rem 0; /* Less padding on mobile */
+    padding: 1.5rem 1rem; /* Less padding on mobile */
   }
 }
