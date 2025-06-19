@@ -15,6 +15,8 @@
   justify-content: center;
   position: relative;
   color: white;
+  /* Ensure hero is behind the header but covers entire viewport */
+  z-index: 1;
 }
 
 .hero-overlay {
@@ -23,13 +25,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.5); /* Stronger dark overlay for better text readability */
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
 }
 

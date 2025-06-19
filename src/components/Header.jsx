@@ -22,13 +22,12 @@ function Header() {
   return (
     <header className="header">
       <div className="container">
-        <div className="header-content">
-          <Link to="/" className="logo">
+        <div className="header-content">          <Link to="/" className="logo">
             {settings.assets?.logo ? (
               <img src={settings.assets.logo} alt="Humble Burger" className="logo-image" />
             ) : (
               <>
-                <span className="logo-icon">🍔</span>
+                <img src="/images/logo.png" alt="Humble Burger" className="logo-image" />
                 <span className="logo-text">Humble Burger</span>
               </>
             )}
