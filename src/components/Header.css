@@ -18,8 +18,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between; /* This will push the logo and nav to the edges */
-  padding: 2rem; /* Apply equal padding on all sides, can be adjusted */
+  padding: 2rem 3rem; /* Generous padding from top/bottom and right edge */
   width: 100%;
+  padding-left: 0; /* NO PADDING ON THE LEFT */
 }
 
 .logo {
@@ -32,11 +33,11 @@
   font-size: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   margin-left: 0; /* Ensure no extra margin */
-  padding-left: 1rem; /* Add padding here to control space from edge */
+  padding-left: 1.5rem; /* Let's give it a small space from the absolute edge */
 }
 
 .logo-image {
-  height: 120px; /* MUCH BIGGER logo */
+  height: 160px; /* EVEN BIGGER LOGO */
   width: auto;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) brightness(1.1);
 }
@@ -121,17 +122,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #FFFFFF; /* PURE WHITE */
   text-decoration: none;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  font-size: 1.8rem; /* Even Bigger icons */
-  margin-left: 1.5rem; /* More space before social icons */
-  padding: 0.5rem; /* Just for click area, no visual borders */
+  text-shadow: none; /* No shadow to ensure pure white color */
+  font-size: 1.2rem; /* Smaller icons */
+  margin-left: 1.5rem;
+  padding: 0.5rem;
 }
 
 .social-link:hover {
-  color: #f0f0f0; /* Slightly lighter white on hover, same as nav links */
+  color: #FFFFFF; /* PURE WHITE on hover */
   transform: translateY(-2px);
 }
 
