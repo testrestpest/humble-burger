@@ -13,7 +13,7 @@ storyContent: >
 
   What began as a small neighborhood spot has grown into a local institution, but we've never forgotten our roots. Every burger is still hand-crafted with the same care and attention that Maria put into those first burgers.
 storyImageEmoji: 👩‍🍳
-storyImageCaption: Chef Mo Ib
+storyImageCaption: Chef Maria
 valuesTitle: Our Values
 values:
   - icon: 🌱
