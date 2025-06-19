@@ -26,9 +26,9 @@ collections:
       - label: "Header Settings"
         name: "header"
         file: "content/settings/header.md"
-        fields:
-          - { label: "Show Logo Text", name: "showLogoText", widget: "boolean", default: false, hint: "Display text next to logo image" }
-          - { label: "Logo Text", name: "logoText", widget: "string", default: "Humble Burger", hint: "Text to display next to logo (if enabled)" }          - label: "Navigation Items"
+        fields:          - { label: "Show Logo Text", name: "showLogoText", widget: "boolean", default: false, hint: "Display text next to logo image" }
+          - { label: "Logo Text", name: "logoText", widget: "string", default: "Humble Burger", hint: "Text to display next to logo (if enabled)" }
+          - label: "Navigation Items"
             name: "navItems"
             widget: "list"
             hint: "Configure navigation menu items"
