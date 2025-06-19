@@ -31,9 +31,8 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <div className="container">          <div className="hero-content">
-            <h1 className="hero-title">
-              {pageContent.heroTitle || "Welcome to"} <span className="highlight">Humble Burger</span>
+        <div className="container">          <div className="hero-content">            <h1 className="hero-title">
+              <span className="highlight">{pageContent.heroTitle || "Welcome to Humble Burger"}</span>
             </h1>
             <p className="hero-subtitle">
               {pageContent.heroSubtitle || "Where gourmet meets comfort. Every burger is crafted with passion, using the freshest ingredients and served with a smile."}
