@@ -28,12 +28,12 @@ collections:
         file: "content/settings/header.md"
         fields:
           - { label: "Show Logo Text", name: "showLogoText", widget: "boolean", default: false, hint: "Display text next to logo image" }
-          - { label: "Logo Text", name: "logoText", widget: "string", default: "Humble Burger", hint: "Text to display next to logo (if enabled)" }
-          - label: "Navigation Items"
+          - { label: "Logo Text", name: "logoText", widget: "string", default: "Humble Burger", hint: "Text to display next to logo (if enabled)" }          - label: "Navigation Items"
             name: "navItems"
             widget: "list"
             hint: "Configure navigation menu items"
-            fields:              - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
               - { label: "Link", name: "link", widget: "string", hint: "Page URL (e.g., /, /menu, /about)" }
               - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }
           - label: "Social Media Links"
