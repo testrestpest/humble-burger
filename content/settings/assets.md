@@ -1,5 +1,5 @@
 ---
 logo: /images/uploads/default2.png
-heroImage: /images/hero.jpg
+heroImage: /images/uploads/default2.png
 heroTitle: KEEPING FOOD HUMBLE
 ---
