@@ -1,3 +1,9 @@
+.container {
+  max-width: 1400px; /* Wider container for better spacing */
+  margin: 0 auto;
+  padding: 0 2rem; /* More padding on sides */
+}
+
 .header {
   background: transparent; /* Completely transparent to blend with hero */
   border-bottom: none; /* Remove separator */
@@ -12,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .logo {
@@ -24,10 +30,11 @@
   font-weight: 700;
   font-size: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+  margin-left: 1rem; /* Push logo more to the left */
 }
 
 .logo-image {
-  height: 50px; /* Slightly larger since no text */
+  height: 80px; /* Much larger logo as shown in the image */
   width: auto;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) brightness(1.1); /* Stronger shadow for visibility */
 }
@@ -47,20 +54,28 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 3rem; /* More spacing between items */
   align-items: center;
+  margin-right: 1rem; /* Push nav more to the right for balance */
 }
 
 .nav-link {
   text-decoration: none;
   color: white; /* White text for visibility over hero image */
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 1rem 0; /* More padding */
   position: relative;
   transition: color 0.2s ease;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .nav-link:hover {
@@ -99,7 +114,38 @@
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {  .nav {
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+}
+
+.social-link:hover {
+  background-color: white;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .nav {
     position: absolute;
     top: 100%;
     left: 0;
@@ -124,6 +170,7 @@
   .menu-toggle {
     display: flex;
   }
+  
   .nav-link {
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* White border for mobile menu */
@@ -132,5 +179,27 @@
 
   .nav-link:last-child {
     border-bottom: none;
+  }
+
+  .social-links {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-left: 0;
+    padding-top: 1rem;
+    margin-left: 0;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-left: 0.5rem; /* Less margin on mobile */
+  }
+
+  .logo-image {
+    height: 60px; /* Smaller on mobile */
+  }
+
+  .header-content {
+    padding: 1rem 0; /* Less padding on mobile */
   }
 }

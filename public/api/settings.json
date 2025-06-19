@@ -10,38 +10,41 @@
     {
       "platform": "Instagram",
       "url": "https://instagram.com/humbleburger",
-      "icon": "📱"
+      "icon": "📷",
+      "enabled": true
     },
     {
       "platform": "Facebook",
       "url": "https://facebook.com/humbleburger",
-      "icon": "👍"
+      "icon": "📘",
+      "enabled": true
     },
     {
-      "platform": "Twitter",
-      "url": "https://twitter.com/humbleburger",
-      "icon": "🐦"
+      "platform": "Website",
+      "url": "https://humbleburger.com",
+      "icon": "🔗",
+      "enabled": true
     }
   ],
   "showLogoText": false,
   "navItems": [
     {
-      "label": "Home",
+      "label": "HOME",
       "link": "/",
       "enabled": true
     },
     {
-      "label": "Menu",
+      "label": "MENU",
       "link": "/menu",
       "enabled": true
     },
     {
-      "label": "About",
-      "link": "/about",
+      "label": "ORDER",
+      "link": "/contact",
       "enabled": true
     },
     {
-      "label": "Contact",
+      "label": "CONTACT",
       "link": "/contact",
       "enabled": true
     }

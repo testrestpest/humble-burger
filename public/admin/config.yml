@@ -19,7 +19,6 @@ collections:  - name: "site-assets"
           - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)" }
           - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)" }
           - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
-
   - name: "navigation"
     label: "🧭 Navigation & Header"
     files:
@@ -37,6 +36,15 @@ collections:  - name: "site-assets"
               - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
               - { label: "Link", name: "link", widget: "string", hint: "Page URL (e.g., /, /menu, /about)" }
               - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }
+          - label: "Social Media Links"
+            name: "socialLinks"
+            widget: "list"
+            hint: "Social media icons displayed in the header"
+            fields:
+              - { label: "Platform Name", name: "platform", widget: "string", hint: "e.g., Instagram, Facebook, Twitter" }
+              - { label: "URL", name: "url", widget: "string", hint: "Full URL to your social media profile" }
+              - { label: "Icon", name: "icon", widget: "string", hint: "Single emoji or symbol (e.g., 📷, 👍, 🐦)" }
+              - { label: "Show in Header", name: "enabled", widget: "boolean", default: true }
   
   - name: "menu-items" # Used in routes, e.g., /admin/collections/menu-items
     label: "Menu Items" # Used in the UI

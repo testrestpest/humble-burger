@@ -18,7 +18,6 @@ function Header() {
     }
     loadSettings()
   }, [])
-
   // Default navigation items if not configured in CMS
   const defaultNavItems = [
     { label: "Home", link: "/", enabled: true },
@@ -26,10 +25,11 @@ function Header() {
     { label: "About", link: "/about", enabled: true },
     { label: "Contact", link: "/contact", enabled: true }
   ]
-
+  
   const navItems = settings.header?.navItems || defaultNavItems
   const showLogoText = settings.header?.showLogoText || false
   const logoText = settings.header?.logoText || "Humble Burger"
+  const socialLinks = settings.header?.socialLinks || settings.general?.socialLinks || settings.socialLinks || []
 
   return (
     <header className="header">
@@ -46,18 +46,36 @@ function Header() {
             )}
           </Link>
           
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            {navItems.filter(item => item.enabled).map((item, index) => (
-              <Link 
-                key={index}
-                to={item.link} 
-                className="nav-link" 
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="nav-container">
+            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+              {navItems.filter(item => item.enabled).map((item, index) => (
+                <Link 
+                  key={index}
+                  to={item.link} 
+                  className="nav-link" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+                {socialLinks.length > 0 && (
+                <div className="social-links">
+                  {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
+                    <a 
+                      key={index}
+                      href={social.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="social-link"
+                      title={social.platform}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </nav>
+          </div>
 
           <button 
             className="menu-toggle"
