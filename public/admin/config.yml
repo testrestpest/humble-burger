@@ -50,52 +50,53 @@ collections:
           widget: "boolean", 
           default: true 
         }
-  
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Home Page"
+      - label: "🏠 Home Page"
         name: "home"
         file: "content/pages/home.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
-          - { label: "About Section Title", name: "aboutTitle", widget: "string" }
-          - { label: "About Section Content", name: "aboutContent", widget: "markdown" }
+          - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string", hint: "Main headline on homepage" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", hint: "Descriptive text under the main headline" }
+          - { label: "About Section Title", name: "aboutTitle", widget: "string", hint: "Title for the about section on homepage" }
+          - { label: "About Section Content", name: "aboutContent", widget: "markdown", hint: "Content for the about section on homepage" }
       
-      - label: "About Page"
+      - label: "ℹ️ About Page"
         name: "about"
         file: "content/pages/about.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Hero Text", name: "heroText", widget: "text" }
-          - { label: "Story Title", name: "storyTitle", widget: "string" }
-          - { label: "Story Content", name: "storyContent", widget: "markdown" }
-          - { label: "Values Title", name: "valuesTitle", widget: "string" }
-          - label: "Values"
+          - { label: "Page Title", name: "title", widget: "string", hint: "Title shown at top of About page" }
+          - { label: "Hero Text", name: "heroText", widget: "text", hint: "Introductory text at top of About page" }
+          - { label: "Story Title", name: "storyTitle", widget: "string", hint: "Title for the story section" }
+          - { label: "Story Content", name: "storyContent", widget: "markdown", hint: "Main story content about your restaurant" }
+          - { label: "Values Title", name: "valuesTitle", widget: "string", hint: "Title for the values section" }
+          - label: "Values List"
             name: "values"
             widget: "list"
+            hint: "List of your restaurant's core values"
             fields:
-              - { label: "Icon", name: "icon", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string", hint: "Use emoji like 🌱, 🤝, ⭐, ❤️" }
+              - { label: "Value Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
       
-      - label: "Contact Page"
+      - label: "📞 Contact Page"
         name: "contact"
         file: "content/pages/contact.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "text" }
-          - { label: "Address", name: "address", widget: "text" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - label: "Hours"
+          - { label: "Page Title", name: "title", widget: "string", hint: "Title for contact page" }
+          - { label: "Page Subtitle", name: "subtitle", widget: "text", hint: "Subtitle/description for contact page" }
+          - { label: "Address", name: "address", widget: "text", hint: "Your restaurant's full address" }
+          - { label: "Phone", name: "phone", widget: "string", hint: "Phone number (e.g., (555) 123-BURGER)" }
+          - { label: "Email", name: "email", widget: "string", hint: "Contact email address" }
+          - label: "Business Hours"
             name: "hours"
             widget: "list"
+            hint: "List of business hours by day"
             fields:
-              - { label: "Days", name: "days", widget: "string" }
-              - { label: "Time", name: "time", widget: "string" }
+              - { label: "Days", name: "days", widget: "string", hint: "e.g., Monday - Friday" }
+              - { label: "Time", name: "time", widget: "string", hint: "e.g., 11:00 AM - 10:00 PM" }
 
   - name: "settings"
     label: "Site Settings"

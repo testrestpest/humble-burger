@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { fetchContent } from '../utils/contentLoader'
 import './Contact.css'
 
 function Contact() {
@@ -7,6 +8,23 @@ function Contact() {
     email: '',
     message: ''
   })
+  const [contactContent, setContactContent] = useState({})
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const pages = await fetchContent('pages')
+        setContactContent(pages.contact || {})
+      } catch (error) {
+        console.error('Error loading contact content:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadContent()
+  }, [])
 
   const handleChange = (e) => {
     setFormData({
@@ -27,10 +45,9 @@ function Contact() {
       <div className="container">
         {/* Header */}
         <div className="contact-header">
-          <h1 className="page-title">Get in Touch</h1>
+          <h1 className="page-title">{contactContent.title || "Get in Touch"}</h1>
           <p className="page-subtitle">
-            We'd love to hear from you! Whether you have questions, feedback, 
-            or just want to say hello, don't hesitate to reach out.
+            {contactContent.subtitle || "We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, don't hesitate to reach out."}
           </p>
         </div>
 
@@ -90,9 +107,7 @@ function Contact() {
                 Send Message
               </button>
             </form>
-          </div>
-
-          {/* Contact Info */}
+          </div>          {/* Contact Info */}
           <div className="contact-info-section">
             <h2>Visit Us</h2>
             
@@ -101,7 +116,7 @@ function Contact() {
                 <div className="info-icon">📍</div>
                 <div>
                   <h3>Address</h3>
-                  <p>123 Burger Street<br />Food City, FC 12345</p>
+                  <p>{contactContent.address || "123 Burger Street\nFood City, FC 12345"}</p>
                 </div>
               </div>
 
@@ -109,7 +124,7 @@ function Contact() {
                 <div className="info-icon">📞</div>
                 <div>
                   <h3>Phone</h3>
-                  <p>(555) 123-BURGER</p>
+                  <p>{contactContent.phone || "(555) 123-BURGER"}</p>
                 </div>
               </div>
 
@@ -117,7 +132,7 @@ function Contact() {
                 <div className="info-icon">✉️</div>
                 <div>
                   <h3>Email</h3>
-                  <p>hello@humbleburger.com</p>
+                  <p>{contactContent.email || "hello@humbleburger.com"}</p>
                 </div>
               </div>
             </div>
@@ -125,18 +140,16 @@ function Contact() {
             <div className="hours-card">
               <h3>Hours of Operation</h3>
               <div className="hours-list">
-                <div className="hours-item">
-                  <span>Monday - Thursday</span>
-                  <span>11:00 AM - 10:00 PM</span>
-                </div>
-                <div className="hours-item">
-                  <span>Friday - Saturday</span>
-                  <span>11:00 AM - 11:00 PM</span>
-                </div>
-                <div className="hours-item">
-                  <span>Sunday</span>
-                  <span>12:00 PM - 9:00 PM</span>
-                </div>
+                {(contactContent.hours || [
+                  { days: "Monday - Thursday", time: "11:00 AM - 10:00 PM" },
+                  { days: "Friday - Saturday", time: "11:00 AM - 11:00 PM" },
+                  { days: "Sunday", time: "12:00 PM - 9:00 PM" }
+                ]).map((hour, index) => (
+                  <div key={index} className="hours-item">
+                    <span>{hour.days}</span>
+                    <span>{hour.time}</span>
+                  </div>
+                ))}
               </div>
             </div>
 

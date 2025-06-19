@@ -158,6 +158,19 @@
   flex-wrap: wrap;
 }
 
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;

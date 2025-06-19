@@ -14,11 +14,9 @@ function Home() {
         // Load menu items and filter for featured ones
         const menuItems = await fetchContent('menu')
         const featured = menuItems.filter(item => item.featured && item.available !== false)
-        setFeaturedItems(featured)
-
-        // Load page content
+        setFeaturedItems(featured)        // Load page content
         const pages = await fetchContent('pages')
-        setPageContent(pages)
+        setPageContent(pages.home || {})
       } catch (error) {
         console.error('Error loading content:', error)
       } finally {
@@ -83,36 +81,42 @@ function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Why Choose Us */}
+      </section>      {/* Why Choose Us */}
       <section className="why-choose py-16">
         <div className="container">
           <h2 className="section-title text-center mb-8">
-            Why Choose Humble Burger?
+            {pageContent.aboutTitle || "Why Choose Humble Burger?"}
           </h2>
-          <div className="features-grid">
-            <div className="feature">
-              <div className="feature-icon">🥩</div>
-              <h3>Premium Ingredients</h3>
-              <p>We source only the finest, locally-raised beef and fresh produce for every burger.</p>
+          {pageContent.aboutContent ? (
+            <div className="about-content">
+              <div dangerouslySetInnerHTML={{ 
+                __html: pageContent.aboutContent.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') 
+              }} />
             </div>
-            <div className="feature">
-              <div className="feature-icon">👨‍🍳</div>
-              <h3>Expert Craftsmanship</h3>
-              <p>Our chefs hand-craft each burger to perfection, ensuring every bite is memorable.</p>
+          ) : (
+            <div className="features-grid">
+              <div className="feature">
+                <div className="feature-icon">🥩</div>
+                <h3>Premium Ingredients</h3>
+                <p>We source only the finest, locally-raised beef and fresh produce for every burger.</p>
+              </div>
+              <div className="feature">
+                <div className="feature-icon">👨‍🍳</div>
+                <h3>Expert Craftsmanship</h3>
+                <p>Our chefs hand-craft each burger to perfection, ensuring every bite is memorable.</p>
+              </div>
+              <div className="feature">
+                <div className="feature-icon">🌱</div>
+                <h3>Sustainable Practices</h3>
+                <p>We're committed to sustainable sourcing and environmentally friendly practices.</p>
+              </div>
+              <div className="feature">
+                <div className="feature-icon">❤️</div>
+                <h3>Made with Love</h3>
+                <p>Every burger is prepared with care and passion by our dedicated team.</p>
+              </div>
             </div>
-            <div className="feature">
-              <div className="feature-icon">🌱</div>
-              <h3>Sustainable Practices</h3>
-              <p>We're committed to sustainable sourcing and environmentally friendly practices.</p>
-            </div>
-            <div className="feature">
-              <div className="feature-icon">❤️</div>
-              <h3>Made with Love</h3>
-              <p>Every burger is prepared with care and passion by our dedicated team.</p>
-            </div>
-          </div>
+          )}
         </div>
       </section>
 

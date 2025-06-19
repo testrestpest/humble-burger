@@ -20,6 +20,16 @@
     "available": true
   },
   {
+    "id": "map-featured-false-available-true-name-bigger-man-ting-description-burga-ting-price-222-category-burgers-image-images-uploads-logo-png",
+    "name": "bigger man ting",
+    "description": "burga ting",
+    "price": "222",
+    "category": "burgers",
+    "image": "/images/uploads/logo.png",
+    "featured": false,
+    "available": true
+  },
+  {
     "id": "map-featured-false-available-true-name-moib-burger-description-big-man-ting-price-1000usd-category-burgers-image-images-uploads-default2-png",
     "name": "moib burger",
     "description": "big man ting",

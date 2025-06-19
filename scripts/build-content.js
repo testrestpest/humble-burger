@@ -10,7 +10,7 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true })
 }
 
-// Parse frontmatter
+// Improved YAML parser for handling complex structures
 function parseFrontmatter(content) {
   const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---/
   const match = content.match(frontmatterRegex)
@@ -18,29 +18,152 @@ function parseFrontmatter(content) {
   if (!match) return {}
   
   const frontmatter = match[1]
-  const data = {}
   
-  frontmatter.split('\n').forEach(line => {
-    const colonIndex = line.indexOf(':')
-    if (colonIndex > 0) {
-      const key = line.substring(0, colonIndex).trim()
-      let value = line.substring(colonIndex + 1).trim()
+  try {
+    const data = {}
+    const lines = frontmatter.split('\n')
+    let i = 0
+    
+    function parseValue(value) {
+      if (value === 'true') return true
+      if (value === 'false') return false
+      if (value === 'null') return null
+      if (/^-?\d+$/.test(value)) return parseInt(value)
+      if (/^-?\d*\.\d+$/.test(value)) return parseFloat(value)
       
-      // Remove quotes
+      // Remove quotes if present
       if ((value.startsWith('"') && value.endsWith('"')) || 
           (value.startsWith("'") && value.endsWith("'"))) {
-        value = value.slice(1, -1)
+        return value.slice(1, -1)
       }
       
-      // Convert boolean strings
-      if (value === 'true') value = true
-      if (value === 'false') value = false
-      
-      data[key] = value
+      return value
     }
-  })
-  
-  return data
+    
+    function parseMultilineString(startIndex, operator) {
+      const content = []
+      let lineIndex = startIndex
+      
+      while (lineIndex < lines.length) {
+        const line = lines[lineIndex]
+        
+        // If we hit a new key at the root level, stop
+        if (line.match(/^\w+:/) && !line.startsWith('  ')) {
+          break
+        }
+        
+        // If it's indented content, add it
+        if (line.startsWith('  ') || line.trim() === '') {
+          content.push(line.replace(/^  /, ''))
+        } else {
+          break
+        }
+        
+        lineIndex++
+      }
+      
+      let result = content.join('\n').trim()
+      
+      // Handle different multiline operators
+      if (operator === '>') {
+        // Folded style - join lines with spaces, preserve paragraph breaks
+        result = result.replace(/\n(?!\n)/g, ' ').replace(/\n\n/g, '\n')
+      }
+      // For '|' (literal style), keep as is
+      
+      return { value: result, nextIndex: lineIndex }
+    }
+    
+    function parseArray(startIndex) {
+      const items = []
+      let lineIndex = startIndex
+      
+      while (lineIndex < lines.length) {
+        const line = lines[lineIndex]
+        
+        if (!line.trim().startsWith('- ')) {
+          break
+        }
+        
+        const itemContent = line.trim().substring(2)
+        
+        if (itemContent.includes(':')) {
+          // This is an object item
+          const item = {}
+          const firstPart = itemContent.split(':')
+          const key = firstPart[0].trim()
+          const value = firstPart.slice(1).join(':').trim()
+          
+          if (value) {
+            item[key] = parseValue(value)
+          }
+          
+          // Look for more properties of this object
+          lineIndex++
+          while (lineIndex < lines.length) {
+            const nextLine = lines[lineIndex]
+            if (nextLine.trim().startsWith('- ')) break
+            if (!nextLine.match(/^\w+:/) && nextLine.startsWith('    ')) {
+              // This is a continuation of the object
+              const propMatch = nextLine.trim().match(/^(\w+):\s*(.*)/)
+              if (propMatch) {
+                item[propMatch[1]] = parseValue(propMatch[2])
+              }
+              lineIndex++
+            } else {
+              break
+            }
+          }
+          
+          items.push(item)
+        } else {
+          // Simple array item
+          items.push(parseValue(itemContent))
+          lineIndex++
+        }
+      }
+      
+      return { value: items, nextIndex: lineIndex }
+    }
+    
+    while (i < lines.length) {
+      const line = lines[i]
+      
+      if (!line.trim() || line.trim().startsWith('#')) {
+        i++
+        continue
+      }
+      
+      const match = line.match(/^(\w+):\s*(.*)/)
+      if (match) {
+        const key = match[1]
+        const value = match[2]
+        
+        if (value === '|' || value === '>') {
+          // Multiline string
+          const result = parseMultilineString(i + 1, value)
+          data[key] = result.value
+          i = result.nextIndex
+        } else if (!value && i + 1 < lines.length && lines[i + 1].trim().startsWith('- ')) {
+          // Array
+          const result = parseArray(i + 1)
+          data[key] = result.value
+          i = result.nextIndex
+        } else {
+          // Simple value
+          data[key] = parseValue(value)
+          i++
+        }
+      } else {
+        i++
+      }
+    }
+    
+    return data
+  } catch (error) {
+    console.error('Error parsing YAML:', error)
+    return {}
+  }
 }
 
 // Process menu items
