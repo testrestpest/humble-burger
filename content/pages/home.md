@@ -1,6 +1,6 @@
 ---
 title: Welcome to Humble Burger
-heroTitle: Welcome to Humbled Burger!
+heroTitle: Welcome to Humbled Burger
 heroSubtitle: Where gourmet meets comfort. Every burger is crafted with passion,
   using the freshest ingredients and served with a smile.
 aboutTitle: Why Choose Humble Burger?
