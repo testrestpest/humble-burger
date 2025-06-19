@@ -1,4 +1,4 @@
-// Utility to fetch and parse markdown content from CMS
+// Utility to fetch and parse content from generated JSON files
 export const fetchContent = async (type) => {
   try {
     switch (type) {
@@ -9,7 +9,7 @@ export const fetchContent = async (type) => {
       case 'pages':
         return await fetchPages()
       default:
-        return []
+        return getFallbackData(type)
     }
   } catch (error) {
     console.error('Error fetching content:', error)
@@ -18,16 +18,41 @@ export const fetchContent = async (type) => {
 }
 
 const fetchMenuItems = async () => {
-  // For now, return fallback data
-  // In production, this would integrate with Netlify CMS API or build process
+  try {
+    const response = await fetch('/api/menu.json')
+    if (response.ok) {
+      const items = await response.json()
+      return items.length > 0 ? items : getFallbackMenuItems()
+    }
+  } catch (error) {
+    console.log('Using fallback menu items')
+  }
   return getFallbackMenuItems()
 }
 
 const fetchSettings = async () => {
+  try {
+    const response = await fetch('/api/settings.json')
+    if (response.ok) {
+      const settings = await response.json()
+      return Object.keys(settings).length > 0 ? settings : getFallbackSettings()
+    }
+  } catch (error) {
+    console.log('Using fallback settings')
+  }
   return getFallbackSettings()
 }
 
 const fetchPages = async () => {
+  try {
+    const response = await fetch('/api/pages.json')
+    if (response.ok) {
+      const pages = await response.json()
+      return pages.home || getFallbackPages()
+    }
+  } catch (error) {
+    console.log('Using fallback pages')
+  }
   return getFallbackPages()
 }
 
