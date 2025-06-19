@@ -1,27 +1,27 @@
 ---
 showLogoText: false
-logoText: "Humble Burger"
+logoText: Humble Burger
 navItems:
-  - label: "HOME"
-    link: "/"
+  - label: HOME
+    link: /
     enabled: true
-  - label: "MENU"
-    link: "/menu"
+  - label: ORDER
+    link: /contact
     enabled: true
-  - label: "ORDER"
-    link: "/contact"
+  - label: MENU
+    link: /menu
     enabled: true
-  - label: "CONTACT"
-    link: "/contact"
+  - label: CONTACT
+    link: /contact
     enabled: true
 socialLinks:
-  - platform: "Instagram"
-    url: "https://instagram.com/humbleburger"
+  - platform: Facebook
+    url: https://facebook.com/humbleburger
     enabled: true
-  - platform: "Facebook"
-    url: "https://facebook.com/humbleburger"
+  - platform: Instagram
+    url: https://instagram.com/humbleburger
     enabled: true
-  - platform: "Website"
-    url: "https://humbleburger.com"
+  - platform: Website
+    url: https://humbleburger.com
     enabled: true
 ---
