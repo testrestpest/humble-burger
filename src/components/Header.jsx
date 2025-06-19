@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe } from 'react-icons/fa'
 import './Header.css'
 
 function Header() {
@@ -18,6 +19,32 @@ function Header() {
     }
     loadSettings()
   }, [])
+
+  // Map platform names to React icons
+  const getIconComponent = (platform, customIcon) => {
+    const platformLower = platform.toLowerCase()
+    
+    switch (platformLower) {
+      case 'instagram':
+        return <FaInstagram />
+      case 'facebook':
+        return <FaFacebookF />
+      case 'twitter':
+        return <FaTwitter />
+      case 'linkedin':
+        return <FaLinkedinIn />
+      case 'youtube':
+        return <FaYoutube />
+      case 'tiktok':
+        return <FaTiktok />
+      case 'website':
+      case 'web':
+        return <FaGlobe />
+      default:
+        // Fallback to custom icon if provided, otherwise use globe
+        return customIcon || <FaGlobe />
+    }
+  }
   // Default navigation items if not configured in CMS
   const defaultNavItems = [
     { label: "Home", link: "/", enabled: true },
@@ -47,8 +74,7 @@ function Header() {
           </Link>
           
           <div className="nav-container">
-            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-              {navItems.filter(item => item.enabled).map((item, index) => (
+            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>              {navItems.filter(item => item.enabled).map((item, index) => (
                 <Link 
                   key={index}
                   to={item.link} 
@@ -58,22 +84,19 @@ function Header() {
                   {item.label}
                 </Link>
               ))}
-                {socialLinks.length > 0 && (
-                <div className="social-links">
-                  {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
-                    <a 
-                      key={index}
-                      href={social.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="social-link"
-                      title={social.platform}
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-              )}
+              
+              {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
+                <a 
+                  key={`social-${index}`}
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                  title={social.platform}
+                >
+                  {getIconComponent(social.platform, social.icon)}
+                </a>
+              ))}
             </nav>
           </div>
 

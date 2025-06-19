@@ -17,14 +17,11 @@ navItems:
 socialLinks:
   - platform: "Instagram"
     url: "https://instagram.com/humbleburger"
-    icon: "📷"
     enabled: true
   - platform: "Facebook"
     url: "https://facebook.com/humbleburger"
-    icon: "📘"
     enabled: true
   - platform: "Website"
     url: "https://humbleburger.com"
-    icon: "🔗"
     enabled: true
 ---

@@ -35,15 +35,13 @@ collections:  - name: "site-assets"
             fields:
               - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
               - { label: "Link", name: "link", widget: "string", hint: "Page URL (e.g., /, /menu, /about)" }
-              - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }
-          - label: "Social Media Links"
+              - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }          - label: "Social Media Links"
             name: "socialLinks"
             widget: "list"
-            hint: "Social media icons displayed in the header"
+            hint: "Social media icons displayed in the header (automatically uses proper icons based on platform)"
             fields:
-              - { label: "Platform Name", name: "platform", widget: "string", hint: "e.g., Instagram, Facebook, Twitter" }
+              - { label: "Platform Name", name: "platform", widget: "select", options: ["Instagram", "Facebook", "Twitter", "LinkedIn", "YouTube", "TikTok", "Website"], hint: "Select platform for automatic icon" }
               - { label: "URL", name: "url", widget: "string", hint: "Full URL to your social media profile" }
-              - { label: "Icon", name: "icon", widget: "string", hint: "Single emoji or symbol (e.g., 📷, 👍, 🐦)" }
               - { label: "Show in Header", name: "enabled", widget: "boolean", default: true }
   
   - name: "menu-items" # Used in routes, e.g., /admin/collections/menu-items

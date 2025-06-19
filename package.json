@@ -2,7 +2,8 @@
   "name": "humble-burger",
   "private": true,
   "version": "0.0.0",
-  "type": "module",  "scripts": {
+  "type": "module",
+  "scripts": {
     "dev": "vite",
     "build": "node scripts/build-content.js && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -13,6 +14,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^6.8.1"
   },
   "devDependencies": {

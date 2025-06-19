@@ -1,7 +1,7 @@
 .container {
-  max-width: 1400px; /* Wider container for better spacing */
-  margin: 0 auto;
-  padding: 0 2rem; /* More padding on sides */
+  width: 100%; /* Full width instead of max-width constraint */
+  margin: 0;
+  padding: 0 3rem; /* More padding on sides */
 }
 
 .header {
@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem 0;
+  width: 100%;
 }
 
 .logo {
@@ -30,11 +31,11 @@
   font-weight: 700;
   font-size: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
-  margin-left: 1rem; /* Push logo more to the left */
+  margin-left: 2rem; /* Push logo further to the left */
 }
 
 .logo-image {
-  height: 80px; /* Much larger logo as shown in the image */
+  height: 100px; /* Even bigger logo */
   width: auto;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8)) brightness(1.1); /* Stronger shadow for visibility */
 }
@@ -61,9 +62,9 @@
 
 .nav {
   display: flex;
-  gap: 3rem; /* More spacing between items */
+  gap: 2rem; /* Spacing between all items including social icons */
   align-items: center;
-  margin-right: 1rem; /* Push nav more to the right for balance */
+  margin-right: 2rem; /* Push nav more to the right for balance */
 }
 
 .nav-link {
@@ -114,15 +115,6 @@
   transition: all 0.3s ease;
 }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-left: 2rem;
-  padding-left: 2rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-}
-
 .social-link {
   display: flex;
   align-items: center;
@@ -135,7 +127,8 @@
   border-radius: 50%;
   transition: all 0.3s ease;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-left: 1rem; /* Add some space before social icons */
 }
 
 .social-link:hover {
@@ -176,19 +169,13 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* White border for mobile menu */
     color: white; /* Ensure white text in mobile menu */
   }
-
   .nav-link:last-child {
     border-bottom: none;
   }
 
-  .social-links {
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-left: 0;
-    padding-top: 1rem;
+  .social-link {
     margin-left: 0;
     margin-top: 1rem;
-    justify-content: center;
   }
 
   .logo {
