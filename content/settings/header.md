@@ -15,11 +15,11 @@ navItems:
     link: /contact
     enabled: true
 socialLinks:
+  - platform: LinkedIn
+    url: https://instagram.com/humbleburger
+    enabled: true
   - platform: Facebook
     url: https://facebook.com/humbleburger
-    enabled: true
-  - platform: Instagram
-    url: https://instagram.com/humbleburger
     enabled: true
   - platform: Website
     url: https://humbleburger.com
