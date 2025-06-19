@@ -82,7 +82,15 @@ function Menu() {
           {filteredItems.map(item => (
             <div key={item.id} className={`menu-item card ${item.featured ? 'featured' : ''}`}>
               {item.featured && <div className="featured-badge">Featured</div>}              <div className="item-image">
-                <span className="item-emoji">{item.emoji || item.image || "🍽️"}</span>
+                {item.image && item.image.startsWith('/') ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="menu-item-img"
+                  />
+                ) : (
+                  <span className="item-emoji">{item.emoji || item.image || "🍽️"}</span>
+                )}
               </div>
               <div className="item-details">
                 <h3 className="item-name">{item.name}</h3>

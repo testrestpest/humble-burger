@@ -61,7 +61,15 @@ function Home() {
           <div className="featured-grid">
             {featuredItems.map(item => (
               <div key={item.id} className="featured-item card">                <div className="item-image">
-                  <span className="item-emoji">{item.emoji || item.image || "🍽️"}</span>
+                  {item.image && item.image.startsWith('/') ? (
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="featured-item-img"
+                    />
+                  ) : (
+                    <span className="item-emoji">{item.emoji || item.image || "🍽️"}</span>
+                  )}
                 </div>
                 <div className="item-content">
                   <h3 className="item-name">{item.name}</h3>
