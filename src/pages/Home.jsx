@@ -1,50 +1,44 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { fetchContent } from '../utils/contentLoader'
 import './Home.css'
 
 function Home() {
   const [featuredItems, setFeaturedItems] = useState([])
+  const [pageContent, setPageContent] = useState({})
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // In a real app, this would fetch from your CMS
-    // For now, we'll use some sample data
-    setFeaturedItems([
-      {
-        id: 1,
-        name: "Classic Humble Burger",
-        description: "Our signature beef patty with lettuce, tomato, onion, and our special sauce",
-        price: "$12.99",
-        image: "🍔"
-      },
-      {
-        id: 2,
-        name: "BBQ Bacon Deluxe",
-        description: "Smoky BBQ sauce, crispy bacon, and caramelized onions",
-        price: "$15.99",
-        image: "🥓"
-      },
-      {
-        id: 3,
-        name: "Mushroom Swiss",
-        description: "Sautéed mushrooms and melted Swiss cheese with garlic aioli",
-        price: "$14.99",
-        image: "🧀"
+    const loadContent = async () => {
+      try {
+        // Load menu items and filter for featured ones
+        const menuItems = await fetchContent('menu')
+        const featured = menuItems.filter(item => item.featured && item.available !== false)
+        setFeaturedItems(featured)
+
+        // Load page content
+        const pages = await fetchContent('pages')
+        setPageContent(pages)
+      } catch (error) {
+        console.error('Error loading content:', error)
+      } finally {
+        setLoading(false)
       }
-    ])
+    }
+
+    loadContent()
   }, [])
 
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <div className="container">
-          <div className="hero-content">
+        <div className="container">          <div className="hero-content">
             <h1 className="hero-title">
-              Welcome to <span className="highlight">Humble Burger</span>
+              {pageContent.heroTitle || "Welcome to"} <span className="highlight">Humble Burger</span>
             </h1>
             <p className="hero-subtitle">
-              Where gourmet meets comfort. Every burger is crafted with passion, 
-              using the freshest ingredients and served with a smile.
+              {pageContent.heroSubtitle || "Where gourmet meets comfort. Every burger is crafted with passion, using the freshest ingredients and served with a smile."}
             </p>
             <div className="hero-actions">
               <Link to="/menu" className="btn btn-primary">
@@ -66,9 +60,8 @@ function Home() {
           </h2>
           <div className="featured-grid">
             {featuredItems.map(item => (
-              <div key={item.id} className="featured-item card">
-                <div className="item-image">
-                  <span className="item-emoji">{item.image}</span>
+              <div key={item.id} className="featured-item card">                <div className="item-image">
+                  <span className="item-emoji">{item.emoji || item.image || "🍽️"}</span>
                 </div>
                 <div className="item-content">
                   <h3 className="item-name">{item.name}</h3>
