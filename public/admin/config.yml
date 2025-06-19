@@ -9,7 +9,8 @@ publish_mode: editorial_workflow
 media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
-collections:  - name: "site-assets"
+collections:
+  - name: "site-assets"
     label: "🎨 Site Assets"
     files:
       - label: "Logo & Hero Image"
@@ -32,10 +33,10 @@ collections:  - name: "site-assets"
             name: "navItems"
             widget: "list"
             hint: "Configure navigation menu items"
-            fields:
-              - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
+            fields:              - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
               - { label: "Link", name: "link", widget: "string", hint: "Page URL (e.g., /, /menu, /about)" }
-              - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }          - label: "Social Media Links"
+              - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }
+          - label: "Social Media Links"
             name: "socialLinks"
             widget: "list"
             hint: "Social media icons displayed in the header (automatically uses proper icons based on platform)"
