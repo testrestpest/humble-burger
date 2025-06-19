@@ -9,8 +9,7 @@ publish_mode: editorial_workflow
 media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
-collections:
-  - name: "site-assets"
+collections:  - name: "site-assets"
     label: "🎨 Site Assets"
     files:
       - label: "Logo & Hero Image"
@@ -20,6 +19,24 @@ collections:
           - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)" }
           - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)" }
           - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
+
+  - name: "navigation"
+    label: "🧭 Navigation & Header"
+    files:
+      - label: "Header Settings"
+        name: "header"
+        file: "content/settings/header.md"
+        fields:
+          - { label: "Show Logo Text", name: "showLogoText", widget: "boolean", default: false, hint: "Display text next to logo image" }
+          - { label: "Logo Text", name: "logoText", widget: "string", default: "Humble Burger", hint: "Text to display next to logo (if enabled)" }
+          - label: "Navigation Items"
+            name: "navItems"
+            widget: "list"
+            hint: "Configure navigation menu items"
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "Text shown in navigation (e.g., Home, Menu)" }
+              - { label: "Link", name: "link", widget: "string", hint: "Page URL (e.g., /, /menu, /about)" }
+              - { label: "Show in Navigation", name: "enabled", widget: "boolean", default: true }
   
   - name: "menu-items" # Used in routes, e.g., /admin/collections/menu-items
     label: "Menu Items" # Used in the UI

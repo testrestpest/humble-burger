@@ -19,33 +19,44 @@ function Header() {
     loadSettings()
   }, [])
 
+  // Default navigation items if not configured in CMS
+  const defaultNavItems = [
+    { label: "Home", link: "/", enabled: true },
+    { label: "Menu", link: "/menu", enabled: true },
+    { label: "About", link: "/about", enabled: true },
+    { label: "Contact", link: "/contact", enabled: true }
+  ]
+
+  const navItems = settings.header?.navItems || defaultNavItems
+  const showLogoText = settings.header?.showLogoText || false
+  const logoText = settings.header?.logoText || "Humble Burger"
+
   return (
     <header className="header">
       <div className="container">
-        <div className="header-content">          <Link to="/" className="logo">
-            {settings.assets?.logo ? (
-              <img src={settings.assets.logo} alt="Humble Burger" className="logo-image" />
-            ) : (
-              <>
-                <img src="/images/logo.png" alt="Humble Burger" className="logo-image" />
-                <span className="logo-text">Humble Burger</span>
-              </>
+        <div className="header-content">
+          <Link to="/" className="logo">
+            <img 
+              src={settings.assets?.logo || "/images/logo.png"} 
+              alt="Humble Burger" 
+              className="logo-image" 
+            />
+            {showLogoText && (
+              <span className="logo-text">{logoText}</span>
             )}
           </Link>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-              Home
-            </Link>
-            <Link to="/menu" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-              Menu
-            </Link>
-            <Link to="/about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-              About
-            </Link>
-            <Link to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </Link>
+            {navItems.filter(item => item.enabled).map((item, index) => (
+              <Link 
+                key={index}
+                to={item.link} 
+                className="nav-link" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           <button 

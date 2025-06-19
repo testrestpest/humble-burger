@@ -22,5 +22,28 @@
       "url": "https://twitter.com/humbleburger",
       "icon": "🐦"
     }
+  ],
+  "showLogoText": false,
+  "navItems": [
+    {
+      "label": "Home",
+      "link": "/",
+      "enabled": true
+    },
+    {
+      "label": "Menu",
+      "link": "/menu",
+      "enabled": true
+    },
+    {
+      "label": "About",
+      "link": "/about",
+      "enabled": true
+    },
+    {
+      "label": "Contact",
+      "link": "/contact",
+      "enabled": true
+    }
   ]
 }
