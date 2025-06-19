@@ -62,11 +62,11 @@ collections:
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", hint: "Descriptive text under the main headline" }
           - { label: "About Section Title", name: "aboutTitle", widget: "string", hint: "Title for the about section on homepage" }
           - { label: "About Section Content", name: "aboutContent", widget: "markdown", hint: "Content for the about section on homepage" }
-      
-      - label: "ℹ️ About Page"
+        - label: "ℹ️ About Page"
         name: "about"
         file: "content/pages/about.md"
-        fields:          - { label: "Page Title", name: "title", widget: "string", hint: "Title shown at top of About page" }
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", hint: "Title shown at top of About page" }
           - { label: "Hero Text", name: "heroText", widget: "text", hint: "Introductory text at top of About page" }
           - { label: "Story Title", name: "storyTitle", widget: "string", hint: "Title for the story section" }
           - { label: "Story Content", name: "storyContent", widget: "markdown", hint: "Main story content about your restaurant" }
