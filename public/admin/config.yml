@@ -57,7 +57,8 @@ collections:
         name: "home"
         file: "content/pages/home.md"
         fields:
-          - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO" }          - { label: "Hero Title", name: "heroTitle", widget: "string", hint: "Main headline on homepage" }
+          - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string", hint: "Main headline on homepage" }
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", hint: "Descriptive text under the main headline" }
           - { label: "About Section Title", name: "aboutTitle", widget: "string", hint: "Title for the about section on homepage" }
           - { label: "About Section Content", name: "aboutContent", widget: "markdown", hint: "Content for the about section on homepage" }
