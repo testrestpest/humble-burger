@@ -54,11 +54,10 @@ function About() {
                   aboutContent.storyContent.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') : 
                   `<p>It all started in 2018 when Chef Maria Rodriguez decided to pursue her passion for creating the perfect burger. After years of perfecting her recipes in her home kitchen, she opened the first Humble Burger location with a simple mission: serve honest, delicious food made with love.</p><p>What began as a small neighborhood spot has grown into a local institution, but we've never forgotten our roots. Every burger is still hand-crafted with the same care and attention that Maria put into those first burgers.</p>`
               }} />
-            </div>
-            <div className="story-image">
+            </div>            <div className="story-image">
               <div className="image-placeholder">
-                👩‍🍳
-                <p>Chef Maria Rodriguez</p>
+                {aboutContent.storyImageEmoji || "👩‍🍳"}
+                <p>{aboutContent.storyImageCaption || "Chef Maria Rodriguez"}</p>
               </div>
             </div>
           </div>
@@ -83,40 +82,25 @@ function About() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Team Section */}
+        </section>        {/* Team Section */}
         <section className="team-section py-16">
           <div className="container">
-            <h2 className="section-title text-center mb-8">Meet Our Team</h2>
+            <h2 className="section-title text-center mb-8">
+              {aboutContent.teamSectionTitle || "Meet Our Team"}
+            </h2>
             <div className="team-grid">
-              <div className="team-member">
-                <div className="member-image">👩‍🍳</div>
-                <h3>Maria Rodriguez</h3>
-                <p className="member-role">Founder & Head Chef</p>
-                <p className="member-bio">
-                  Maria's passion for cooking started in her grandmother's kitchen. 
-                  She brings 15 years of culinary experience to every burger.
-                </p>
-              </div>
-              <div className="team-member">
-                <div className="member-image">👨‍💼</div>
-                <h3>James Thompson</h3>
-                <p className="member-role">General Manager</p>
-                <p className="member-bio">
-                  James ensures every customer has an exceptional experience. 
-                  His attention to detail keeps everything running smoothly.
-                </p>
-              </div>
-              <div className="team-member">
-                <div className="member-image">👩‍🍳</div>
-                <h3>Sarah Kim</h3>
-                <p className="member-role">Sous Chef</p>
-                <p className="member-bio">
-                  Sarah's creativity and precision in the kitchen help maintain 
-                  our high standards and develop new menu items.
-                </p>
-              </div>
+              {(aboutContent.teamMembers || [
+                { emoji: "👩‍🍳", name: "Maria Rodriguez", role: "Founder & Head Chef", bio: "Maria's passion for cooking started in her grandmother's kitchen. She brings 15 years of culinary experience to every burger." },
+                { emoji: "👨‍💼", name: "James Thompson", role: "General Manager", bio: "James ensures every customer has an exceptional experience. His attention to detail keeps everything running smoothly." },
+                { emoji: "👩‍🍳", name: "Sarah Kim", role: "Sous Chef", bio: "Sarah's creativity and precision in the kitchen help maintain our high standards and develop new menu items." }
+              ]).map((member, index) => (
+                <div key={index} className="team-member">
+                  <div className="member-image">{member.emoji}</div>
+                  <h3>{member.name}</h3>
+                  <p className="member-role">{member.role}</p>
+                  <p className="member-bio">{member.bio}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
