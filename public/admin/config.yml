@@ -10,6 +10,17 @@ media_folder: "public/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
+  - name: "site-assets"
+    label: "🎨 Site Assets"
+    files:
+      - label: "Logo & Hero Image"
+        name: "assets"
+        file: "content/settings/assets.md"
+        fields:
+          - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)" }
+          - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
+  
   - name: "menu-items" # Used in routes, e.g., /admin/collections/menu-items
     label: "Menu Items" # Used in the UI
     folder: "content/menu" # The path to the folder where the documents are stored

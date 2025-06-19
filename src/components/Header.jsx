@@ -1,17 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [settings, setSettings] = useState({})
+
+  useEffect(() => {
+    const loadSettings = async () => {
+      try {
+        const response = await fetch('/api/settings.json')
+        const data = await response.json()
+        setSettings(data)
+      } catch (error) {
+        console.error('Error loading settings:', error)
+      }
+    }
+    loadSettings()
+  }, [])
 
   return (
     <header className="header">
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
-            <span className="logo-icon">🍔</span>
-            <span className="logo-text">Humble Burger</span>
+            {settings.assets?.logo ? (
+              <img src={settings.assets.logo} alt="Humble Burger" className="logo-image" />
+            ) : (
+              <>
+                <span className="logo-icon">🍔</span>
+                <span className="logo-text">Humble Burger</span>
+              </>
+            )}
           </Link>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

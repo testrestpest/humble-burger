@@ -6,6 +6,7 @@ import './Home.css'
 function Home() {
   const [featuredItems, setFeaturedItems] = useState([])
   const [pageContent, setPageContent] = useState({})
+  const [settings, setSettings] = useState({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -14,9 +15,15 @@ function Home() {
         // Load menu items and filter for featured ones
         const menuItems = await fetchContent('menu')
         const featured = menuItems.filter(item => item.featured && item.available !== false)
-        setFeaturedItems(featured)        // Load page content
+        setFeaturedItems(featured)
+        
+        // Load page content
         const pages = await fetchContent('pages')
         setPageContent(pages.home || {})
+        
+        // Load settings for hero image
+        const settingsData = await fetchContent('settings')
+        setSettings(settingsData)
       } catch (error) {
         console.error('Error loading content:', error)
       } finally {
@@ -30,22 +37,17 @@ function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
-        <div className="container">          <div className="hero-content">            <h1 className="hero-title">
-              <span className="highlight">{pageContent.heroTitle || "Welcome to Humble Burger"}</span>
-            </h1>
-            <p className="hero-subtitle">
-              {pageContent.heroSubtitle || "Where gourmet meets comfort. Every burger is crafted with passion, using the freshest ingredients and served with a smile."}
-            </p>
-            <div className="hero-actions">
-              <Link to="/menu" className="btn btn-primary">
-                View Our Menu
-              </Link>
-              <Link to="/about" className="btn btn-secondary">
-                Our Story
-              </Link>
-            </div>
-          </div>
+      <section 
+        className="hero" 
+        style={{
+          backgroundImage: settings.assets?.heroImage ? `url(${settings.assets.heroImage})` : 'url(/images/hero.jpg)'
+        }}
+      >
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1 className="hero-title">
+            {settings.assets?.heroTitle || "KEEPING FOOD HUMBLE"}
+          </h1>
         </div>
       </section>
 
