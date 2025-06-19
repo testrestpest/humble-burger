@@ -85,7 +85,7 @@ function Header() {
                 </Link>
               ))}
               
-              {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
+              <div className="social-links-container"> {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
                 <a 
                   key={`social-${index}`}
                   href={social.url} 
@@ -97,18 +97,19 @@ function Header() {
                   {getIconComponent(social.platform, social.icon)}
                 </a>
               ))}
+              </div>
             </nav>
-          </div>
 
-          <button 
-            className="menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+            <button 
+              className="menu-toggle"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
     </header>
