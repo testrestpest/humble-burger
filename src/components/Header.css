@@ -131,6 +131,11 @@
   padding: 0.5rem;
 }
 
+/* This is required to force the color of the react-icons SVG elements */
+.social-link svg {
+  fill: #FFFFFF;
+}
+
 .social-link:hover {
   color: #FFFFFF; /* PURE WHITE on hover */
   transform: translateY(-2px);
