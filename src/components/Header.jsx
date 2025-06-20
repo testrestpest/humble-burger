@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe, FaGoogle } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe, FaGoogle } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 import './Header.css'
 
 function Header() {
@@ -31,7 +32,7 @@ function Header() {
         return <FaFacebookF />
       case 'x':
       case 'twitter':
-        return <FaTwitter />
+        return <FaXTwitter />
       case 'linkedin':
         return <FaLinkedinIn />
       case 'youtube':
