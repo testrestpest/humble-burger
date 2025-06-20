@@ -45,34 +45,34 @@ function Home() {
         </div>
       </section>
 
-      {/* Feel Good Street Food Section */}
-      {pageContent.feelGoodStreetFood && (
+      {/* Section 1 */}
+      {pageContent.section_1_title && (
         <section className="feel-good-street-food py-16">
           <div className="container">
             <h2 className="section-title text-center mb-8">
-              {pageContent.feelGoodStreetFood.title}
+              {pageContent.section_1_title}
             </h2>
             <div 
               className="text-center"
-              dangerouslySetInnerHTML={{ __html: pageContent.feelGoodStreetFood.content }} 
+              dangerouslySetInnerHTML={{ __html: pageContent.section_1_content }} 
             />
           </div>
         </section>
       )}
 
-      {/* Click + Collect Section */}
-      {pageContent.clickAndCollect && (
+      {/* Section 2 */}
+      {pageContent.section_2_title && (
         <section className="click-and-collect py-16 bg-gray-100">
           <div className="container text-center">
             <h2 className="section-title mb-8">
-              {pageContent.clickAndCollect.title}
+              {pageContent.section_2_title}
             </h2>
             <div 
               className="mb-8"
-              dangerouslySetInnerHTML={{ __html: pageContent.clickAndCollect.content }} 
+              dangerouslySetInnerHTML={{ __html: pageContent.section_2_content }} 
             />
             <Link to="/order" className="btn btn-primary">
-              {pageContent.clickAndCollect.buttonText || 'Order Now'}
+              {pageContent.section_2_button_text || 'Order Now'}
             </Link>
           </div>
         </section>
