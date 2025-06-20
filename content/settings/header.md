@@ -14,9 +14,6 @@ navItems:
   - label: CONTACT
     link: /contact
     enabled: true
-  - enabled: true
-    label: ABOUT
-    link: /about
 socialLinks:
   - platform: Instagram
     url: https://instagram.com/humbleburger
