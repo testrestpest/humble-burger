@@ -238,7 +238,10 @@ function processSettings() {
         const filePath = path.join(settingsDir, file)
         const content = fs.readFileSync(filePath, 'utf-8')
         const data = parseFrontmatter(content)
-        Object.assign(settings, data)
+        const settingName = path.basename(file, '.md')
+        
+        // Organize settings by their filename (assets, header, general, etc.)
+        settings[settingName] = data
       }
     })
   }

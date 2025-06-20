@@ -9,6 +9,10 @@ publish_mode: editorial_workflow
 media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
+# Ensure the build script runs after changes
+site_url: https://your-site.netlify.app
+display_url: https://your-site.netlify.app
+
 collections:
   - name: "site-assets"
     label: "🎨 Site Assets"
@@ -16,9 +20,8 @@ collections:
       - label: "Logo & Hero Image"
         name: "assets"
         file: "content/settings/assets.md"
-        fields:
-          - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)" }
-          - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)" }
+        fields:          - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)", default: "/images/logo.png" }
+          - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)", default: "/images/hero.jpg" }
           - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
   - name: "navigation"
     label: "🧭 Navigation & Header"
