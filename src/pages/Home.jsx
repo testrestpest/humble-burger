@@ -77,7 +77,7 @@ function Home() {
           </div>
           {/* Wave SVG curve */}
           <svg className="click-curve" viewBox="0 0 1440 200">
-            <path fill="#fff" d="M0,50 C720,200 720,200 1440,50 V200 H0 Z" />
+            <path fill="#fff" d="M0,80 C400,150 800,0 1440,80 V200 H0 Z" />
           </svg>
         </section>
       )}
