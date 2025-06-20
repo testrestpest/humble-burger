@@ -57,17 +57,20 @@ function Header() {
   const showLogoText = settings.header?.showLogoText || false
   const logoText = settings.header?.logoText || "Humble Burger"
   const socialLinks = settings.header?.socialLinks || settings.general?.socialLinks || settings.socialLinks || []
+  const logoSrc = settings.assets?.logo
 
   return (
     <header className="header">
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
-            <img 
-              src={settings.assets?.logo || "/images/logo.png"} 
-              alt="Humble Burger" 
-              className="logo-image" 
-            />
+            {logoSrc && (
+              <img 
+                src={logoSrc} 
+                alt="Humble Burger" 
+                className="logo-image" 
+              />
+            )}
             {showLogoText && (
               <span className="logo-text">{logoText}</span>
             )}
