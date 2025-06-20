@@ -1,4 +1,4 @@
-import { useContent } from '../../hooks/useContent';
+import { useContent } from '../hooks/useContent';
 import './Order.css';
 
 function Order() {

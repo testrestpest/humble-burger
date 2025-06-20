@@ -203,28 +203,18 @@ function processContent(directory, outputFileName) {
   const contentDir = path.join(process.cwd(), 'content', directory)
   const items = {}
 
-  console.log(`Processing directory: ${contentDir}`)
-  
   if (fs.existsSync(contentDir)) {
     const files = fs.readdirSync(contentDir)
-    console.log(`Found files: ${files.join(', ')}`)
-    
     files.forEach(file => {
       if (file.endsWith('.md')) {
-        console.log(`Processing file: ${file}`)
         const filePath = path.join(contentDir, file)
         const content = fs.readFileSync(filePath, 'utf-8')
         const data = parseFrontmatter(content)
         const name = path.basename(file, '.md')
-        console.log(`Parsed data for ${name}:`, Object.keys(data))
         items[name] = data
       }
     })
-  } else {
-    console.log(`Directory does not exist: ${contentDir}`)
   }
-
-  console.log(`Final items for ${outputFileName}:`, Object.keys(items))
 
   fs.writeFileSync(
     path.join(outputDir, outputFileName),
