@@ -1,5 +1,5 @@
 ---
-logo: "/images/uploads/logo.png"
-heroImage: "/images/hero.jpg"
-heroTitle: "KEEPING FOOD HUMBLE"
+logo: /images/uploads/default2.png
+heroImage: /images/hero.jpg
+heroTitle: KEEPING FOOD HUMBLE
 ---
