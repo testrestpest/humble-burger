@@ -7,12 +7,17 @@ import './Header.css'
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [settings, setSettings] = useState({})
-
   useEffect(() => {
     const loadSettings = async () => {
       try {
+        console.log('Loading settings from /api/settings.json')
         const response = await fetch('/api/settings.json')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
         const data = await response.json()
+        console.log('Settings loaded:', data)
+        console.log('Header nav items:', data.header?.navItems)
         setSettings(data)
       } catch (error) {
         console.error('Error loading settings:', error)
@@ -57,12 +62,14 @@ function Header() {
     { label: "Order", link: "/order", enabled: true },
     { label: "Contact", link: "/contact", enabled: true }
   ]
-  
-  const navItems = settings.header?.navItems || defaultNavItems
+    const navItems = settings.header?.navItems || defaultNavItems
   const showLogoText = settings.header?.showLogoText || false
   const logoText = settings.header?.logoText || "Humble Burger"
   const socialLinks = settings.header?.socialLinks || settings.general?.socialLinks || settings.socialLinks || []
   const logoSrc = settings.assets?.logo
+
+  console.log('Current nav items being used:', navItems)
+  console.log('Settings object:', settings)
 
   return (
     <header className="header">
