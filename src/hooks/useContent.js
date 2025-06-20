@@ -29,14 +29,13 @@ export const useContent = (type, fallbackData = []) => {
       } catch (error) {
         console.error('Failed to load content:', error)
         setError(error)
-        setContent(fallbackData)
-      } finally {
+        setContent(fallbackData)      } finally {
         setLoading(false)
       }
     }
 
     loadContent()
-  }, [type, fallbackData])
+  }, [type])
 
   return { content, loading, error }
 }
