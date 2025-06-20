@@ -123,6 +123,24 @@ collections:
               - { label: "Days", name: "days", widget: "string", hint: "e.g., Monday - Friday" }
               - { label: "Time", name: "time", widget: "string", hint: "e.g., 11:00 AM - 10:00 PM" }
 
+      - label: "🍔 Order Page"
+        name: "order"
+        file: "content/pages/order.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", hint: "Main title for the order page" }
+          - { label: "Takeaway Title", name: "takeaway_title", widget: "string", default: "TAKEAWAY" }
+          - { label: "Takeaway Content", name: "takeaway_content", widget: "text", hint: "Description of takeaway service" }
+          - { label: "Click & Collect Title", name: "click_collect_title", widget: "string", default: "CLICK & COLLECT" }
+          - { label: "Click & Collect Content", name: "click_collect_content", widget: "text", hint: "Description of click & collect service" }
+          - { label: "Click & Collect Button Text", name: "click_collect_button_text", widget: "string", default: "ORDER NOW" }
+          - { label: "Click & Collect Button Link", name: "click_collect_button_link", widget: "string", default: "#", hint: "Link to ordering system" }
+          - { label: "Delivery Title", name: "delivery_title", widget: "string", default: "DO YOU DO DELIVERY?" }
+          - { label: "Delivery Content", name: "delivery_content", widget: "text", hint: "Explanation about delivery policy" }
+          - { label: "Eat In Title", name: "eat_in_title", widget: "string", default: "EAT IN" }
+          - { label: "Eat In Content", name: "eat_in_content", widget: "text", hint: "Description of dine-in service" }
+          - { label: "Map Title", name: "map_title", widget: "string", default: "Find Us" }
+          - { label: "Map Address", name: "map_address", widget: "string", hint: "Address for map display" }
+
   - name: "settings"
     label: "Site Settings"
     files:
