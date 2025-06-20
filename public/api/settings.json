@@ -37,13 +37,13 @@
         "enabled": true
       },
       {
-        "label": "MENU",
-        "link": "/menu",
+        "label": "ORDER",
+        "link": "/contact",
         "enabled": true
       },
       {
-        "label": "ORDER",
-        "link": "/contact",
+        "label": "MENU",
+        "link": "/menu",
         "enabled": true
       },
       {
@@ -54,7 +54,7 @@
     ],
     "socialLinks": [
       {
-        "platform": "Instagram",
+        "platform": "LinkedIn",
         "url": "https://instagram.com/humbleburger",
         "enabled": true
       },
