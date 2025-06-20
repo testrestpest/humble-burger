@@ -15,7 +15,7 @@ navItems:
     link: /contact
     enabled: true
   - enabled: true
-    label: About
+    label: ABOUT
     link: /about
 socialLinks:
   - platform: Instagram
