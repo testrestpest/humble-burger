@@ -198,66 +198,38 @@ function processMenuItems() {
   console.log(`Generated ${menuItems.length} menu items`)
 }
 
-// Process pages
-function processPages() {
-  const pagesDir = path.join(contentDir, 'pages')
-  const pageFiles = fs.readdirSync(pagesDir).filter(file => file.endsWith('.md'))
+// Process all content files (pages and settings)
+function processContent(directory, outputFileName) {
+  const contentDir = path.join(process.cwd(), 'content', directory)
+  const items = {}
 
-  pageFiles.forEach(file => {
-    const filePath = path.join(pagesDir, file)
-    const content = fs.readFileSync(filePath, 'utf-8')
-    const data = parseFrontmatter(content)
-    const pageName = path.basename(file, '.md')
-    
-    // Wrap in an array to match useContent hook structure
-    const pageData = [{
-      id: pageName,
-      attributes: data
-    }]
-
-    fs.writeFileSync(
-      path.join(outputDir, `${pageName}.json`),
-      JSON.stringify(pageData, null, 2)
-    )
-  })
-
-  console.log(`Generated JSON for ${pageFiles.length} pages.`)
-}
-
-// Process settings
-function processSettings() {
-  const settingsDir = path.join(contentDir, 'settings')
-  const settings = {}
-  
-  if (fs.existsSync(settingsDir)) {
-    const files = fs.readdirSync(settingsDir)
-    
+  if (fs.existsSync(contentDir)) {
+    const files = fs.readdirSync(contentDir)
     files.forEach(file => {
       if (file.endsWith('.md')) {
-        const filePath = path.join(settingsDir, file)
+        const filePath = path.join(contentDir, file)
         const content = fs.readFileSync(filePath, 'utf-8')
         const data = parseFrontmatter(content)
-        const settingName = path.basename(file, '.md')
-        
-        // Organize settings by their filename (assets, header, general, etc.)
-        settings[settingName] = data
+        const name = path.basename(file, '.md')
+        items[name] = data
       }
     })
   }
-  
+
   fs.writeFileSync(
-    path.join(outputDir, 'settings.json'), 
-    JSON.stringify(settings, null, 2)
+    path.join(outputDir, outputFileName),
+    JSON.stringify(items, null, 2)
   )
-  
-  console.log('Generated settings data')
+
+  console.log(`Generated ${outputFileName}`)
 }
 
 // Run all processors
 try {
   processMenuItems()
-  processPages()
-  processSettings()
+  // Consolidate page and settings processing
+  processContent('pages', 'pages.json')
+  processContent('settings', 'settings.json')
   console.log('✅ Content processing complete!')
 } catch (error) {
   console.error('❌ Error processing content:', error)
