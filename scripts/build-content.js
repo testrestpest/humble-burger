@@ -201,28 +201,27 @@ function processMenuItems() {
 // Process pages
 function processPages() {
   const pagesDir = path.join(contentDir, 'pages')
-  const pages = {}
-  
-  if (fs.existsSync(pagesDir)) {
-    const files = fs.readdirSync(pagesDir)
+  const pageFiles = fs.readdirSync(pagesDir).filter(file => file.endsWith('.md'))
+
+  pageFiles.forEach(file => {
+    const filePath = path.join(pagesDir, file)
+    const content = fs.readFileSync(filePath, 'utf-8')
+    const data = parseFrontmatter(content)
+    const pageName = path.basename(file, '.md')
     
-    files.forEach(file => {
-      if (file.endsWith('.md')) {
-        const filePath = path.join(pagesDir, file)
-        const content = fs.readFileSync(filePath, 'utf-8')
-        const data = parseFrontmatter(content)
-        const pageName = path.basename(file, '.md')
-        pages[pageName] = data
-      }
-    })
-  }
-  
-  fs.writeFileSync(
-    path.join(outputDir, 'pages.json'), 
-    JSON.stringify(pages, null, 2)
-  )
-  
-  console.log('Generated pages data')
+    // Wrap in an array to match useContent hook structure
+    const pageData = [{
+      id: pageName,
+      attributes: data
+    }]
+
+    fs.writeFileSync(
+      path.join(outputDir, `${pageName}.json`),
+      JSON.stringify(pageData, null, 2)
+    )
+  })
+
+  console.log(`Generated JSON for ${pageFiles.length} pages.`)
 }
 
 // Process settings

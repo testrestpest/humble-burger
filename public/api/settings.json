@@ -1,7 +1,7 @@
 {
   "assets": {
     "logo": "/images/uploads/logo.png",
-    "heroImage": "/images/hero.jpg",
+    "heroImage": "/images/uploads/hero.jpg",
     "heroTitle": "KEEPING FOOD HUMBLE"
   },
   "general": {
@@ -54,7 +54,7 @@
     ],
     "socialLinks": [
       {
-        "platform": "LinkedIn",
+        "platform": "Instagram",
         "url": "https://instagram.com/humbleburger",
         "enabled": true
       },
@@ -64,9 +64,14 @@
         "enabled": true
       },
       {
-        "platform": "Website",
-        "url": "https://humbleburger.com",
-        "enabled": true
+        "enabled": true,
+        "platform": "X",
+        "url": "x.com"
+      },
+      {
+        "enabled": true,
+        "platform": "Google",
+        "url": "https://google.com"
       }
     ]
   }
