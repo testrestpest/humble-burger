@@ -238,6 +238,13 @@
   background-position: bottom;
 }
 
+.click-and-collect .click-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+}
 
 .click-and-collect .section-title {
   font-family: 'Montserrat', sans-serif;

@@ -62,7 +62,7 @@ function Home() {
 
       {/* Section 2 */}
       {pageContent.section_2_title && (
-        <section className="click-and-collect py-16">
+        <section className="click-and-collect py-16" style={{ paddingBottom: '200px' }}>
           <div className="container text-center">
             <h2 className="section-title mb-8">
               {pageContent.section_2_title}
@@ -75,6 +75,10 @@ function Home() {
               {pageContent.section_2_button_text || 'Order Now'}
             </Link>
           </div>
+          {/* Wave SVG curve */}
+          <svg className="click-curve" viewBox="0 0 1440 200" preserveAspectRatio="none">
+            <path fill="#fff" d="M0,96 C360,192 720,0 1440,96 L1440,200 L0,200 Z" />
+          </svg>
         </section>
       )}
     </div>
