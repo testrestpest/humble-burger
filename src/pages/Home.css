@@ -192,6 +192,81 @@
   margin-bottom: 1.5rem;
 }
 
+/* Feel Good Street Food Section */
+.feel-good-street-food {
+  background-color: #fff;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.feel-good-street-food .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-transform: lowercase;
+}
+
+.feel-good-street-food .text-center {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Click + Collect Section */
+.click-and-collect {
+  background-color: #1a2a44; /* Dark navy blue */
+  color: #fff;
+  padding: 8rem 1rem 12rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* To contain the wave */
+}
+
+.click-and-collect::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  width: 200%;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 100% 100% 0 0;
+  transform: translateY(50%);
+}
+
+
+.click-and-collect .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-transform: lowercase;
+}
+
+.click-and-collect .btn.btn-primary {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.click-and-collect .btn.btn-primary:hover {
+  background-color: #fff;
+  color: #1a2a44;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
@@ -213,5 +288,17 @@
   .features-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+  }
+
+  .feel-good-street-food .section-title {
+    font-size: 2rem;
+  }
+
+  .click-and-collect .section-title {
+    font-size: 2.5rem;
+  }
+
+  .click-and-collect {
+    padding: 6rem 1rem 10rem;
   }
 }
