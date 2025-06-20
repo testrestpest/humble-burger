@@ -21,4 +21,10 @@ socialLinks:
   - platform: Facebook
     url: https://facebook.com/humbleburger
     enabled: true
+  - enabled: true
+    platform: X
+    url: x.com
+  - enabled: true
+    platform: Google
+    url: https://google.com
 ---
