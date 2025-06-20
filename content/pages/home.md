@@ -12,4 +12,8 @@ aboutContent: >
 
 
   Our team of passionate chefs hand-crafts each burger to order, ensuring that every bite is as delicious as the last. From our signature sauces to our perfectly toasted buns, every detail matters.
+feelGoodTitle: "feel good street food."
+feelGoodContent: "Inspired by the street food vibes of Seattle, Humble was launched in January 2021 to deliver simple, wholesome street food from the best local suppliers. Specialising in scotch beef burgers and loaded fries."
+clickAndCollectTitle: "click + collect"
+clickAndCollectButtonText: "ORDER NOW"
 ---
