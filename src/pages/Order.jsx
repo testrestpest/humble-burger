@@ -7,9 +7,10 @@ function Order() {
   if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">Error loading page content.</div>;
 
-  const page = content?.[0]?.attributes;
+  // Handle both possible data structures
+  const page = content?.[0]?.attributes || content?.[0] || {};
 
-  if (!page) return <div>Page content not found.</div>;
+  if (!page || !page.title) return <div>Page content not found.</div>;
 
   return (
     <div className="order-page">
