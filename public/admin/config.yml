@@ -1,15 +1,12 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 
-# This line should *not* be indented
 publish_mode: editorial_workflow
 
-# This line should *not* be indented
-media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
-# Ensure the build script runs after changes
 site_url: https://your-site.netlify.app
 display_url: https://your-site.netlify.app
 
@@ -24,6 +21,7 @@ collections:
           - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)", default: "/images/logo.png" }
           - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)", default: "/images/hero.jpg" }
           - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
+
   - name: "navigation"
     label: "🧭 Navigation & Header"
     files:
@@ -48,59 +46,37 @@ collections:
             fields:
               - { label: "Platform Name", name: "platform", widget: "select", options: ["Instagram", "Facebook", "Twitter", "LinkedIn", "YouTube", "TikTok", "Website"], hint: "Select platform for automatic icon" }
               - { label: "URL", name: "url", widget: "string", hint: "Full URL to your social media profile" }
-              - { label: "Show in Header", name: "enabled", widget: "boolean", default: true }  
-- name: "menu-items" # Used in routes, e.g., /admin/collections/menu-items
-  label: "Menu Items" # Used in the UI
-  folder: "content/menu" # The path to the folder where the documents are stored
-  create: true # Allow users to create new documents in this collection
-  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  fields: # The fields for each document, usually in front matter
+              - { label: "Show in Header", name: "enabled", widget: "boolean", default: true }
+
+  - name: "menu-items"
+    label: "Menu Items"
+    folder: "content/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Price", name: "price", widget: "string" }
-      - { 
-          label: "Category", 
-          name: "category", 
-          widget: "select", 
-          options: ["burgers", "sides", "drinks", "desserts"] 
-        }
-      - { 
-          label: "Image", 
-          name: "image", 
-          widget: "image",
-          required: false
-        }
-      - { 
-          label: "Emoji", 
-          name: "emoji", 
-          widget: "string",
-          required: false,
-          hint: "Optional emoji to display (e.g., 🍔)"
-        }
-      - { 
-          label: "Featured", 
-          name: "featured", 
-          widget: "boolean", 
-          default: false 
-        }
-      - { 
-          label: "Available", 
-          name: "available", 
-          widget: "boolean", 
-          default: true        }
-- name: "pages"
-  label: "Pages"
-  files:    - label: "🏠 Home Page"
-      name: "home"
-      file: "content/pages/home.md"
-      fields:
-        - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO" }
-        - { label: "Hero Title", name: "heroTitle", widget: "string", hint: "Main headline on homepage" }
-        - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", hint: "Descriptive text under the main headline" }
-        - { label: "About Section Title", name: "aboutTitle", widget: "string", hint: "Title for the about section on homepage" }
-        - { label: "About Section Content", name: "aboutContent", widget: "markdown", hint: "Content for the about section on homepage" }
-    
-    - label: "ℹ️ About Page"
+      - { label: "Category", name: "category", widget: "select", options: ["burgers", "sides", "drinks", "desserts"] }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Emoji", name: "emoji", widget: "string", required: false, hint: "Optional emoji to display (e.g., 🍔)" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Available", name: "available", widget: "boolean", default: true }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "🏠 Home Page"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string", hint: "Main headline on homepage" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", hint: "Descriptive text under the main headline" }
+          - { label: "About Section Title", name: "aboutTitle", widget: "string", hint: "Title for the about section on homepage" }
+          - { label: "About Section Content", name: "aboutContent", widget: "markdown", hint: "Content for the about section on homepage" }
+
+      - label: "ℹ️ About Page"
         name: "about"
         file: "content/pages/about.md"
         fields:
@@ -128,38 +104,40 @@ collections:
               - { label: "Image Emoji", name: "emoji", widget: "string", hint: "Emoji representing the person (e.g., 👩‍🍳, 👨‍💼)" }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role", name: "role", widget: "string", hint: "Job title (e.g., Founder & Head Chef)" }
-              - { label: "Bio", name: "bio", widget: "text", hint: "Short biography" }      
-    - label: "📞 Contact Page"
-      name: "contact"
-      file: "content/pages/contact.md"
-      fields:
-        - { label: "Page Title", name: "title", widget: "string", hint: "Title for contact page" }
-        - { label: "Page Subtitle", name: "subtitle", widget: "text", hint: "Subtitle/description for contact page" }
-        - { label: "Address", name: "address", widget: "text", hint: "Your restaurant's full address" }
-        - { label: "Phone", name: "phone", widget: "string", hint: "Phone number (e.g., (555) 123-BURGER)" }        - { label: "Email", name: "email", widget: "string", hint: "Contact email address" }
-        - label: "Business Hours"
-          name: "hours"
-          widget: "list"
-          hint: "List of business hours by day"
-          fields:
-            - { label: "Days", name: "days", widget: "string", hint: "e.g., Monday - Friday" }
-            - { label: "Time", name: "time", widget: "string", hint: "e.g., 11:00 AM - 10:00 PM" }
+              - { label: "Bio", name: "bio", widget: "text", hint: "Short biography" }
 
-- name: "settings"
-  label: "Site Settings"
-  files:
-    - label: "General Settings"
-      name: "general"
-      file: "content/settings/general.md"
-      fields:
-        - { label: "Site Title", name: "siteTitle", widget: "string" }
-        - { label: "Site Description", name: "siteDescription", widget: "text" }
-        - { label: "Logo Text", name: "logoText", widget: "string" }
-        - { label: "Logo Emoji", name: "logoEmoji", widget: "string" }
-        - label: "Social Links"
-          name: "socialLinks"
-          widget: "list"
-          fields:
-            - { label: "Platform", name: "platform", widget: "string" }
-            - { label: "URL", name: "url", widget: "string" }
-            - { label: "Icon", name: "icon", widget: "string" }
+      - label: "📞 Contact Page"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", hint: "Title for contact page" }
+          - { label: "Page Subtitle", name: "subtitle", widget: "text", hint: "Subtitle/description for contact page" }
+          - { label: "Address", name: "address", widget: "text", hint: "Your restaurant's full address" }
+          - { label: "Phone", name: "phone", widget: "string", hint: "Phone number (e.g., (555) 123-BURGER)" }
+          - { label: "Email", name: "email", widget: "string", hint: "Contact email address" }
+          - label: "Business Hours"
+            name: "hours"
+            widget: "list"
+            hint: "List of business hours by day"
+            fields:
+              - { label: "Days", name: "days", widget: "string", hint: "e.g., Monday - Friday" }
+              - { label: "Time", name: "time", widget: "string", hint: "e.g., 11:00 AM - 10:00 PM" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "content/settings/general.md"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - { label: "Logo Text", name: "logoText", widget: "string" }
+          - { label: "Logo Emoji", name: "logoEmoji", widget: "string" }
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
