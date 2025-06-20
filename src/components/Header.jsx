@@ -52,8 +52,9 @@ function Header() {
   // Default navigation items if not configured in CMS
   const defaultNavItems = [
     { label: "Home", link: "/", enabled: true },
-    { label: "Menu", link: "/menu", enabled: true },
     { label: "About", link: "/about", enabled: true },
+    { label: "Menu", link: "/menu", enabled: true },
+    { label: "Order", link: "/order", enabled: true },
     { label: "Contact", link: "/contact", enabled: true }
   ]
   
