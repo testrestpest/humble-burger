@@ -6,7 +6,7 @@ navItems:
     link: /
     enabled: true
   - label: ORDER
-    link: /contact
+    link: /order
     enabled: true
   - label: MENU
     link: /menu
@@ -14,6 +14,9 @@ navItems:
   - label: CONTACT
     link: /contact
     enabled: true
+  - enabled: true
+    label: About
+    link: /about
 socialLinks:
   - platform: Instagram
     url: https://instagram.com/humbleburger
