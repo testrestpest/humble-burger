@@ -35,6 +35,20 @@
   text-align: center;
 }
 
+/* Lower hero slogan on desktop */
+@media (min-width: 769px) {
+  .hero-content {
+    margin-top: 2rem;
+  }
+}
+
+/* Increase hero slogan size on mobile */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(5rem, 12vw, 7rem);
+  }
+}
+
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(4rem, 8vw, 8rem);
