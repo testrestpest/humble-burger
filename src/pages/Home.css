@@ -38,14 +38,14 @@
 /* Lower hero slogan on desktop */
 @media (min-width: 769px) {
   .hero-content {
-    margin-top: 2rem;
+    margin-top: 4rem; /* more space below header */
   }
 }
 
 /* Increase hero slogan size on mobile */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(5rem, 12vw, 7rem);
+    font-size: clamp(6rem, 15vw, 9rem); /* larger on mobiles */
   }
 }
 
