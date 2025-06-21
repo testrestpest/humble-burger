@@ -1,5 +1,6 @@
 import './Footer.css'
-import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa'
+import { FaInstagram, FaFacebook } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 function Footer() {
   return (
@@ -22,8 +23,8 @@ function Footer() {
               <a href="#" className="social-icon" aria-label="Facebook">
                 <FaFacebook />
               </a>
-              <a href="#" className="social-icon" aria-label="Twitter">
-                <FaTwitter />
+              <a href="#" className="social-icon" aria-label="X (Twitter)">
+                <FaXTwitter />
               </a>
             </div>
             
