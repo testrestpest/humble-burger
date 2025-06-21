@@ -304,12 +304,12 @@
 
 @media (max-width: 1024px) {
   .click-and-collect .click-curve {
-    height: 150px; /* Slightly reduced for mid-size screens */
+    height: 120px; /* Reduced height for mid-size screens */
   }
 }
 
 @media (max-width: 768px) {
   .click-and-collect .click-curve {
-    height: 100px; /* Further reduced for mobile */
+    height: 80px; /* Reduced height for mobile */
   }
 }
