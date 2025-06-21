@@ -25,7 +25,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Stronger dark overlay for better text readability */
+  background: rgba(0, 0, 0, 0.2); /* Lighter overlay for brighter hero image */
   z-index: 2;
 }
 
