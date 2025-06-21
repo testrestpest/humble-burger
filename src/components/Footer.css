@@ -1,14 +1,14 @@
 .footer {
-  background-color: var(--secondary-color);
+  background-color: #1a2a44;
   color: white;
-  padding: 3rem 0 1rem;
+  padding: 3rem 0;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: start;
 }
 
 .footer-section h3,
@@ -17,51 +17,99 @@
 }
 
 .footer-title {
-  color: var(--primary-color);
-  font-size: 1.5rem;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
 }
 
 .footer-subtitle {
-  color: var(--accent-color);
-  font-size: 1.1rem;
-}
-
-.footer-text {
   color: #9ca3af;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  line-height: 1.6;
+  font-weight: normal;
 }
 
-.social-links {
+.footer-address {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-contact {
+  margin-bottom: 2rem;
+}
+
+.footer-email {
+  color: white;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.footer-email:hover {
+  color: #9ca3af;
+}
+
+.footer-social {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
 }
 
-.social-link {
-  color: #9ca3af;
+.social-icon {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  color: #1a2a44;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
-.social-link:hover {
-  color: var(--primary-color);
+.social-icon:hover {
+  background-color: #9ca3af;
 }
 
-.footer-bottom {
-  border-top: 1px solid #374151;
-  padding-top: 1rem;
-  text-align: center;
+.footer-company {
   color: #9ca3af;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.footer-hours {
+  text-align: right;
+}
+
+.hours-title {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.hours-text {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
   }
   
-  .social-links {
+  .footer-hours {
+    text-align: center;
+  }
+  
+  .footer-social {
     justify-content: center;
   }
 }
