@@ -1,6 +1,5 @@
 /* Import Google Fonts for the hero title */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 .home {
   padding-top: 0; /* Remove top padding since hero covers the header */
@@ -68,14 +67,20 @@
   line-height: 1;
 }
 
-/* Bubble font for 'FOOD' word */
 .hero-title .hero-word:nth-child(2) {
+  /* outline-only style for FOOD */
   margin: 0.5rem 0;
-  font-family: 'Luckiest Guy', cursive;
-  color: white;
-  letter-spacing: 0.05em;
-  font-size: clamp(4rem, 8vw, 8rem); /* match hero size */
-  text-transform: none; /* keep original casing */
+  color: transparent;
+  /* Outline stroke for WebKit browsers */
+  -webkit-text-stroke: 2px white;
+  /* Fallback outline for other browsers */
+  text-shadow:
+    1px 1px 0 white,
+    -1px 1px 0 white,
+    1px -1px 0 white,
+    -1px -1px 0 white;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* Styles for other sections below hero */
