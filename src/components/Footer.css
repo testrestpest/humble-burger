@@ -1,39 +1,48 @@
 .footer {
-  background-color: #1a2a44;
+  background-color: #2c3e50;
   color: white;
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .footer-content {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4rem;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.footer-section h3,
-.footer-section h4 {
-  margin-bottom: 1rem;
+.footer-left {
+  flex: 1;
+}
+
+.footer-right {
+  flex: 0 0 auto;
+  text-align: right;
+  margin-left: 4rem;
 }
 
 .footer-title {
   color: white;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 300;
   margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-subtitle {
-  color: #9ca3af;
-  font-size: 0.9rem;
+  color: #bdc3c7;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
   font-weight: normal;
 }
 
 .footer-address {
   color: white;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .footer-contact {
@@ -43,73 +52,79 @@
 .footer-email {
   color: white;
   text-decoration: underline;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .footer-email:hover {
-  color: #9ca3af;
+  color: #bdc3c7;
 }
 
 .footer-social {
   display: flex;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .social-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   background-color: white;
-  color: #1a2a44;
+  color: #2c3e50;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-  background-color: #9ca3af;
+  background-color: #ecf0f1;
+  transform: translateY(-2px);
 }
 
 .footer-company {
-  color: #9ca3af;
-  font-size: 0.8rem;
+  color: #95a5a6;
+  font-size: 0.9rem;
   margin: 0;
-}
-
-.footer-hours {
-  text-align: right;
+  line-height: 1.4;
 }
 
 .hours-title {
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
 }
 
 .hours-text {
   color: white;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 @media (max-width: 768px) {
   .footer-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
-    gap: 2rem;
+    gap: 3rem;
   }
   
-  .footer-hours {
+  .footer-right {
     text-align: center;
+    margin-left: 0;
   }
   
   .footer-social {
     justify-content: center;
+  }
+  
+  .footer {
+    padding: 3rem 0;
   }
 }

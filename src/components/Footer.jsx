@@ -1,11 +1,12 @@
 import './Footer.css'
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
-          <div className="footer-section">
+          <div className="footer-left">
             <h3 className="footer-title">Where + when</h3>
             <p className="footer-subtitle">(Next to Foggles Bar)</p>
             <p className="footer-address">Munro Place, Elgin, IV30 4LL</p>
@@ -15,15 +16,21 @@ function Footer() {
             </div>
             
             <div className="footer-social">
-              <a href="#" className="social-icon">📷</a>
-              <a href="#" className="social-icon">f</a>
-              <a href="#" className="social-icon">X</a>
+              <a href="#" className="social-icon" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href="#" className="social-icon" aria-label="Facebook">
+                <FaFacebook />
+              </a>
+              <a href="#" className="social-icon" aria-label="Twitter">
+                <FaTwitter />
+              </a>
             </div>
             
             <p className="footer-company">The Humble Burger Ltd SC743154</p>
           </div>
           
-          <div className="footer-section footer-hours">
+          <div className="footer-right">
             <h4 className="hours-title">OPENING TIMES</h4>
             <p className="hours-text">Tue - Thu 4:30-8pm</p>
             <p className="hours-text">Fri - Sun 12-3/4:30-8pm</p>
