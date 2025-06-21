@@ -313,3 +313,37 @@
     height: 80px; /* Reduced height for mobile */
   }
 }
+
+/* Adjust ribbon section height */
+.click-and-collect {
+  padding: 8rem 1rem 0; /* Default top padding */
+}
+
+@media (max-width: 1024px) {
+  .click-and-collect {
+    padding: 6rem 1rem 0; /* Reduced top padding for mid-size screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .click-and-collect {
+    padding: 4rem 1rem 0; /* Further reduced top padding for mobile */
+  }
+}
+
+/* Responsive outer padding bottom for ribbon section */
+.click-and-collect {
+  padding-bottom: 12rem; /* Default bottom padding matching curve height */
+}
+
+@media (max-width: 1024px) {
+  .click-and-collect {
+    padding-bottom: 10rem; /* Reduced bottom padding for mid-size screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .click-and-collect {
+    padding-bottom: 8rem; /* Further reduced bottom padding for mobile */
+  }
+}

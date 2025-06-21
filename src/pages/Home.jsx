@@ -62,7 +62,7 @@ function Home() {
 
       {/* Section 2 */}
       {pageContent.section_2_title && (
-        <section className="click-and-collect py-16" style={{ paddingBottom: '200px' }}>
+        <section className="click-and-collect">
           <div className="container text-center">
             <h2 className="section-title mb-8">
               {pageContent.section_2_title}
