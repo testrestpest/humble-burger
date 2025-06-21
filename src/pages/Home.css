@@ -1,4 +1,4 @@
-/* Import Google Fonts for the hero title */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
 
 .home {
@@ -68,19 +68,14 @@
 }
 
 .hero-title .hero-word:nth-child(2) {
-  /* outline-only style for FOOD */
-  margin: 0.5rem 0;
+  /* Refined hollow outline style matching design */
+  font-family: 'Bebas Neue', sans-serif;
   color: transparent;
-  /* Outline stroke for WebKit browsers */
-  -webkit-text-stroke: 2px white;
-  /* Fallback outline for other browsers */
-  text-shadow:
-    1px 1px 0 white,
-    -1px 1px 0 white,
-    1px -1px 0 white,
-    -1px -1px 0 white;
-  letter-spacing: 0.1em;
+  -webkit-text-stroke: 1px white;  /* thinner stroke */
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.25em;         /* wider spacing */
   text-transform: uppercase;
+  text-rendering: geometricPrecision;
 }
 
 /* Styles for other sections below hero */

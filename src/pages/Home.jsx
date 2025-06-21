@@ -43,7 +43,7 @@ function Home() {
             {(settings.assets?.heroTitle || "KEEPING FOOD HUMBLE")
               .split(' ')
               .map((word, idx) => (
-                <span key={idx} className="hero-word">{word}</span>
+                <span key={idx} className="hero-word" data-word={word}>{word}</span>
               ))}
           </h1>
         </div>
