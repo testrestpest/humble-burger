@@ -138,6 +138,13 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* Link Styles */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
 /* Responsive */
 @media (min-width: 640px) {
   .grid-cols-1 {
