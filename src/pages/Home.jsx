@@ -74,10 +74,9 @@ function Home() {
             <Link to="/order" className="btn btn-primary">
               {pageContent.section_2_button_text || 'Order Now'}
             </Link>
-          </div>
-          {/* Wave SVG curve */}
+          </div>          {/* Wave SVG curve */}
           <svg className="click-curve" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path fill="#fff" d="M0,50 Q50,100 100,50 V100 H0 Z" />
+            <path fill="#fff" d="M0,50 Q25,100 50,50 Q75,0 100,50 V100 H0 Z" />
           </svg>
         </section>
       )}
