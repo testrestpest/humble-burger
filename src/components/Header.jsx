@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe, FaGoogle } from 'react-icons/fa'
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe, FaGoogle, FaEnvelope } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import './Header.css'
 
@@ -43,6 +43,8 @@ function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
         return <FaTiktok />
       case 'google':
         return <FaGoogle />
+      case 'email':
+        return <FaEnvelope />
       case 'website':
       case 'web':
         return <FaGlobe />
@@ -114,7 +116,6 @@ function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <span></span>
               <span></span>
               <span></span>
             </button>

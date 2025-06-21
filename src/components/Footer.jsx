@@ -1,5 +1,5 @@
 import './Footer.css'
-import { FaInstagram, FaFacebook } from 'react-icons/fa'
+import { FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
 function Footer() {
@@ -12,11 +12,10 @@ function Footer() {
             <p className="footer-subtitle">(Next to Foggles Bar)</p>
             <p className="footer-address">Munro Place, Elgin, IV30 4LL</p>
             
-            <div className="footer-contact">
-              <a href="mailto:info@humbleburger.com" className="footer-email">Email</a>
-            </div>
-            
             <div className="footer-social">
+              <a href="mailto:info@humbleburger.com" className="social-icon" aria-label="Email">
+                <FaEnvelope />
+              </a>
               <a href="#" className="social-icon" aria-label="Instagram">
                 <FaInstagram />
               </a>
