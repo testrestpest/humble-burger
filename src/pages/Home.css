@@ -47,6 +47,12 @@
   text-transform: uppercase;
 }
 
+/* Stack each word vertically */
+.hero-title .hero-word {
+  display: block;
+  line-height: 1;
+}
+
 /* Styles for other sections below hero */
 .section {
   padding: 4rem 0;

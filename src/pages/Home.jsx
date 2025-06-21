@@ -40,7 +40,11 @@ function Home() {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1 className="hero-title">
-            {settings.assets?.heroTitle || "KEEPING FOOD HUMBLE"}
+            {(settings.assets?.heroTitle || "KEEPING FOOD HUMBLE")
+              .split(' ')
+              .map((word, idx) => (
+                <span key={idx} className="hero-word">{word}</span>
+              ))}
           </h1>
         </div>
       </section>
