@@ -127,26 +127,23 @@
   font-size: 1.2rem; /* Smaller icons */
   margin-left: 1rem; /* Reduced space between icons */
   padding: 0.5rem;
-  transition: none !important;
-}
-
-.social-link:hover {
-  color: #FFFFFF;
 }
 
 /* This is required to force the color of the react-icons SVG elements */
 .social-link svg {
-  fill: #FFFFFF;
-  transition: none !important;
-}
-
-.social-link:hover svg {
   fill: #FFFFFF;
 }
 
 .social-links-container {
   display: flex;
   align-items: center;
+}
+
+/* Disable hover effects on header social media icons */
+.social-link:hover {
+  transform: none !important;
+  color: #FFFFFF !important;
+  background-color: transparent !important;
 }
 
 @media (max-width: 768px) {
