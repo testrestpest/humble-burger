@@ -101,6 +101,7 @@
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
   text-decoration: underline;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hours-text {
@@ -108,17 +109,18 @@
   margin-bottom: 0.8rem;
   font-size: 1rem;
   line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    text-align: center;
+    text-align: left; /* Left align instead of centered */
     gap: 3rem;
   }
   
   .footer-right {
-    text-align: center;
+    text-align: left; /* Left align opening times on mobile */
     margin-left: 0;
   }
   
