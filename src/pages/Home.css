@@ -67,6 +67,30 @@
   line-height: 1;
 }
 
+/* Stylize the second word ("FOOD") as lines */
+.hero-title .hero-word:nth-child(2) {
+  position: relative;
+  color: transparent;
+  margin: 0.5rem 0;
+  height: 3rem;
+}
+.hero-title .hero-word:nth-child(2)::before,
+.hero-title .hero-word:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 0.3rem;
+  background: white;
+}
+.hero-title .hero-word:nth-child(2)::before {
+  top: 0;
+}
+.hero-title .hero-word:nth-child(2)::after {
+  bottom: 0;
+}
+
 /* Styles for other sections below hero */
 .section {
   padding: 4rem 0;
