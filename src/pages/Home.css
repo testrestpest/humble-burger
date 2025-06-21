@@ -45,7 +45,7 @@
 /* Increase hero slogan size on mobile */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(8rem, 20vw, 12rem); /* increased for mobile */
+    font-size: clamp(5rem, 12vw, 8rem); /* toned down for mobile */
   }
 }
 
@@ -284,7 +284,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(8rem, 20vw, 12rem); /* increased for mobile */
+    font-size: clamp(5rem, 12vw, 8rem); /* toned down for mobile */
   }
   
   .featured-grid {
