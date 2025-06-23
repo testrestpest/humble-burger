@@ -86,7 +86,10 @@ function Menu() {
               style={{
                 backgroundImage: item.image && item.image.startsWith('/')
                   ? `url(${item.image})`
-                  : 'none'
+                  : 'none',
+                backgroundSize: '100% 100%', // stretch to fill container
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: '0 0'
               }}
             >
                {item.featured && <div className="featured-badge">Featured</div>}
