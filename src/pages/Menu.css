@@ -62,7 +62,7 @@
   position: relative;
   transition: all 0.2s ease;
   /* Fill entire square card with image (stretched) */
-  background-size: 100% 100%;
+  background-size: 100% 100%; /* Stretch to fill, no cropping */
   background-position: center;
   aspect-ratio: 1 / 1; /* square cards */
   overflow: hidden;
