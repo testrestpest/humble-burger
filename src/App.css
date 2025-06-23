@@ -6,4 +6,5 @@
 
 .main-content {
   flex: 1;
+  padding-top: 160px; /* Adjust this value based on the actual height of your header */
 }
