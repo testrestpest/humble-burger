@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe, FaGoogle, FaEnvelope } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import './Header.css'
 
 function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
   const [settings, setSettings] = useState({})
 
   useEffect(() => {
@@ -68,7 +71,7 @@ function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const logoSrc = settings.assets?.logo
 
   return (
-    <header className="header">
+    <header className={`header ${!isHome ? 'with-bg' : ''}`}>
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">

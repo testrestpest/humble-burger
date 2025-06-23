@@ -122,6 +122,25 @@
   color: var(--text-light);
 }
 
+/* Popular badge styling */
+.menu-item.popular {
+  border: 2px solid #1a2a44; /* Footer navy */
+}
+
+/* Popular badge in corner */
+.popular-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: white; /* white background */
+  color: #1a2a44; /* navy text */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
   .page-title {
     font-size: 2.5rem;

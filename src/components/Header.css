@@ -6,12 +6,17 @@
 
 .header {
   background: transparent; /* Completely transparent to blend with hero */
-  border-bottom: none; /* Remove separator */
+  border-bottom: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+}
+
+/* Solid background for header on non-home pages */
+.header.with-bg {
+  background-color: #1a2a44; /* Footer navy */
 }
 
 .header-content {

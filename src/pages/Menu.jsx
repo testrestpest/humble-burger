@@ -82,7 +82,7 @@ function Menu() {
           {filteredItems.map(item => (
             <div
               key={item.id}
-              className={`menu-item card ${item.featured ? 'featured' : ''}`}
+              className={`menu-item card ${item.popular ? 'popular' : ''}`}
               style={{
                 backgroundImage: item.image && item.image.startsWith('/')
                   ? `url(${item.image})`
@@ -92,7 +92,7 @@ function Menu() {
                 backgroundPosition: '0 0'
               }}
             >
-               {item.featured && <div className="featured-badge">Featured</div>}
+              {item.popular && <div className="popular-badge">Popular</div>}
                <div className="item-details">
                  <h3 className="item-name">{item.name}</h3>
                  <p className="item-description">{item.description}</p>
