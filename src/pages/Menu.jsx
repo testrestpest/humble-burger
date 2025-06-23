@@ -97,7 +97,6 @@ function Menu() {
                 <p className="item-description">{item.description}</p>
                 <div className="item-footer">
                   <span className="item-price">{item.price}</span>
-                  <button className="btn btn-primary btn-sm">Add to Order</button>
                 </div>
               </div>
             </div>

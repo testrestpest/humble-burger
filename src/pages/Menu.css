@@ -61,9 +61,10 @@
   padding: 1.5rem;
   position: relative;
   transition: all 0.2s ease;
-  /* Full background image */
-  background-size: cover;
+  /* Fill entire square card with image (stretched) */
+  background-size: 100% 100%;
   background-position: center;
+  aspect-ratio: 1 / 1; /* square cards */
   overflow: hidden;
 }
 
