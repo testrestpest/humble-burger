@@ -9,5 +9,5 @@
 }
 
 .main-content--padded {
-  padding-top: 160px; /* Match header height to push content down */
+  padding-top: 224px; /* Match header height (160px logo + 64px padding) */
 }
