@@ -47,9 +47,9 @@
 }
 
 .category-btn.active {
-  background-color: #1a2a44; /* Navy background */
-  color: white; /* White text */
-  border: none; /* Remove any borders */
+  background-color: white;
+  color: #1a2a44;
+  border: 2px solid #1a2a44;
 }
 
 .menu-grid {
