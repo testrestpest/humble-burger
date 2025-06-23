@@ -1,9 +1,9 @@
 ---
-name: BBQ Chicken Deluxe
+name: Plain Jane
 description: Smoky BBQ sauce, crispy bacon, caramelized onions, and cheddar cheese
 price: $15.99
 category: burgers
-emoji: 🥓
+image: "/images/uploads/plain-jane.png"
 featured: true
 available: true
 ---
