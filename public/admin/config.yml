@@ -47,7 +47,6 @@ collections:
               - { label: "Platform Name", name: "platform", widget: "select", options: ["Instagram", "Facebook", "X", "LinkedIn", "YouTube", "TikTok", "Google"], hint: "Select platform for automatic icon" }
               - { label: "URL", name: "url", widget: "string", hint: "Full URL to your social media profile" }
               - { label: "Show in Header", name: "enabled", widget: "boolean", default: true }
-
   - name: "menu-items"
     label: "Menu Items"
     folder: "content/menu"
@@ -57,10 +56,10 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Price", name: "price", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["burgers", "sides", "drinks", "desserts"] }
+      - { label: "Category", name: "category", widget: "select", options: ["burgers", "sides", "bowls", "kids", "drinks", "desserts"] }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Emoji", name: "emoji", widget: "string", required: false, hint: "Optional emoji to display (e.g., 🍔)" }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Popular", name: "popular", widget: "boolean", default: false, hint: "Mark this item as popular to show a 'Popular' badge" }
       - { label: "Available", name: "available", widget: "boolean", default: true }
 
   - name: "pages"

@@ -4,6 +4,6 @@ description: Double smash, american cheese, ketchup, mustard, sweet onion and gh
 price: £10.50
 category: burgers
 image: "/images/uploads/ballpark.jpg"
-featured: false
+popular: false
 available: true
 ---

@@ -30,12 +30,13 @@ function Menu() {
   const filteredItems = activeCategory === 'all' 
     ? menuItems.filter(item => item.available !== false) 
     : menuItems.filter(item => item.category === activeCategory && item.available !== false)
-
   const getCategoryName = (category) => {
     const names = {
       all: 'All Items',
       burgers: 'Burgers',
       sides: 'Sides',
+      bowls: 'Bowls',
+      kids: 'Kids',
       drinks: 'Drinks',
       desserts: 'Desserts'
     }

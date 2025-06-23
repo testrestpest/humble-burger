@@ -4,6 +4,6 @@ description: Spicy oriental veggie patty, korean slaw, lettuce, jalapeño lime m
 price: £10.00
 category: burgers
 emoji: 🌶️
-featured: false
+popular: false
 available: true
 ---

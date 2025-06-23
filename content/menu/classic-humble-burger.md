@@ -4,6 +4,6 @@ description: Our signature beef patty with lettuce, tomato, onion, and our speci
 price: $12.99
 category: burgers
 emoji: 🍔
-featured: true
+popular: true
 available: true
 ---

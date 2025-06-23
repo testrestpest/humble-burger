@@ -4,6 +4,6 @@ description: Nashville buttermilk chicken thigh with hot honey and pepper pearl 
 price: £11.00
 category: burgers
 emoji: 🌶️
-featured: false
+popular: true
 available: true
 ---
