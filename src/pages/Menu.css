@@ -58,19 +58,14 @@
 }
 
 .menu-item {
-  /* Fill entire square card with image */
-  background-size: cover;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.2s ease;
+  /* Fill entire square card with image (stretched) */
+  background-size: 100% 100%;
   background-position: center;
-  background-repeat: no-repeat;
   aspect-ratio: 1 / 1; /* square cards */
   overflow: hidden;
-  /* All text inside should be white */
-  color: white !important;
-}
-
-/* Force all nested text inside a menu-item to white */
-.menu-item * {
-  color: white !important;
 }
 
 /* Dark overlay for readability (20% black to mimic hero) */
@@ -100,28 +95,16 @@
   text-transform: uppercase;
 }
 
-.item-image {
-  position: relative;
-  width: 100%;
-  height: 200px; /* example card height */
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.menu-item-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-}
-
 .item-details {
   text-align: left;
   position: relative;
   z-index: 1;
+}
+
+.menu-item .item-name,
+.menu-item .item-description,
+.menu-item .item-price {
+  color: white !important; /* Force white text */
 }
 
 .item-name {
@@ -147,18 +130,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary-color);
-}
-
-/* Ensure details text elements are white */
-.menu-item .item-name,
-.menu-item .item-description,
-.menu-item .item-price {
-  color: white;
-}
-
-/* Override any price color from variables */
-.menu-item .item-price {
-  color: white !important;
 }
 
 .no-items {
