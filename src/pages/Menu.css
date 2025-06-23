@@ -41,15 +41,15 @@
 }
 
 .category-btn:hover {
-  border: none;
-  background-color: #1a2a44;
-  color: white;
+  background-color: #1a2a44; /* Navy background */
+  color: white; /* White text */
+  border: none; /* Remove any borders */
 }
 
 .category-btn.active {
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: #1a2a44; /* Navy background */
+  color: white; /* White text */
+  border: none; /* Remove any borders */
 }
 
 .menu-grid {
@@ -59,8 +59,8 @@
 }
 
 .menu-item {
-  border: none !important;
-  outline: none !important;
+  border: none !important; /* Remove any card border */
+  outline: none !important; /* Remove any focus outline */
   border-radius: 8px; /* Softer corners */
   padding: 1.5rem;
   position: relative;
