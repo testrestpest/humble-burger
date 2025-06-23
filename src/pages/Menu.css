@@ -66,16 +66,16 @@
   background-position: center;
   aspect-ratio: 1 / 1; /* square cards */
   overflow: hidden;
+  isolation: isolate; /* Create new stacking context for overlay */
 }
 
-/* Dark overlay for readability (20% black to mimic hero) */
-.menu-item-overlay {
+/* Add overlay using a pseudo-element */
+.menu-item::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* 20% black overlay */
+  z-index: -1; /* Position behind content */
 }
 
 .menu-item.featured {

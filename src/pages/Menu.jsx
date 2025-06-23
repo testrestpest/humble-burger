@@ -89,16 +89,14 @@ function Menu() {
                   : 'none'
               }}
             >
-              {/* Dark overlay for readability */}
-              <div className="menu-item-overlay"></div>
-              {item.featured && <div className="featured-badge">Featured</div>}
-              <div className="item-details">
-                <h3 className="item-name">{item.name}</h3>
-                <p className="item-description">{item.description}</p>
-                <div className="item-footer">
-                  <span className="item-price">{item.price}</span>
-                </div>
-              </div>
+               {item.featured && <div className="featured-badge">Featured</div>}
+               <div className="item-details">
+                 <h3 className="item-name">{item.name}</h3>
+                 <p className="item-description">{item.description}</p>
+                 <div className="item-footer">
+                   <span className="item-price">{item.price}</span>
+                 </div>
+               </div>
             </div>
           ))}
         </div>
