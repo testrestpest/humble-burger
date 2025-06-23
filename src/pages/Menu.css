@@ -31,8 +31,8 @@
 
 .category-btn {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #1a2a44; /* Footer navy */
-  background: #1a2a44; /* Footer navy */
+  border: none;
+  background-color: #1a2a44;
   color: white;
   border-radius: 2rem;
   cursor: pointer;
@@ -41,15 +41,14 @@
 }
 
 .category-btn:hover {
-  /* No hover effect - styles match the default state */
-  border-color: #1a2a44;
-  background: #1a2a44;
+  border: none;
+  background-color: #1a2a44;
   color: white;
 }
 
 .category-btn.active {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  border: none;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -60,7 +59,9 @@
 }
 
 .menu-item {
-  border: none; /* Remove outline/border */
+  border: none !important;
+  outline: none !important;
+  border-radius: 8px; /* Softer corners */
   padding: 1.5rem;
   position: relative;
   transition: all 0.2s ease;
