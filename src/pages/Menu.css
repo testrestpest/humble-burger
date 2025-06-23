@@ -61,6 +61,20 @@
   padding: 1.5rem;
   position: relative;
   transition: all 0.2s ease;
+  /* Full background image */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Dark overlay for readability (20% black to mimic hero) */
+.menu-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .menu-item.featured {
@@ -100,6 +114,8 @@
 
 .item-details {
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
 .item-name {
