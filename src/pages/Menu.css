@@ -31,9 +31,9 @@
 
 .category-btn {
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--border-color);
-  background: white;
-  color: var(--text-color);
+  border: 2px solid var(--footer-bg);
+  background: var(--footer-bg);
+  color: white;
   border-radius: 2rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -41,8 +41,8 @@
 }
 
 .category-btn:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  background: #2a406b; /* Lighter navy */
+  border-color: #2a406b;
 }
 
 .category-btn.active {
@@ -58,6 +58,8 @@
 }
 
 .menu-item {
+  border: none; /* Remove outline */
+  border-radius: 8px; /* Softer corners */
   padding: 1.5rem;
   position: relative;
   transition: all 0.2s ease;
