@@ -68,30 +68,23 @@
   overflow: hidden;
 }
 
-/* Featured menu item styling */
-.menu-item.featured {
-  border: 2px solid var(--primary-color);
-}
-
-.featured-badge {
+/* Dark overlay for readability */
+.menu-item::before {
+  content: '';
   position: absolute;
-  top: -10px;
-  right: 1rem;
-  background: var(--primary-color);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
 }
 
+/* Ensure text sits above overlay */
 .item-details {
   text-align: left;
   position: relative;
   z-index: 1;
 }
 
+/* Force all text in menu items to be white */
 .menu-item .item-name,
 .menu-item .item-description,
 .menu-item .item-price {
