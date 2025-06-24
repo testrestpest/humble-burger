@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { CartProvider } from './contexts/CartContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -8,15 +9,13 @@ import Contact from './pages/Contact'
 import Order from './pages/Order'
 import './App.css'
 
-function App() {
+function AppContent() {
   const location = useLocation()
   const isHome = location.pathname === '/'
 
-  return (
-    <div className="app">
-      <Header />
-      <main className={`main-content ${!isHome ? 'main-content--padded' : ''}`}>
-        <Routes>
+  return (      <div className="app">
+        <Header />        <main className={isHome ? 'main-content' : 'main-content main-content--padded'}>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/order" element={<Order />} />
@@ -26,6 +25,14 @@ function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <CartProvider>
+      <AppContent />
+    </CartProvider>
   )
 }
 

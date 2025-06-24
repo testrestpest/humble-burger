@@ -9,5 +9,74 @@
 }
 
 .main-content--padded {
-  padding-top: 224px; /* Match header height (160px logo + 64px padding) */
+  padding-top: 224px; /* Desktop: 160px logo + 64px padding */
+}
+
+@media (max-width: 1024px) {
+  .main-content--padded {
+    padding-top: 168px; /* Tablet: 120px logo + 48px padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content--padded {
+    padding-top: 112px; /* Mobile: 80px logo + 32px padding */
+  }
+}
+
+/* Snipcart Modal Override - Ensure cart appears above everything */
+#snipcart-modal {
+  z-index: 999999 !important;
+}
+
+.snipcart-modal {
+  z-index: 999999 !important;
+}
+
+.snipcart-modal__container {
+  z-index: 999999 !important;
+}
+
+.snipcart-modal__backdrop {
+  z-index: 999998 !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ensure Snipcart is above header */
+.snipcart {
+  z-index: 999999 !important;
+}
+
+.snipcart-layout {
+  z-index: 999999 !important;
+}
+
+/* Make sure header doesn't interfere but stays absolute */
+.header {
+  z-index: 1000;
+}
+
+/* When Snipcart modal is open, ensure full coverage */
+body.snipcart-modal-open {
+  overflow: hidden !important;
+}
+
+body.snipcart-modal-open .header,
+body.snipcart-modal-open .main-content,
+body.snipcart-modal-open .footer {
+  filter: blur(2px) !important;
+  pointer-events: none !important;
+}
+
+/* Additional Snipcart z-index overrides */
+.snipcart-cart {
+  z-index: 999999 !important;
+}
+
+.snipcart-cart-header {
+  z-index: 999999 !important;
+}
+
+.snipcart-cart-content {
+  z-index: 999999 !important;
 }

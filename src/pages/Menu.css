@@ -54,31 +54,32 @@
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 400px));
   gap: 2rem;
+  justify-content: center;
 }
 
 .menu-item {
   border: none !important; /* Remove any card border */
   outline: none !important; /* Remove any focus outline */
   border-radius: 8px; /* Softer corners */
-  padding: 1.5rem;
+  padding: 0; /* Remove padding, it will be on item-details */
   position: relative;
   transition: all 0.2s ease;
-  /* Stretch background to fill entire card, no cropping */
   background-size: 100% 100% !important;
   background-position: 0 0 !important;
   aspect-ratio: 1 / 1; /* square cards */
   overflow: hidden;
 }
 
-/* Dark overlay for readability */
+/* Gradient overlay for readability */
 .menu-item::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.8) 100%);
   z-index: 0;
+  border-radius: 8px; /* Match parent */
 }
 
 /* Ensure text sits above overlay */
@@ -86,13 +87,18 @@
   text-align: left;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Key for layout */
+  height: 100%;
+  padding: 1.5rem;
 }
 
 /* Force all text in menu items to be white */
 .menu-item .item-name,
 .menu-item .item-description,
 .menu-item .item-price {
-  color: white !important; /* Force white text */
+  color: white !important; /* Force white text for readability on image */
 }
 
 .item-name {
@@ -103,7 +109,7 @@
 
 .item-description {
   color: var(--text-light);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Adjusted margin */
   line-height: 1.5;
   font-size: 0.9rem;
 }

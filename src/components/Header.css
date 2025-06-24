@@ -5,7 +5,7 @@
 }
 
 .header {
-  background: transparent; /* Completely transparent to blend with hero */
+  background: transparent; /* Completely transparent to let hero show through */
   border-bottom: none;
   position: absolute;
   top: 0;
@@ -65,6 +65,12 @@
   display: flex;
   align-items: center;
   padding-right: 1rem; /* Add padding here to control space from edge */
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav {
@@ -151,13 +157,33 @@
   background-color: transparent !important;
 }
 
-@media (max-width: 768px) {
+/* Tablet view - intermediate sizes */
+@media (max-width: 1024px) {
+  .header-content {
+    padding: 1.5rem 2rem; /* Less padding on tablets */
+  }
+  
+  .logo-image {
+    height: 120px; /* Smaller logo on tablets */
+  }
+  
+  .nav {
+    gap: 1.5rem; /* Reduce nav spacing */
+  }
+  
+  .social-links-container {
+    gap: 1rem; /* Reduce social icon spacing */
+  }
+}
+
+/* Mobile and small tablets - hamburger menu */
+@media (max-width: 900px) {
   .nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.95); /* Stronger background for mobile menu */
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     flex-direction: column;
     padding: 1rem;
@@ -180,34 +206,39 @@
   
   .nav-link {
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* White border for mobile menu */
-    color: white; /* Ensure white text in mobile menu */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
   }
+  
   .nav-link:last-child {
     border-bottom: none;
   }
+  
   .social-link {
     margin-left: 0;
     margin-top: 0;
-    font-size: 1.5rem; /* Make them a bit bigger on mobile */
+    font-size: 1.5rem;
   }
 
   .social-links-container {
-    flex-direction: row; /* Ensure horizontal layout */
-    justify-content: center; /* Center the icons */
-    gap: 1.5rem; /* Add space between the horizontal icons */
-    margin-top: 1.5rem; /* Add space above the icon container */
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
+}
 
-  .logo {
-    margin-left: 0; /* Keep logo left-aligned on mobile too */
-  }
-
+/* Small mobile devices */
+@media (max-width: 768px) {
   .logo-image {
-    height: 80px; /* Smaller on mobile but still bigger than before */
+    height: 80px;
   }
 
   .header-content {
-    padding: 1.5rem 2rem; /* Adjust mobile padding */
+    padding: 1rem 1.5rem; /* Even tighter on small mobile */
+  }
+  
+  .header-actions {
+    gap: 0.5rem; /* Tighter spacing for cart and menu */
   }
 }

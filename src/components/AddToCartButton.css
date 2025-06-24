@@ -1,0 +1,74 @@
+.add-to-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* Make background semi-transparent by default */
+  background: rgba(26, 42, 68, 0.75); /* 75% opaque navy */
+  border: 1px solid rgba(255, 255, 255, 0.7); /* Light border */
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.add-to-cart-button:hover:not(:disabled) {
+  /* Solid on hover */
+  background: white;
+  color: var(--secondary-color, #1f2937);
+  border-color: white;
+}
+
+.add-to-cart-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.add-to-cart-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.add-to-cart-button.success {
+  background: var(--success-color, #10b981);
+  border-color: var(--success-color, #10b981);
+  color: white;
+}
+
+.add-to-cart-button.success:hover {
+  background: var(--success-color, #10b981);
+  border-color: var(--success-color, #10b981);
+  transform: none;
+}
+
+/* Size variants */
+.add-to-cart-button.small {
+  padding: 8px 12px;
+  font-size: 0.8rem;
+}
+
+.add-to-cart-button.medium {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.add-to-cart-button.large {
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .add-to-cart-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .add-to-cart-button.large {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}

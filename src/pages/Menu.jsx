@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchContent } from '../utils/contentLoader'
+import AddToCartButton from '../components/AddToCartButton'
 import './Menu.css'
 
 function Menu() {
@@ -94,13 +95,16 @@ function Menu() {
               }}
             >
               {item.popular && <div className="popular-badge">Popular</div>}
-               <div className="item-details">
-                 <h3 className="item-name">{item.name}</h3>
-                 <p className="item-description">{item.description}</p>
-                 <div className="item-footer">
-                   <span className="item-price">{item.price}</span>
-                 </div>
-               </div>
+              <div className="item-details">
+                <div className="item-content">
+                  <h3 className="item-name">{item.name}</h3>
+                  <p className="item-description">{item.description}</p>
+                </div>
+                <div className="item-footer">
+                  <span className="item-price">{item.price}</span>
+                  <AddToCartButton item={item} />
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -9,15 +9,22 @@
     
     <!-- Netlify Identity Widget -->
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
-    <!-- Google Fonts -->
+      <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Snipcart CSS -->
+    <link rel="preconnect" href="https://app.snipcart.com">
+    <link rel="preconnect" href="https://cdn.snipcart.com">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" />
+  </head>  <body>
+    <div id="root"></div>    <!-- Snipcart container -->
+    <div hidden id="snipcart" data-api-key="NzIxY2VjZWUtOTdkMC00MzBjLWJkMjEtOGU3YTVmMTdmNTA4NjM4ODYzMTE4MTU4ODk5NDQ4" data-config-modal-style="side"></div>
+      <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Snipcart JavaScript -->
+    <script async src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></script>
     
     <script>
       if (window.netlifyIdentity) {

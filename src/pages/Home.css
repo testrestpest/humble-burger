@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
 
 .home {
-  padding-top: 0; /* Remove top padding since hero covers the header */
+  padding: 0;
+  margin: 0;
 }
 
 .hero {
@@ -15,8 +16,9 @@
   justify-content: center;
   position: relative;
   color: white;
-  /* Ensure hero is behind the header but covers entire viewport */
   z-index: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-overlay {

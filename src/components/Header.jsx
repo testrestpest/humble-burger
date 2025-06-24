@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaTiktok, FaGlobe, FaGoogle, FaEnvelope } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
+import CartButton from './CartButton'
+import useCloseCartOnNavigate from '../hooks/useCloseCartOnNavigate'
 import './Header.css'
 
-function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
+function Header() {  
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
   const isHome = location.pathname === '/'
   const [settings, setSettings] = useState({})
+
+  // Close cart when navigating
+  useCloseCartOnNavigate()
 
   useEffect(() => {
     const loadSettings = async () => {
@@ -86,9 +92,9 @@ function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
               <span className="logo-text">{logoText}</span>
             )}
           </Link>
-          
-          <div className="nav-container">
-            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>              {navItems.filter(item => item.enabled).map((item, index) => (
+            <div className="nav-container">
+            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+              {navItems.filter(item => item.enabled).map((item, index) => (
                 <Link 
                   key={index}
                   to={item.link} 
@@ -99,29 +105,34 @@ function Header() {  const [isMenuOpen, setIsMenuOpen] = useState(false)
                 </Link>
               ))}
               
-              <div className="social-links-container"> {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
-                <a 
-                  key={`social-${index}`}
-                  href={social.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-link"
-                  title={social.platform}
-                >
-                  {getIconComponent(social.platform, social.icon)}
-                </a>
-              ))}
+              <div className="social-links-container">
+                {socialLinks.filter(social => social.enabled !== false).map((social, index) => (
+                  <a 
+                    key={`social-${index}`}
+                    href={social.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="social-link"
+                    title={social.platform}
+                  >
+                    {getIconComponent(social.platform, social.icon)}
+                  </a>
+                ))}
               </div>
             </nav>
 
-            <button 
-              className="menu-toggle"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <span></span>
-              <span></span>
-            </button>
+            <div className="header-actions">
+              <CartButton />
+              
+              <button 
+                className="menu-toggle"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                <span></span>
+                <span></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
