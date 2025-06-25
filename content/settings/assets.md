@@ -1,7 +1,7 @@
 ---
 logo: /images/uploads/logo-rm.png
 logoWidth: 200
-mobileLogoWidth: 90
+mobileLogoWidth: 40
 heroImage: /images/uploads/hero.jpg
-heroTitle: ZAP YOUR HUNGER
+heroTitle: ZAP YOUR HUNGERR
 ---
