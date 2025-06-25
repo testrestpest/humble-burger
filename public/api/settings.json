@@ -1,8 +1,11 @@
 {
   "assets": {
-    "logo": "/images/uploads/logo.png",
+    "logo": "/images/uploads/logo-rm.png",
+    "logoWidth": 220,
+    "mobileLogoWidth": 160,
     "heroImage": "/images/uploads/hero.jpg",
-    "heroTitle": "KEEPING FOOD HUMBLE"
+    "heroHeight": "100%",
+    "heroTitle": "ZAP YOUR HUNGER"
   },
   "general": {
     "siteTitle": "Humble Burger",

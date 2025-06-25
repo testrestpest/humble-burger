@@ -24,7 +24,12 @@ function parseFrontmatter(content) {
     const lines = frontmatter.split('\n')
     let i = 0
     
-    function parseValue(value) {
+    function parseValue(value, key) {
+      // Treat certain keys as markdown and preserve line breaks
+      const markdownFields = ['section_1_content', 'section_2_content', 'storyContent']
+      if (markdownFields.includes(key)) {
+        return value.replace(/\\n/g, '\n')
+      }
       if (value === 'true') return true
       if (value === 'false') return false
       if (value === 'null') return null
@@ -138,7 +143,6 @@ function parseFrontmatter(content) {
       if (match) {
         const key = match[1]
         const value = match[2]
-        
         if (value === '|' || value === '>') {
           // Multiline string
           const result = parseMultilineString(i + 1, value)
@@ -150,8 +154,8 @@ function parseFrontmatter(content) {
           data[key] = result.value
           i = result.nextIndex
         } else {
-          // Simple value
-          data[key] = parseValue(value)
+          // Simple value, but check for markdown fields
+          data[key] = parseValue(value, key)
           i++
         }
       } else {

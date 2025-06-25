@@ -147,6 +147,16 @@
     "available": true
   },
   {
+    "id": "moib-burger",
+    "name": "Moib Burger",
+    "description": "Pure Grit",
+    "price": "£200",
+    "category": "burgers",
+    "image": "/images/uploads/ballpark.jpg",
+    "popular": true,
+    "available": true
+  },
+  {
     "id": "nacho-bacon-fries",
     "name": "Nacho Bacon Fries",
     "description": "Sweet bones and bacon fries with nacho cheese sauce, crispy bacon bits, chives and crispy onions",
