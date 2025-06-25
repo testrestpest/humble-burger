@@ -54,12 +54,12 @@
     ]
   },
   "colors": {
-    "headerBackgroundColor": "#ffffff",
-    "headerTextColor": "#333333",
-    "headerLogoColor": "#333333",
+    "headerBackgroundColor": "#1a2a44",
+    "headerTextColor": "#ffffff",
+    "headerLogoColor": "#ffffff",
     "headerActiveLinkColor": "#ff6b35",
     "headerHoverColor": "#ff8c5a",
-    "footerBackgroundColor": "#ff0000",
+    "footerBackgroundColor": "#1a2a44",
     "footerTextColor": "#ffffff",
     "footerLinkColor": "#ff6b35",
     "primaryMain": "#ff6b35",

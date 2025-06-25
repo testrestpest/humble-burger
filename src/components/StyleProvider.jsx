@@ -39,7 +39,8 @@ function StyleProvider({ children }) {
     loadStyles()
   }, [])
 
-  // Render children immediately, styles will apply when loaded
+  // Only render children after styles are loaded to prevent any flash
+  if (!stylesLoaded) return null;
   return children
 }
 
