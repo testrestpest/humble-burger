@@ -90,7 +90,7 @@ function Header() {
   const currentLogoWidth = isMobile ? mobileLogoWidth : logoWidth
 
   return (
-    <header className={`header ${!isHome ? 'with-bg' : ''}`}>
+    <header className={`header ${!isHome ? 'with-bg' : ''}`} style={isHome ? { background: 'transparent' } : {}}>
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
