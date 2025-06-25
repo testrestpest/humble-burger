@@ -4,7 +4,7 @@ A modern, responsive website for Humble Burger restaurant built with React, Vite
 
 ## 🚀 Features
 
-- **Modern React Frontend**: Built with Vite for fast development and building
+- **Modern React Frontend**: Built witth Vite for fast development and building
 - **Netlify CMS Integration**: Easy content management with a user-friendly admin interface
 - **Responsive Design**: Looks great on all devices
 - **Editable Menu Items**: Add, edit, and remove menu items through the CMS
