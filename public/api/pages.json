@@ -75,9 +75,9 @@
   "home": {
     "title": "Welcome to Zaporio",
     "section_1_title": "feel good street food.",
-    "section_1_content": "Inspired by the street food vibes of Seattle, Zaporio was",
+    "section_1_content": "<p>Inspired by the street food vibes of Seattle, Zaporio was</p>\n",
     "section_2_title": "click + collect",
-    "section_2_content": ".",
+    "section_2_content": "<p>&quot;&quot;</p>\n",
     "section_2_button_text": "ORDER NOW"
   },
   "order": {

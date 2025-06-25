@@ -39,7 +39,7 @@ function Order() {
         <div className="order-options-grid">
           <div className="order-option">
             <h2>{page.takeaway_title}</h2>
-            <p dangerouslySetInnerHTML={{ __html: page.takeaway_content }}></p>
+            <p dangerouslySetInnerHTML={{ __html: page.takeaway_content && page.takeaway_content !== '<p>""</p>\n' ? page.takeaway_content : '' }}></p>
           </div>
           <div className="order-option">
             <h2>{page.click_collect_title}</h2>

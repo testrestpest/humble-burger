@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { marked } from 'marked'
 
 // This is a build-time script to convert markdown to JSON
 const contentDir = path.join(process.cwd(), 'content')
@@ -28,7 +29,7 @@ function parseFrontmatter(content) {
       // Treat certain keys as markdown and preserve line breaks
       const markdownFields = ['section_1_content', 'section_2_content', 'storyContent']
       if (markdownFields.includes(key)) {
-        return value.replace(/\\n/g, '\n')
+        return marked.parse(value.replace(/\\n/g, '\n'))
       }
       if (value === 'true') return true
       if (value === 'false') return false

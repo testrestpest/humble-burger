@@ -78,7 +78,7 @@ function Home() {
             </h2>
             <div 
               className="mb-8"
-              dangerouslySetInnerHTML={{ __html: pageContent.section_2_content }} 
+              dangerouslySetInnerHTML={{ __html: pageContent.section_2_content && pageContent.section_2_content !== '<p>""</p>\n' ? pageContent.section_2_content : '' }} 
             />
             <Link to="/order" className="btn btn-primary">
               {pageContent.section_2_button_text || 'Order Now'}

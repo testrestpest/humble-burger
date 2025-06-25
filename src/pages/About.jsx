@@ -49,11 +49,11 @@ function About() {
           <div className="story-content">
             <div className="story-text">
               <h2>{aboutContent.storyTitle || "From Humble Beginnings"}</h2>
-              <div dangerouslySetInnerHTML={{ 
-                __html: aboutContent.storyContent ? 
-                  aboutContent.storyContent.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') : 
-                  `<p>It all started in 2018 when Chef Maria Rodriguez decided to pursue her passion for creating the perfect burger. After years of perfecting her recipes in her home kitchen, she opened the first Humble Burger location with a simple mission: serve honest, delicious food made with love.</p><p>What began as a small neighborhood spot has grown into a local institution, but we've never forgotten our roots. Every burger is still hand-crafted with the same care and attention that Maria put into those first burgers.</p>`
-              }} />
+              {aboutContent.storyContent && aboutContent.storyContent !== '<p>""</p>\n' && (
+                <div dangerouslySetInnerHTML={{ 
+                  __html: aboutContent.storyContent
+                }} />
+              )}
             </div>            <div className="story-image">
               <div className="image-placeholder">
                 {aboutContent.storyImageEmoji || "👩‍🍳"}
