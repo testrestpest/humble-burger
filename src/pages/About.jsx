@@ -85,11 +85,7 @@ function About() {
               <div key={index} className="value-card">
                 <div className="value-icon">{value.icon}</div>
                 <h3>{value.title}</h3>
-                {typeof value.description === 'string' && value.description.includes('<p>') ? (
-                  <div dangerouslySetInnerHTML={{ __html: value.description }} />
-                ) : (
-                  <p>{value.description}</p>
-                )}
+                <p>{value.description}</p>
               </div>
             ))}
           </div>
@@ -109,7 +105,7 @@ function About() {
                   <div className="member-image">{member.emoji}</div>
                   <h3>{member.name}</h3>
                   <p className="member-role">{member.role}</p>
-                  {typeof member.bio === 'string' && member.bio.includes('<p>') ? (
+                  {member.bio && member.bio.includes('<p>') ? (
                     <div className="member-bio" dangerouslySetInnerHTML={{ __html: member.bio }} />
                   ) : (
                     <p className="member-bio">{member.bio}</p>

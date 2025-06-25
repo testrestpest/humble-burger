@@ -32,7 +32,7 @@ function parseFrontmatter(content) {
       }
       
       // Treat certain keys as markdown and preserve line breaks
-      const markdownFields = ['section_1_content', 'section_2_content', 'storyContent', 'heroText', 'description', 'bio', 'takeaway_content', 'click_collect_content', 'delivery_content', 'eat_in_content']
+      const markdownFields = ['section_1_content', 'section_2_content', 'storyContent', 'heroText', 'bio', 'takeaway_content', 'click_collect_content', 'delivery_content', 'eat_in_content']
       if (markdownFields.includes(key) && value && value !== '""') {
         // Join multi-line YAML strings and convert to HTML
         const joined = Array.isArray(value) ? value.join('\n') : value

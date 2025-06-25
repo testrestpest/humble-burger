@@ -11,22 +11,22 @@
       {
         "icon": "🌱",
         "title": "Sustainability",
-        "description": "<p>We partner with local farms and suppliers who share our commitment to sustainable practices and environmental responsibility.</p>\n"
+        "description": "We partner with local farms and suppliers who share our commitment to sustainable practices and environmental responsibility.\r"
       },
       {
         "icon": "🤝",
         "title": "Community",
-        "description": "<p>We believe in giving back to our community and supporting local initiatives that make our neighborhood stronger.</p>\n"
+        "description": "We believe in giving back to our community and supporting local initiatives that make our neighborhood stronger.\r"
       },
       {
         "icon": "⭐",
         "title": "Quality",
-        "description": "<p>Every ingredient is carefully selected and every burger is made to order, ensuring the highest quality in every bite.</p>\n"
+        "description": "Every ingredient is carefully selected and every burger is made to order, ensuring the highest quality in every bite.\r"
       },
       {
         "icon": "❤️",
         "title": "Passion",
-        "description": "<p>Our team is passionate about food and hospitality, and it shows in everything we do, from cooking to customer service.</p>\n"
+        "description": "Our team is passionate about food and hospitality, and it shows in everything we do, from cooking to customer service.\r"
       }
     ],
     "teamSectionTitle": "Meet Our Team",
@@ -75,7 +75,7 @@
   "home": {
     "title": "Welcome to Zaporio",
     "section_1_title": "feel good street food.",
-    "section_1_content": "<p>Inspired by the street food vibes of Seattle, Zaporio was launched in January 2021 to deliver simple, wholesome street food in a zap from the best local suppliers.</p>\n",
+    "section_1_content": "<p>Inspired by the streeet food vibes of Seattle, Zaporio was launched in January 2023 to deliver simple, wholesome street food in a zap from the best local suppliers.</p>\n",
     "section_2_title": "click + collect",
     "section_2_content": null,
     "section_2_button_text": "ORDER NOW"
