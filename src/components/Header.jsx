@@ -75,7 +75,19 @@ function Header() {
   const socialLinks = settings.header?.socialLinks || settings.general?.socialLinks || settings.socialLinks || []
   const logoSrc = settings.assets?.logo
   const logoWidth = settings.assets?.logoWidth || 150
-  const logoHeight = settings.assets?.logoHeight || 60
+  const mobileLogoWidth = settings.assets?.mobileLogoWidth || 100
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const currentLogoWidth = isMobile ? mobileLogoWidth : logoWidth
 
   return (
     <header className={`header ${!isHome ? 'with-bg' : ''}`}>
@@ -88,8 +100,8 @@ function Header() {
                 alt="Humble Burger" 
                 className="logo-image"
                 style={{
-                  width: `${logoWidth}px`,
-                  height: logoHeight ? `${logoHeight}px` : 'auto'
+                  width: `${currentLogoWidth}px`,
+                  height: 'auto'
                 }}
               />
             )}
