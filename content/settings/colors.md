@@ -1,24 +1,19 @@
 ---
-header:
-  backgroundColor: "#ffffff"
-  textColor: "#333333"
-  logoColor: "#333333"
-  activeLinkColor: "#ff6b35"
-  hoverColor: "#ff8c5a"
-footer:
-  backgroundColor: "#2c2c2c"
-  textColor: "#ffffff"
-  linkColor: "#ff6b35"
-primary:
-  main: "#ff6b35"
-  hover: "#e55a2b"
-  secondary: "#4a90e2"
-background:
-  page: "#ffffff"
-  section: "#f8f9fa"
-  card: "#ffffff"
-text:
-  heading: "#2c2c2c"
-  body: "#666666"
-  muted: "#999999"
+headerBackgroundColor: "#ffffff"
+headerTextColor: "#333333"
+headerLogoColor: "#333333"
+headerActiveLinkColor: "#ff6b35"
+headerHoverColor: "#ff8c5a"
+footerBackgroundColor: "#ff0000"
+footerTextColor: "#ffffff"
+footerLinkColor: "#ff6b35"
+primaryMain: "#ff6b35"
+primaryHover: "#e55a2b"
+primarySecondary: "#4a90e2"
+backgroundPage: "#ffffff"
+backgroundSection: "#f8f9fa"
+backgroundCard: "#ffffff"
+textHeading: "#2c2c2c"
+textBody: "#666666"
+textMuted: "#999999"
 ---

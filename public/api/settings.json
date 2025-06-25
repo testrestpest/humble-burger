@@ -54,11 +54,23 @@
     ]
   },
   "colors": {
-    "header": "",
-    "footer": "",
-    "primary": "",
-    "background": "",
-    "text": ""
+    "headerBackgroundColor": "#ffffff",
+    "headerTextColor": "#333333",
+    "headerLogoColor": "#333333",
+    "headerActiveLinkColor": "#ff6b35",
+    "headerHoverColor": "#ff8c5a",
+    "footerBackgroundColor": "#ff0000",
+    "footerTextColor": "#ffffff",
+    "footerLinkColor": "#ff6b35",
+    "primaryMain": "#ff6b35",
+    "primaryHover": "#e55a2b",
+    "primarySecondary": "#4a90e2",
+    "backgroundPage": "#ffffff",
+    "backgroundSection": "#f8f9fa",
+    "backgroundCard": "#ffffff",
+    "textHeading": "#2c2c2c",
+    "textBody": "#666666",
+    "textMuted": "#999999"
   },
   "general": {
     "siteTitle": "Humble Burger",

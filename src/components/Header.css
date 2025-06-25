@@ -21,6 +21,19 @@
   background-color: var(--header-bg, #1a2a44); /* Keep original navy color as fallback */
 }
 
+/* Update text colors for non-home pages when background changes */
+.header.with-bg .nav-link {
+  color: var(--header-text, white);
+}
+
+.header.with-bg .nav-link:hover {
+  color: var(--header-hover, #f0f0f0);
+}
+
+.header.with-bg .logo {
+  color: var(--header-logo, white);
+}
+
 .header-content {
   display: flex;
   align-items: center;

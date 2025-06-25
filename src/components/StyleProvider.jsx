@@ -27,23 +27,7 @@ function StyleProvider({ children }) {
           document.head.appendChild(styleElement)
         }
         
-        // Handle Google Fonts
-        const fontImportURL = generateFontImport(settings.typography)
-        
-        // Remove existing font imports
-        const existingFontLink = document.getElementById('cms-google-fonts')
-        if (existingFontLink) {
-          existingFontLink.remove()
-        }
-        
-        // Inject new font imports
-        if (fontImportURL) {
-          const linkElement = document.createElement('link')
-          linkElement.id = 'cms-google-fonts'
-          linkElement.rel = 'stylesheet'
-          linkElement.href = fontImportURL
-          document.head.appendChild(linkElement)
-        }
+        // Skip font handling - keeping original fonts
         
         setStylesLoaded(true)
       } catch (error) {

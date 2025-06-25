@@ -1,6 +1,6 @@
 .footer {
-  background-color: #1a2a44;
-  color: white;
+  background-color: var(--footer-bg, #1a2a44);
+  color: var(--footer-text, white);
   padding: 4rem 0;
 }
 
@@ -50,14 +50,14 @@
 }
 
 .footer-email {
-  color: white;
+  color: var(--footer-link, white);
   text-decoration: underline;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .footer-email:hover {
-  color: #bdc3c7;
+  color: var(--footer-text, #bdc3c7);
 }
 
 .footer-social {
