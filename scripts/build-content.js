@@ -29,7 +29,9 @@ function parseFrontmatter(content) {
       // Treat certain keys as markdown and preserve line breaks
       const markdownFields = ['section_1_content', 'section_2_content', 'storyContent']
       if (markdownFields.includes(key)) {
-        return marked.parse(value.replace(/\\n/g, '\n'))
+        // Join multi-line YAML strings and convert to HTML
+        const joined = Array.isArray(value) ? value.join('\n') : value
+        return marked.parse(joined.replace(/\\n/g, '\n'))
       }
       if (value === 'true') return true
       if (value === 'false') return false
