@@ -13,10 +13,10 @@ display_url: https://your-site.netlify.app
 collections:
   - name: "site-assets"
     label: "🎨 Site Assets"
-    files:
-      - label: "Logo & Hero Image"
+    files:      - label: "Logo & Hero Image"
         name: "assets"
-        file: "content/settings/assets.md"        fields:
+        file: "content/settings/assets.md"
+        fields:
           - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your restaurant logo (recommended: PNG with transparent background)", default: "/images/logo.png" }
           - { label: "Logo Width (pixels)", name: "logoWidth", widget: "number", default: 150, hint: "Logo width in pixels (recommended: 100-250px)", min: 50, max: 400 }
           - { label: "Logo Height (pixels)", name: "logoHeight", widget: "number", default: 60, hint: "Logo height in pixels (leave blank for auto-height)", required: false, min: 30, max: 200 }
