@@ -2,11 +2,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-page, #ffffff);
-  color: var(--text-body, #666666);
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: var(--size-body, 1rem);
-  font-weight: var(--weight-body, 400);
 }
 
 .main-content {

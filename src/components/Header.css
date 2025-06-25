@@ -18,7 +18,7 @@
 
 /* Solid background for header on non-home pages */
 .header.with-bg {
-  background-color: var(--header-bg, #ffffff);
+  background-color: var(--header-bg, #1a2a44); /* Keep original navy color as fallback */
 }
 
 .header-content {
@@ -36,14 +36,13 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: var(--header-logo, white);
-  font-weight: var(--weight-heading, 700);
+  color: white;
+  font-weight: 700;
   font-size: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   margin-left: 0; /* Ensure no extra margin */
   padding-left: 0;
   max-height: 100%;
-  font-family: var(--font-heading, 'Inter', sans-serif);
 }
 
 .logo-image {
@@ -89,7 +88,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: var(--header-text, white); /* Use CMS color or fallback to white */
+  color: white; /* White text for visibility over hero image */
   font-weight: 500;
   padding: 1rem 0; /* More padding */
   position: relative;
@@ -97,11 +96,10 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   font-size: 1rem;
   letter-spacing: 0.5px;
-  font-family: var(--font-body, 'Inter', sans-serif);
 }
 
 .nav-link:hover {
-  color: var(--header-hover, #f0f0f0); /* Use CMS hover color */
+  color: #f0f0f0; /* Slightly lighter white on hover */
 }
 
 .nav-link::after {
