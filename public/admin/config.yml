@@ -72,12 +72,12 @@ collections:
         name: "home"
         file: "content/pages/home.md"
         fields:
-          - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO" }
-          - { label: "Section 1 Title", name: "section_1_title", widget: "string" }
-          - { label: "Section 1 Content", name: "section_1_content", widget: "markdown" }
-          - { label: "Section 2 Title", name: "section_2_title", widget: "string" }
-          - { label: "Section 2 Content", name: "section_2_content", widget: "markdown" }
-          - { label: "Section 2 Button Text", name: "section_2_button_text", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string", hint: "Main page title for SEO", required: false }
+          - { label: "Section 1 Title", name: "section_1_title", widget: "string", required: false }
+          - { label: "Section 1 Content", name: "section_1_content", widget: "markdown", required: false }
+          - { label: "Section 2 Title", name: "section_2_title", widget: "string", required: false }
+          - { label: "Section 2 Content", name: "section_2_content", widget: "markdown", required: false }
+          - { label: "Section 2 Button Text", name: "section_2_button_text", widget: "string", required: false }
 
       - label: "ℹ️ About Page"
         name: "about"
