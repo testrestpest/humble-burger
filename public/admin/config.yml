@@ -22,6 +22,7 @@ collections:
           - { label: "Logo Width (pixels)", name: "logoWidth", widget: "number", default: 150, hint: "Logo width in pixels (recommended: 100-250px)", min: 50, max: 400 }
           - { label: "Mobile Logo Width (pixels)", name: "mobileLogoWidth", widget: "number", default: 100, hint: "Logo width on mobile devices (recommended: 80-150px)", min: 40, max: 200 }
           - { label: "Hero Background Image", name: "heroImage", widget: "image", hint: "Main hero image for homepage (recommended: high resolution, landscape orientation)", default: "/images/hero.jpg" }
+          - { label: "Hero Viewport Height", name: "heroHeight", widget: "select", options: ["25%", "50%", "75%", "100%"], default: "100%", hint: "Set the hero image height as a percentage of the screen height." }
           - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
 
   - name: "navigation"
