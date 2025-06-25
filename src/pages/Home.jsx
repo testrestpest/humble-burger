@@ -28,9 +28,9 @@ function Home() {
   }
 
   const heroImage = settings.assets?.heroImage || '/images/hero.jpg'
-  const heroHeight = settings.heroHeight || '100%'
+  const heroHeight = settings.assets?.heroHeight || '100%'
   const heroHeightValue = heroHeight.replace('%', 'vh')
-  const heroTitle = settings.heroTitle || 'KEEPING FOOD HUMBLE'
+  const heroTitle = settings.assets?.heroTitle || 'KEEPING FOOD HUMBLE'
 
   return (
     <div className="home">
