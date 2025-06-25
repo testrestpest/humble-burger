@@ -1,7 +1,8 @@
 .footer {
-  background-color: #1a2a44;
-  color: white;
-  padding: 4rem 0;
+  background-color: var(--footer-bg, #1a2a44);
+  color: var(--footer-text, white);
+  padding: var(--section-padding, 4rem) 0;
+  font-family: var(--font-body, 'Inter', sans-serif);
 }
 
 .footer-content {
@@ -24,11 +25,11 @@
 }
 
 .footer-title {
-  color: white;
-  font-size: 2rem;
-  font-weight: 300;
+  color: var(--footer-text, white);
+  font-size: var(--size-section-title, 1.75rem);
+  font-weight: var(--weight-heading, 700);
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading, 'Inter', sans-serif);
 }
 
 .footer-subtitle {
@@ -50,14 +51,14 @@
 }
 
 .footer-email {
-  color: white;
+  color: var(--footer-link, #ff6b35);
   text-decoration: underline;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .footer-email:hover {
-  color: #bdc3c7;
+  color: var(--footer-text, white);
 }
 
 .footer-social {

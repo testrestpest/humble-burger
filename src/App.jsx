@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { CartProvider } from './contexts/CartContext'
+import StyleProvider from './components/StyleProvider'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -30,9 +31,11 @@ function AppContent() {
 
 function App() {
   return (
-    <CartProvider>
-      <AppContent />
-    </CartProvider>
+    <StyleProvider>
+      <CartProvider>
+        <AppContent />
+      </CartProvider>
+    </StyleProvider>
   )
 }
 

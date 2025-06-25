@@ -53,6 +53,13 @@
       }
     ]
   },
+  "colors": {
+    "header": "",
+    "footer": "",
+    "primary": "",
+    "background": "",
+    "text": ""
+  },
   "general": {
     "siteTitle": "Humble Burger",
     "siteDescription": "Gourmet burgers made with fresh, locally-sourced ingredients. Visit us for an unforgettable dining experience.",
@@ -123,5 +130,14 @@
         "url": "https://google.com"
       }
     ]
+  },
+  "layout": {
+    "container": "",
+    "menuGrid": ""
+  },
+  "typography": {
+    "fonts": "",
+    "sizes": "",
+    "weights": ""
   }
 }

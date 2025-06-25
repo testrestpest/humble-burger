@@ -25,6 +25,96 @@ collections:
           - { label: "Hero Viewport Height", name: "heroHeight", widget: "select", options: ["25%", "50%", "75%", "100%"], default: "100%", hint: "Set the hero image height as a percentage of the screen height." }
           - { label: "Hero Title", name: "heroTitle", widget: "string", default: "KEEPING FOOD HUMBLE", hint: "Main hero text overlay" }
 
+  - name: "site-styling"
+    label: "🎨 Colors & Styling"
+    files:
+      - label: "Theme Colors"
+        name: "colors"
+        file: "content/settings/colors.md"
+        fields:
+          - label: "Header & Navigation"
+            name: "header"
+            widget: "object"
+            fields:
+              - { label: "Background Color", name: "backgroundColor", widget: "color", default: "#ffffff", hint: "Header background color" }
+              - { label: "Text Color", name: "textColor", widget: "color", default: "#333333", hint: "Navigation text color" }
+              - { label: "Logo Text Color", name: "logoColor", widget: "color", default: "#333333", hint: "Logo text color" }
+              - { label: "Active Link Color", name: "activeLinkColor", widget: "color", default: "#ff6b35", hint: "Color for active navigation links" }
+              - { label: "Hover Color", name: "hoverColor", widget: "color", default: "#ff8c5a", hint: "Color when hovering over links" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Background Color", name: "backgroundColor", widget: "color", default: "#2c2c2c", hint: "Footer background color" }
+              - { label: "Text Color", name: "textColor", widget: "color", default: "#ffffff", hint: "Footer text color" }
+              - { label: "Link Color", name: "linkColor", widget: "color", default: "#ff6b35", hint: "Footer link color" }
+          - label: "Primary Colors"
+            name: "primary"
+            widget: "object"
+            fields:
+              - { label: "Primary Color", name: "main", widget: "color", default: "#ff6b35", hint: "Main brand color (buttons, accents)" }
+              - { label: "Primary Hover", name: "hover", widget: "color", default: "#e55a2b", hint: "Primary color when hovered" }
+              - { label: "Secondary Color", name: "secondary", widget: "color", default: "#4a90e2", hint: "Secondary accent color" }
+          - label: "Background Colors"
+            name: "background"
+            widget: "object"
+            fields:
+              - { label: "Page Background", name: "page", widget: "color", default: "#ffffff", hint: "Main page background color" }
+              - { label: "Section Background", name: "section", widget: "color", default: "#f8f9fa", hint: "Alternate section background" }
+              - { label: "Card Background", name: "card", widget: "color", default: "#ffffff", hint: "Menu item card background" }
+          - label: "Text Colors"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Heading Color", name: "heading", widget: "color", default: "#2c2c2c", hint: "Main heading color" }
+              - { label: "Body Text Color", name: "body", widget: "color", default: "#666666", hint: "Regular text color" }
+              - { label: "Muted Text Color", name: "muted", widget: "color", default: "#999999", hint: "Secondary/muted text color" }
+
+      - label: "Typography"
+        name: "typography"
+        file: "content/settings/typography.md"
+        fields:
+          - label: "Font Families"
+            name: "fonts"
+            widget: "object"
+            fields:
+              - { label: "Heading Font", name: "heading", widget: "select", options: ["Inter", "Roboto", "Open Sans", "Lato", "Montserrat", "Poppins", "Nunito", "Source Sans Pro", "Raleway", "Ubuntu"], default: "Inter", hint: "Font for headings and titles" }
+              - { label: "Body Font", name: "body", widget: "select", options: ["Inter", "Roboto", "Open Sans", "Lato", "Montserrat", "Poppins", "Nunito", "Source Sans Pro", "Raleway", "Ubuntu"], default: "Inter", hint: "Font for body text" }
+              - { label: "Custom Google Font URL", name: "customFont", widget: "string", required: false, hint: "Optional: Add custom Google Fonts URL (e.g., https://fonts.googleapis.com/css2?family=YourFont)" }
+          - label: "Font Sizes"
+            name: "sizes"
+            widget: "object"
+            fields:
+              - { label: "Hero Title Size", name: "heroTitle", widget: "select", options: ["2.5rem", "3rem", "3.5rem", "4rem", "4.5rem", "5rem"], default: "4rem", hint: "Size of hero title text" }
+              - { label: "Page Title Size", name: "pageTitle", widget: "select", options: ["1.5rem", "2rem", "2.5rem", "3rem"], default: "2.5rem", hint: "Size of page titles" }
+              - { label: "Section Title Size", name: "sectionTitle", widget: "select", options: ["1.25rem", "1.5rem", "1.75rem", "2rem"], default: "1.75rem", hint: "Size of section headings" }
+              - { label: "Body Text Size", name: "body", widget: "select", options: ["0.875rem", "1rem", "1.125rem", "1.25rem"], default: "1rem", hint: "Size of regular text" }
+          - label: "Font Weights"
+            name: "weights"
+            widget: "object"
+            fields:
+              - { label: "Heading Weight", name: "heading", widget: "select", options: ["300", "400", "500", "600", "700", "800"], default: "700", hint: "Font weight for headings" }
+              - { label: "Body Weight", name: "body", widget: "select", options: ["300", "400", "500", "600"], default: "400", hint: "Font weight for body text" }
+
+      - label: "Layout & Spacing"
+        name: "layout"
+        file: "content/settings/layout.md"
+        fields:
+          - label: "Container & Spacing"
+            name: "container"
+            widget: "object"
+            fields:
+              - { label: "Max Container Width", name: "maxWidth", widget: "select", options: ["1200px", "1280px", "1320px", "1400px", "1600px"], default: "1280px", hint: "Maximum width of content containers" }
+              - { label: "Section Padding", name: "sectionPadding", widget: "select", options: ["2rem", "3rem", "4rem", "5rem", "6rem"], default: "4rem", hint: "Vertical padding for sections" }
+              - { label: "Card Border Radius", name: "cardRadius", widget: "select", options: ["0px", "4px", "8px", "12px", "16px", "20px"], default: "12px", hint: "Rounded corners for cards and buttons" }
+          - label: "Menu Grid"
+            name: "menuGrid"
+            widget: "object"
+            fields:
+              - { label: "Items Per Row (Desktop)", name: "desktop", widget: "select", options: ["2", "3", "4"], default: "3", hint: "Number of menu items per row on desktop" }
+              - { label: "Items Per Row (Tablet)", name: "tablet", widget: "select", options: ["1", "2", "3"], default: "2", hint: "Number of menu items per row on tablet" }
+              - { label: "Gap Between Items", name: "gap", widget: "select", options: ["1rem", "1.5rem", "2rem", "2.5rem"], default: "2rem", hint: "Space between menu items" }
+
   - name: "navigation"
     label: "🧭 Navigation & Header"
     files:

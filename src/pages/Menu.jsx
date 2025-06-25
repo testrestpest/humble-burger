@@ -22,10 +22,18 @@ function Menu() {
         
         setMenuItems(items)
         
+        // Get categories that actually have available items
+        const availableCategories = [...new Set(
+          items
+            .filter(item => item.available !== false)
+            .map(item => item.category.toLowerCase())
+        )]
+
         // Use managed categories if available, otherwise fall back to auto-generated
         if (settings.categories?.categories) {
           const enabledCategories = settings.categories.categories
             .filter(cat => cat.enabled !== false)
+            .filter(cat => availableCategories.includes(cat.name.toLowerCase())) // Only show categories with items
             .sort((a, b) => (a.order || 999) - (b.order || 999))
           
           // Create category settings lookup
@@ -43,11 +51,10 @@ function Menu() {
             setActiveCategory(categoryNames[0])
           }
         } else {
-          // Fallback: auto-generate from menu items
-          const uniqueCategories = [...new Set(items.map(item => item.category.toLowerCase()))]
+          // Fallback: auto-generate from menu items (only categories with available items)
           const categoryOrder = ['burgers', 'sides', 'bowls', 'kids', 'drinks', 'desserts', 'specials']
           
-          const sortedCategories = uniqueCategories.sort((a, b) => {
+          const sortedCategories = availableCategories.sort((a, b) => {
             const aIndex = categoryOrder.indexOf(a)
             const bIndex = categoryOrder.indexOf(b)
             
