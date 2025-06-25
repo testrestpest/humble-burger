@@ -67,14 +67,15 @@ function Header() {
     { label: "Home", link: "/", enabled: true },
     { label: "About", link: "/about", enabled: true },
     { label: "Menu", link: "/menu", enabled: true },
-    { label: "Order", link: "/order", enabled: true },
-    { label: "Contact", link: "/contact", enabled: true }
+    { label: "Order", link: "/order", enabled: true },    { label: "Contact", link: "/contact", enabled: true }
   ]
   const navItems = settings.header?.navItems || defaultNavItems
   const showLogoText = settings.header?.showLogoText || false
   const logoText = settings.header?.logoText || "Humble Burger"
   const socialLinks = settings.header?.socialLinks || settings.general?.socialLinks || settings.socialLinks || []
   const logoSrc = settings.assets?.logo
+  const logoWidth = settings.assets?.logoWidth || 150
+  const logoHeight = settings.assets?.logoHeight || 60
 
   return (
     <header className={`header ${!isHome ? 'with-bg' : ''}`}>
@@ -85,7 +86,11 @@ function Header() {
               <img 
                 src={logoSrc} 
                 alt="Humble Burger" 
-                className="logo-image" 
+                className="logo-image"
+                style={{
+                  width: `${logoWidth}px`,
+                  height: logoHeight ? `${logoHeight}px` : 'auto'
+                }}
               />
             )}
             {showLogoText && (
