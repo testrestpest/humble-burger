@@ -13,7 +13,8 @@ display_url: https://your-site.netlify.app
 collections:
   - name: "site-assets"
     label: "🎨 Site Assets"
-    files:      - label: "Logo & Hero Image"
+    files:
+      - label: "Logo & Hero Image"
         name: "assets"
         file: "content/settings/assets.md"
         fields:
