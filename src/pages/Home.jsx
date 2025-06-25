@@ -4,29 +4,33 @@ import { fetchContent } from '../utils/contentLoader'
 import './Home.css'
 
 function Home() {
-  const [pageContent, setPageContent] = useState({})
-  const [settings, setSettings] = useState({})
-  const [loading, setLoading] = useState(true)
+  const [pageContent, setPageContent] = useState(null)
+  const [settings, setSettings] = useState(null)
 
   useEffect(() => {
     const loadContent = async () => {
       try {
-        // Load page content
         const pages = await fetchContent('pages')
         setPageContent(pages.home || {})
         
-        // Load settings for hero image
         const settingsData = await fetchContent('settings')
         setSettings(settingsData)
       } catch (error) {
         console.error('Error loading content:', error)
-      } finally {
-        setLoading(false)
       }
     }
 
     loadContent()
   }, [])
+
+  if (!settings || !pageContent) {
+    return <div /> // Render an empty div to prevent flash of unstyled content
+  }
+
+  const heroImage = settings.assets?.heroImage || '/images/hero.jpg'
+  const heroHeight = settings.heroHeight || '100%'
+  const heroHeightValue = heroHeight.replace('%', 'vh')
+  const heroTitle = settings.heroTitle || 'KEEPING FOOD HUMBLE'
 
   return (
     <div className="home">
@@ -34,13 +38,14 @@ function Home() {
       <section 
         className="hero" 
         style={{
-          backgroundImage: settings.assets?.heroImage ? `url(${settings.assets.heroImage})` : 'url(/images/hero.jpg)'
+          backgroundImage: `url(${heroImage})`,
+          height: heroHeightValue
         }}
       >
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1 className="hero-title">
-            {(settings.assets?.heroTitle || "KEEPING FOOD HUMBLE")
+            {heroTitle
               .split(' ')
               .map((word, idx) => (
                 <span key={idx} className="hero-word" data-word={word}>{word}</span>
