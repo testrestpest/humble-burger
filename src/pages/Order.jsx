@@ -39,20 +39,28 @@ function Order() {
         <div className="order-options-grid">
           <div className="order-option">
             <h2>{page.takeaway_title}</h2>
-            <p dangerouslySetInnerHTML={{ __html: page.takeaway_content && page.takeaway_content !== '<p>""</p>\n' ? page.takeaway_content : '' }}></p>
+            {page.takeaway_content && (
+              <div dangerouslySetInnerHTML={{ __html: page.takeaway_content }} />
+            )}
           </div>
           <div className="order-option">
             <h2>{page.click_collect_title}</h2>
-            <p>{page.click_collect_content}</p>
+            {page.click_collect_content && (
+              <div dangerouslySetInnerHTML={{ __html: page.click_collect_content }} />
+            )}
             <a href={page.click_collect_button_link} className="btn">{page.click_collect_button_text}</a>
           </div>
           <div className="order-option">
             <h2>{page.delivery_title}</h2>
-            <p>{page.delivery_content}</p>
+            {page.delivery_content && (
+              <div dangerouslySetInnerHTML={{ __html: page.delivery_content }} />
+            )}
           </div>
           <div className="order-option">
             <h2>{page.eat_in_title}</h2>
-            <p>{page.eat_in_content}</p>
+            {page.eat_in_content && (
+              <div dangerouslySetInnerHTML={{ __html: page.eat_in_content }} />
+            )}
           </div>
         </div>
         <div className="map-section">

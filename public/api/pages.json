@@ -1,7 +1,7 @@
 {
   "about": {
     "title": "Our Story",
-    "heroText": "Founded on the belief that great burgers bring people together, Humble",
+    "heroText": "<p>Founded on the belief that great burgers bring people together, Humble Burger started as a small family dream and has grown into a beloved community gathering place.</p>\n",
     "storyTitle": "From Humble Beginnings",
     "storyContent": "It all started in 2018 when Chef Maria Rodriguez decided to pursue her passion\r for creating the perfect burger. After years of perfecting her recipes in her\r home kitchen, she opened the first Humble Burger location with a simple\r mission: serve honest, delicious food made with love.\r \r \r What began as a small neighborhood spot has grown into a local institution, but we've never forgotten our roots. Every burger is still hand-crafted with the same care and attention that Maria put into those first burgers.",
     "storyImageEmoji": "👩‍🍳",
@@ -11,22 +11,22 @@
       {
         "icon": "🌱",
         "title": "Sustainability",
-        "description": "We partner with local farms and suppliers who share our commitment"
+        "description": "<p>We partner with local farms and suppliers who share our commitment to sustainable practices and environmental responsibility.</p>\n"
       },
       {
         "icon": "🤝",
         "title": "Community",
-        "description": "We believe in giving back to our community and supporting local"
+        "description": "<p>We believe in giving back to our community and supporting local initiatives that make our neighborhood stronger.</p>\n"
       },
       {
         "icon": "⭐",
         "title": "Quality",
-        "description": "Every ingredient is carefully selected and every burger is made to"
+        "description": "<p>Every ingredient is carefully selected and every burger is made to order, ensuring the highest quality in every bite.</p>\n"
       },
       {
         "icon": "❤️",
         "title": "Passion",
-        "description": "Our team is passionate about food and hospitality, and it shows in"
+        "description": "<p>Our team is passionate about food and hospitality, and it shows in everything we do, from cooking to customer service.</p>\n"
       }
     ],
     "teamSectionTitle": "Meet Our Team",
@@ -35,19 +35,19 @@
         "emoji": "👩‍🍳",
         "name": "Maria Rodriguez",
         "role": "Founder & Head Chef",
-        "bio": "Maria's passion for cooking started in her grandmother's kitchen. She"
+        "bio": "<p>Maria&#39;s passion for cooking started in her grandmother&#39;s kitchen. She brings 15 years of culinary experience to every burger.</p>\n"
       },
       {
         "emoji": "👨‍💼",
         "name": "James Thompson",
         "role": "General Manager",
-        "bio": "James ensures every customer has an exceptional experience. His attention"
+        "bio": "<p>James ensures every customer has an exceptional experience. His attention to detail keeps everything running smoothly.</p>\n"
       },
       {
         "emoji": "👩‍🍳",
         "name": "Sarah Kim",
         "role": "Sous Chef",
-        "bio": "Sarah's creativity and precision in the kitchen help maintain our high"
+        "bio": "<p>Sarah&#39;s creativity and precision in the kitchen help maintain our high standards and develop new menu items.</p>\n"
       }
     ]
   },
@@ -75,23 +75,23 @@
   "home": {
     "title": "Welcome to Zaporio",
     "section_1_title": "feel good street food.",
-    "section_1_content": "<p>Inspired by the streeet food vibes of Seattle, Zaporio was</p>\n",
+    "section_1_content": "<p>Inspired by the street food vibes of Seattle, Zaporio was launched in January 2021 to deliver simple, wholesome street food in a zap from the best local suppliers.</p>\n",
     "section_2_title": "click + collect",
-    "section_2_content": "<p>&quot;&quot;</p>\n",
+    "section_2_content": null,
     "section_2_button_text": "ORDER NOW"
   },
   "order": {
     "title": "How to Get Your Humble Burger",
     "takeaway_title": "TAKEAWAY",
-    "takeaway_content": "Visit us at Munro Place, Elgin, IV30 4LL. No need to pre-order just come along! View our [opening times](/contact) here.",
+    "takeaway_content": "<p>&quot;Visit us at Munro Place, Elgin, IV30 4LL. No need to pre-order just come along! View our <a href=\"/contact\">opening times</a> here.&quot;</p>\n",
     "click_collect_title": "CLICK & COLLECT",
-    "click_collect_content": "You can now order your Humble online! Just pick your food and choose a collection time.",
+    "click_collect_content": "<p>&quot;You can now order your Humble online! Just pick your food and choose a collection time.&quot;</p>\n",
     "click_collect_button_text": "ORDER NOW",
     "click_collect_button_link": "#",
     "delivery_title": "DO YOU DO DELIVERY?",
-    "delivery_content": "Afraid not. We don't offer delivery because we don't believe burgers and fries travel well, and we only want you to have the best.",
+    "delivery_content": "<p>&quot;Afraid not. We don&#39;t offer delivery because we don&#39;t believe burgers and fries travel well, and we only want you to have the best.&quot;</p>\n",
     "eat_in_title": "EAT IN",
-    "eat_in_content": "You can take your food into Foggies and enjoy some drinks with your meal. To book a table with Foggies please call 01343 611161. When you arrive, simply head through to us to order your food and you will be given a buzzer which reaches next door meaning you can relax while you wait!",
+    "eat_in_content": "<p>&quot;You can take your food into Foggies and enjoy some drinks with your meal. To book a table with Foggies please call 01343 611161. When you arrive, simply head through to us to order your food and you will be given a buzzer which reaches next door meaning you can relax while you wait!&quot;</p>\n",
     "map_title": "Find Us",
     "map_address": "Munro Place, Elgin, IV30 4LL"
   }

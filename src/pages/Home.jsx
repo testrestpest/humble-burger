@@ -61,10 +61,12 @@ function Home() {
             <h2 className="section-title text-center mb-8">
               {pageContent.section_1_title}
             </h2>
-            <div 
-              className="text-center"
-              dangerouslySetInnerHTML={{ __html: pageContent.section_1_content }} 
-            />
+            {pageContent.section_1_content && (
+              <div 
+                className="text-center"
+                dangerouslySetInnerHTML={{ __html: pageContent.section_1_content }} 
+              />
+            )}
           </div>
         </section>
       )}
@@ -76,10 +78,12 @@ function Home() {
             <h2 className="section-title mb-8">
               {pageContent.section_2_title}
             </h2>
-            <div 
-              className="mb-8"
-              dangerouslySetInnerHTML={{ __html: pageContent.section_2_content && pageContent.section_2_content !== '<p>""</p>\n' ? pageContent.section_2_content : '' }} 
-            />
+            {pageContent.section_2_content && (
+              <div 
+                className="mb-8"
+                dangerouslySetInnerHTML={{ __html: pageContent.section_2_content }} 
+              />
+            )}
             <Link to="/order" className="btn btn-primary">
               {pageContent.section_2_button_text || 'Order Now'}
             </Link>

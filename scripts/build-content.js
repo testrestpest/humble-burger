@@ -26,13 +26,19 @@ function parseFrontmatter(content) {
     let i = 0
     
     function parseValue(value, key) {
+      // Handle empty string values - return null instead of ""
+      if (value === '""' || value === "''") {
+        return null
+      }
+      
       // Treat certain keys as markdown and preserve line breaks
-      const markdownFields = ['section_1_content', 'section_2_content', 'storyContent']
-      if (markdownFields.includes(key)) {
+      const markdownFields = ['section_1_content', 'section_2_content', 'storyContent', 'heroText', 'description', 'bio', 'takeaway_content', 'click_collect_content', 'delivery_content', 'eat_in_content']
+      if (markdownFields.includes(key) && value && value !== '""') {
         // Join multi-line YAML strings and convert to HTML
         const joined = Array.isArray(value) ? value.join('\n') : value
         return marked.parse(joined.replace(/\\n/g, '\n'))
       }
+      
       if (value === 'true') return true
       if (value === 'false') return false
       if (value === 'null') return null
@@ -42,7 +48,8 @@ function parseFrontmatter(content) {
       // Remove quotes if present
       if ((value.startsWith('"') && value.endsWith('"')) || 
           (value.startsWith("'") && value.endsWith("'"))) {
-        return value.slice(1, -1)
+        const unquoted = value.slice(1, -1)
+        return unquoted === '' ? null : unquoted
       }
       
       return value
@@ -82,6 +89,40 @@ function parseFrontmatter(content) {
       return { value: result, nextIndex: lineIndex }
     }
     
+    function parseWrappedString(startIndex) {
+      const content = []
+      let lineIndex = startIndex
+      
+      while (lineIndex < lines.length) {
+        const line = lines[lineIndex]
+        
+        // If we hit a new key at the root level, stop
+        if (line.match(/^\w+:/) && !line.startsWith('  ')) {
+          break
+        }
+        
+        // If it's a continuation line (starts with spaces but not a list item)
+        if (line.startsWith('  ') && !line.trim().startsWith('- ')) {
+          content.push(line.replace(/^  /, ''))
+        } else if (line.trim() === '') {
+          // Empty line - preserve for paragraph breaks
+          if (content.length > 0) {
+            content.push('')
+          }
+        } else {
+          // Not indented, must be end of this value
+          break
+        }
+        
+        lineIndex++
+      }
+      
+      // Join with spaces, but preserve paragraph breaks
+      let result = content.join(' ').replace(/\s+/g, ' ').trim()
+      
+      return { value: result, nextIndex: lineIndex }
+    }
+    
     function parseArray(startIndex) {
       const items = []
       let lineIndex = startIndex
@@ -111,13 +152,38 @@ function parseFrontmatter(content) {
           while (lineIndex < lines.length) {
             const nextLine = lines[lineIndex]
             if (nextLine.trim().startsWith('- ')) break
-            if (!nextLine.match(/^\w+:/) && nextLine.startsWith('    ')) {
+            if (nextLine.startsWith('    ')) {
               // This is a continuation of the object
               const propMatch = nextLine.trim().match(/^(\w+):\s*(.*)/)
               if (propMatch) {
-                item[propMatch[1]] = parseValue(propMatch[2])
+                const propKey = propMatch[1]
+                const propValue = propMatch[2]
+                
+                // Check if this property continues on next lines
+                if (propValue && lineIndex + 1 < lines.length && lines[lineIndex + 1].startsWith('      ')) {
+                  // Multi-line property value
+                  const propContent = [propValue]
+                  let propLineIndex = lineIndex + 1
+                  
+                  while (propLineIndex < lines.length) {
+                    const propLine = lines[propLineIndex]
+                    if (propLine.startsWith('      ')) {
+                      propContent.push(propLine.replace(/^      /, ''))
+                      propLineIndex++
+                    } else {
+                      break
+                    }
+                  }
+                  
+                  item[propKey] = parseValue(propContent.join(' '), propKey)
+                  lineIndex = propLineIndex
+                } else {
+                  item[propKey] = parseValue(propValue, propKey)
+                  lineIndex++
+                }
+              } else {
+                lineIndex++
               }
-              lineIndex++
             } else {
               break
             }
@@ -155,6 +221,12 @@ function parseFrontmatter(content) {
           // Array
           const result = parseArray(i + 1)
           data[key] = result.value
+          i = result.nextIndex
+        } else if (value && i + 1 < lines.length && lines[i + 1].startsWith('  ') && !lines[i + 1].trim().startsWith('- ')) {
+          // Multi-line wrapped string (continues on next lines with indentation)
+          const result = parseWrappedString(i + 1)
+          const fullValue = value + ' ' + result.value
+          data[key] = parseValue(fullValue, key)
           i = result.nextIndex
         } else {
           // Simple value, but check for markdown fields

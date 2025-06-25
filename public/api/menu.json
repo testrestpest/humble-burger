@@ -2,7 +2,7 @@
   {
     "id": "ballpark",
     "name": "Ballpark",
-    "description": "Double smash, american cheese, ketchup, mustard, sweet onion and gherkins",
+    "description": "<p>Double smash, american cheese, ketchup, mustard, sweet onion and gherkins</p>\n",
     "price": "£10.50",
     "category": "burgers",
     "image": "/images/uploads/ballpark.jpg",
@@ -12,7 +12,7 @@
   {
     "id": "bangkok-badboy",
     "name": "Bangkok Badboy",
-    "description": "Spicy oriental veggie patty, korean slaw, lettuce, jalapeño lime mayo",
+    "description": "<p>Spicy oriental veggie patty, korean slaw, lettuce, jalapeño lime mayo</p>\n",
     "price": "£10.00",
     "category": "burgers",
     "emoji": "🌶️",
@@ -22,7 +22,7 @@
   {
     "id": "bbq-chicken",
     "name": "BBQ Chicken",
-    "description": "Honey bbq fried chicken thigh, smoked bacon, cheese, lettuce, BBQ mayo",
+    "description": "<p>Honey bbq fried chicken thigh, smoked bacon, cheese, lettuce, BBQ mayo</p>\n",
     "price": "£11.20",
     "category": "burgers",
     "popular": false,
@@ -31,7 +31,7 @@
   {
     "id": "bbq-tender-bowl",
     "name": "BBQ Tender Bowl",
-    "description": "BBQ chicken tenders, seasoned fries, cheese, bacon bits, crispy onions, chives, BBQ dip pot",
+    "description": "<p>BBQ chicken tenders, seasoned fries, cheese, bacon bits, crispy onions, chives, BBQ dip pot</p>\n",
     "price": "£11.00",
     "category": "bowls",
     "popular": false,
@@ -40,7 +40,7 @@
   {
     "id": "big-yin",
     "name": "Big Yin",
-    "description": "Double smash, haggis, american cheese, bacon, gherkins, peppercorn",
+    "description": "<p>Double smash, haggis, american cheese, bacon, gherkins, peppercorn</p>\n",
     "price": "£12.40",
     "category": "burgers",
     "popular": false,
@@ -49,7 +49,7 @@
   {
     "id": "chargrilled-chicken",
     "name": "Chargrilled Chicken",
-    "description": "Honey chilli chicken breast, crispy halloumi, chipotle lime mayo, lettuce & tomato",
+    "description": "<p>Honey chilli chicken breast, crispy halloumi, chipotle lime mayo, lettuce &amp; tomato</p>\n",
     "price": "£11.00",
     "category": "burgers",
     "popular": false,
@@ -58,7 +58,7 @@
   {
     "id": "classic-humble-burger",
     "name": "Classic Humble Burger",
-    "description": "Our signature beef patty with lettuce, tomato, onion, and our special sauce on a brioche bun",
+    "description": "<p>Our signature beef patty with lettuce, tomato, onion, and our special sauce on a brioche bun</p>\n",
     "price": "$12.99",
     "category": "burgers",
     "emoji": "🍔",
@@ -68,7 +68,7 @@
   {
     "id": "cowboy",
     "name": "Cowboy",
-    "description": "Double smash, cheese, bacon, lettuce, mayo, tattie spirals, Carolina mustard bbq, candied jalapeños",
+    "description": "<p>Double smash, cheese, bacon, lettuce, mayo, tattie spirals, Carolina mustard bbq, candied jalapeños</p>\n",
     "price": "£12.40",
     "category": "burgers",
     "popular": false,
@@ -77,7 +77,7 @@
   {
     "id": "honey-chilli-tender-bowl",
     "name": "Honey Chilli Tender Bowl",
-    "description": "Honey chilli chicken tenders, salt n' fries, sesame seeds, chillies, slaw",
+    "description": "<p>Honey chilli chicken tenders, salt n&#39; fries, sesame seeds, chillies, slaw</p>\n",
     "price": "£11.00",
     "category": "bowls",
     "popular": false,
@@ -86,7 +86,7 @@
   {
     "id": "humble-classic",
     "name": "Humble Classic",
-    "description": "Double smash, smoked bacon, cheese, caramelised onions, lettuce, tomato, chipotle & lime mayo",
+    "description": "<p>Double smash, smoked bacon, cheese, caramelised onions, lettuce, tomato, chipotle &amp; lime mayo</p>\n",
     "price": "£11.80",
     "category": "burgers",
     "popular": true,
@@ -95,7 +95,7 @@
   {
     "id": "kids-beef-burger",
     "name": "Kids Beef Burger",
-    "description": "Single smash with ketchup, cheese (all come with fries)",
+    "description": "<p>Single smash with ketchup, cheese (all come with fries)</p>\n",
     "price": "£7.10",
     "category": "kids",
     "popular": false,
@@ -104,7 +104,7 @@
   {
     "id": "kids-chicken-burger",
     "name": "Kids Chicken Burger",
-    "description": "Two breaded chicken tenders, mayo, lettuce",
+    "description": "<p>Two breaded chicken tenders, mayo, lettuce</p>\n",
     "price": "£6.50",
     "category": "kids",
     "popular": false,
@@ -113,7 +113,7 @@
   {
     "id": "kids-tenders",
     "name": "Kids Tenders",
-    "description": "Two breaded chicken tenders, ketchup",
+    "description": "<p>Two breaded chicken tenders, ketchup</p>\n",
     "price": "£6.50",
     "category": "kids",
     "popular": false,
@@ -122,7 +122,7 @@
   {
     "id": "korean-chicken",
     "name": "Korean Chicken",
-    "description": "Gochujang glazed fried chicken thigh, mayo, asian slaw, sesame seed, lettuce",
+    "description": "<p>Gochujang glazed fried chicken thigh, mayo, asian slaw, sesame seed, lettuce</p>\n",
     "price": "£11.20",
     "category": "burgers",
     "popular": false,
@@ -131,7 +131,7 @@
   {
     "id": "korean-fries",
     "name": "Korean Fries",
-    "description": "Crispy chicken tenders drizzled with korean glaze, sesame seeds, spring onions, chillies",
+    "description": "<p>Crispy chicken tenders drizzled with korean glaze, sesame seeds, spring onions, chillies</p>\n",
     "price": "£8.50 | £10.50",
     "category": "sides",
     "popular": false,
@@ -140,7 +140,7 @@
   {
     "id": "korean-tender-bowl",
     "name": "Korean Tender Bowl",
-    "description": "Korean glazed chicken tenders, salt n' chilli fries, korean slaw, sesame seeds",
+    "description": "<p>Korean glazed chicken tenders, salt n&#39; chilli fries, korean slaw, sesame seeds</p>\n",
     "price": "£11.00",
     "category": "bowls",
     "popular": false,
@@ -149,7 +149,7 @@
   {
     "id": "moib-burger",
     "name": "Moib Burger",
-    "description": "Pure Grit",
+    "description": "<p>Pure Grit</p>\n",
     "price": "£200",
     "category": "burgers",
     "image": "/images/uploads/ballpark.jpg",
@@ -159,7 +159,7 @@
   {
     "id": "nacho-bacon-fries",
     "name": "Nacho Bacon Fries",
-    "description": "Sweet bones and bacon fries with nacho cheese sauce, crispy bacon bits, chives and crispy onions",
+    "description": "<p>Sweet bones and bacon fries with nacho cheese sauce, crispy bacon bits, chives and crispy onions</p>\n",
     "price": "£7.00 | £9.00",
     "category": "sides",
     "popular": false,
@@ -168,7 +168,7 @@
   {
     "id": "nashville",
     "name": "Nashville",
-    "description": "Nashville buttermilk chicken thigh with hot honey and pepper pearl slaw",
+    "description": "<p>Nashville buttermilk chicken thigh with hot honey and pepper pearl slaw</p>\n",
     "price": "£11.00",
     "category": "burgers",
     "emoji": "🌶️",
@@ -178,7 +178,7 @@
   {
     "id": "new-yorker",
     "name": "New Yorker",
-    "description": "Double smash, Pastrami, gherkins, american cheese, red onion + mustard mayo",
+    "description": "<p>Double smash, Pastrami, gherkins, american cheese, red onion + mustard mayo</p>\n",
     "price": "£12.40",
     "category": "burgers",
     "popular": false,
@@ -187,7 +187,7 @@
   {
     "id": "oklahoma",
     "name": "Oklahoma",
-    "description": "Double smash with thinly sliced white onions, cheese, mustard, bacon, BBQ sauce",
+    "description": "<p>Double smash with thinly sliced white onions, cheese, mustard, bacon, BBQ sauce</p>\n",
     "price": "£11.20",
     "category": "burgers",
     "popular": false,
@@ -196,7 +196,7 @@
   {
     "id": "pig",
     "name": "P.I.G",
-    "description": "Double smash, BBQ pulled pork, cheese, crispy onions, lettuce, apple sauce, mayo",
+    "description": "<p>Double smash, BBQ pulled pork, cheese, crispy onions, lettuce, apple sauce, mayo</p>\n",
     "price": "£12.50",
     "category": "burgers",
     "popular": false,
@@ -205,7 +205,7 @@
   {
     "id": "piri-piri",
     "name": "Piri Piri",
-    "description": "Fried halloumi, house salsa, lettuce, tomato, onion and perinaise",
+    "description": "<p>Fried halloumi, house salsa, lettuce, tomato, onion and perinaise</p>\n",
     "price": "£9.50",
     "category": "burgers",
     "popular": false,
@@ -214,7 +214,7 @@
   {
     "id": "pizza",
     "name": "Pizza",
-    "description": "Double smash, American and mozzarella, pepperoni, marinara, basil pesto mayo, rocket",
+    "description": "<p>Double smash, American and mozzarella, pepperoni, marinara, basil pesto mayo, rocket</p>\n",
     "price": "£12.50",
     "category": "burgers",
     "popular": false,
@@ -223,7 +223,7 @@
   {
     "id": "plain-fries",
     "name": "Plain Fries",
-    "description": "Crispy skin on salted fries",
+    "description": "<p>Crispy skin on salted fries</p>\n",
     "price": "£2.00 | £3.50 | £4.50",
     "category": "sides",
     "popular": false,
@@ -232,7 +232,7 @@
   {
     "id": "plain-jane",
     "name": "Plain Jane",
-    "description": "Double smash, american cheese",
+    "description": "<p>Double smash, american cheese</p>\n",
     "price": "£9.50",
     "category": "burgers",
     "image": "/images/uploads/plain_jane.JPG",
@@ -242,7 +242,7 @@
   {
     "id": "pork-fries",
     "name": "Pork Fries",
-    "description": "Sweet bones & bacon fries with homemade Scottish BBQ pulled pork, chipotle lime mayo, spring onions and crispy onions",
+    "description": "<p>Sweet bones &amp; bacon fries with homemade Scottish BBQ pulled pork, chipotle lime mayo, spring onions and crispy onions</p>\n",
     "price": "£8.50 | £10.50",
     "category": "sides",
     "popular": false,
@@ -251,7 +251,7 @@
   {
     "id": "salt-n-chilli-fries",
     "name": "Salt N' Chilli Fries",
-    "description": "Salt n' chilli seasoned fries with sriracha mayo and fresh toppings (spring onion, chilli and coriander)",
+    "description": "<p>Salt n&#39; chilli seasoned fries with sriracha mayo and fresh toppings (spring onion, chilli and coriander)</p>\n",
     "price": "£5.50 | £7.50",
     "category": "sides",
     "popular": true,
@@ -260,7 +260,7 @@
   {
     "id": "salt-n-chilli-tender-bowl",
     "name": "Salt N' Chilli Tender Bowl",
-    "description": "Salt n' chilli chicken tenders with salt n' chilli fries, halloumi and spinacha dip",
+    "description": "<p>Salt n&#39; chilli chicken tenders with salt n&#39; chilli fries, halloumi and spinacha dip</p>\n",
     "price": "£11.00",
     "category": "bowls",
     "popular": false,
@@ -269,7 +269,7 @@
   {
     "id": "sweet-potato-fries",
     "name": "Sweet Potato Fries",
-    "description": "Crispy sweet potato fries with a hint of cinnamon and sea salt",
+    "description": "<p>Crispy sweet potato fries with a hint of cinnamon and sea salt</p>\n",
     "price": "$6.99",
     "category": "sides",
     "emoji": "🍟",

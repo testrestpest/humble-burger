@@ -39,9 +39,16 @@ function About() {
         {/* Hero Section */}
         <section className="about-hero">
           <h1 className="page-title">{aboutContent.title || "Our Story"}</h1>
-          <p className="hero-text">
-            {aboutContent.heroText || "Founded on the belief that great burgers bring people together, Humble Burger started as a small family dream and has grown into a beloved community gathering place."}
-          </p>
+          {aboutContent.heroText ? (
+            <div 
+              className="hero-text"
+              dangerouslySetInnerHTML={{ __html: aboutContent.heroText }}
+            />
+          ) : (
+            <p className="hero-text">
+              Founded on the belief that great burgers bring people together, Humble Burger started as a small family dream and has grown into a beloved community gathering place.
+            </p>
+          )}
         </section>
 
         {/* Story Section */}
@@ -49,7 +56,7 @@ function About() {
           <div className="story-content">
             <div className="story-text">
               <h2>{aboutContent.storyTitle || "From Humble Beginnings"}</h2>
-              {aboutContent.storyContent && aboutContent.storyContent !== '<p>""</p>\n' && (
+              {aboutContent.storyContent && (
                 <div dangerouslySetInnerHTML={{ 
                   __html: aboutContent.storyContent
                 }} />
@@ -78,7 +85,11 @@ function About() {
               <div key={index} className="value-card">
                 <div className="value-icon">{value.icon}</div>
                 <h3>{value.title}</h3>
-                <p>{value.description}</p>
+                {typeof value.description === 'string' && value.description.includes('<p>') ? (
+                  <div dangerouslySetInnerHTML={{ __html: value.description }} />
+                ) : (
+                  <p>{value.description}</p>
+                )}
               </div>
             ))}
           </div>
@@ -98,7 +109,11 @@ function About() {
                   <div className="member-image">{member.emoji}</div>
                   <h3>{member.name}</h3>
                   <p className="member-role">{member.role}</p>
-                  <p className="member-bio">{member.bio}</p>
+                  {typeof member.bio === 'string' && member.bio.includes('<p>') ? (
+                    <div className="member-bio" dangerouslySetInnerHTML={{ __html: member.bio }} />
+                  ) : (
+                    <p className="member-bio">{member.bio}</p>
+                  )}
                 </div>
               ))}
             </div>
