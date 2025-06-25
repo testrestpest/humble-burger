@@ -6,7 +6,7 @@ header:
   activeLinkColor: "#ff6b35"
   hoverColor: "#ff8c5a"
 footer:
-  backgroundColor: "#2c2c2c"
+  backgroundColor: "#ea1111"
   textColor: "#ffffff"
   linkColor: "#ff6b35"
 primary:
