@@ -6,42 +6,84 @@ import './Menu.css'
 function Menu() {
   const [menuItems, setMenuItems] = useState([])
   const [categories, setCategories] = useState([])
-  const [activeCategory, setActiveCategory] = useState('all')
+  const [categorySettings, setCategorySettings] = useState({})
+  const [activeCategory, setActiveCategory] = useState('burgers')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const loadMenuItems = async () => {
+    const loadContent = async () => {
       setLoading(true)
       try {
-        const items = await fetchContent('menu')
+        // Load both menu items and settings (including categories)
+        const [items, settings] = await Promise.all([
+          fetchContent('menu'),
+          fetchContent('settings')
+        ])
+        
         setMenuItems(items)
         
-        // Extract unique categories from items
-        const uniqueCategories = [...new Set(items.map(item => item.category))]
-        setCategories(['all', ...uniqueCategories])
+        // Use managed categories if available, otherwise fall back to auto-generated
+        if (settings.categories?.categories) {
+          const enabledCategories = settings.categories.categories
+            .filter(cat => cat.enabled !== false)
+            .sort((a, b) => (a.order || 999) - (b.order || 999))
+          
+          // Create category settings lookup
+          const categoryLookup = {}
+          enabledCategories.forEach(cat => {
+            categoryLookup[cat.name.toLowerCase()] = cat
+          })
+          setCategorySettings(categoryLookup)
+          
+          const categoryNames = enabledCategories.map(cat => cat.name.toLowerCase())
+          setCategories(categoryNames)
+          
+          // Set first enabled category as default if burgers isn't available
+          if (categoryNames.length > 0 && !categoryNames.includes('burgers')) {
+            setActiveCategory(categoryNames[0])
+          }
+        } else {
+          // Fallback: auto-generate from menu items
+          const uniqueCategories = [...new Set(items.map(item => item.category.toLowerCase()))]
+          const categoryOrder = ['burgers', 'sides', 'bowls', 'kids', 'drinks', 'desserts', 'specials']
+          
+          const sortedCategories = uniqueCategories.sort((a, b) => {
+            const aIndex = categoryOrder.indexOf(a)
+            const bIndex = categoryOrder.indexOf(b)
+            
+            if (aIndex !== -1 && bIndex !== -1) {
+              return aIndex - bIndex
+            } else if (aIndex !== -1) {
+              return -1
+            } else if (bIndex !== -1) {
+              return 1
+            } else {
+              return a.localeCompare(b)
+            }
+          })
+          
+          setCategories(sortedCategories)
+        }
       } catch (error) {
-        console.error('Error loading menu items:', error)
+        console.error('Error loading content:', error)
       } finally {
         setLoading(false)
       }
     }
 
-    loadMenuItems()
+    loadContent()
   }, [])
-  const filteredItems = activeCategory === 'all' 
-    ? menuItems.filter(item => item.available !== false) 
-    : menuItems.filter(item => item.category === activeCategory && item.available !== false)
+  const filteredItems = menuItems.filter(item => item.category.toLowerCase() === activeCategory && item.available !== false)
   const getCategoryName = (category) => {
-    const names = {
-      all: 'All Items',
-      burgers: 'Burgers',
-      sides: 'Sides',
-      bowls: 'Bowls',
-      kids: 'Kids',
-      drinks: 'Drinks',
-      desserts: 'Desserts'
+    // Use managed category display name if available
+    if (categorySettings[category.toLowerCase()]) {
+      return categorySettings[category.toLowerCase()].displayName
     }
-    return names[category] || category.charAt(0).toUpperCase() + category.slice(1)
+    
+    // Convert to title case without hardcoded fallbacks
+    return category.split(' ').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    ).join(' ')
   }
 
   if (loading) {

@@ -40,16 +40,24 @@ function Contact() {
     setFormData({ name: '', email: '', message: '' })
   }
 
+  if (loading) {
+    return <div /> // Prevent flash of loading content
+  }
+
   return (
     <div className="contact-page">
       <div className="container">
         {/* Header */}
-        <div className="contact-header">
-          <h1 className="page-title">{contactContent.title || "Get in Touch"}</h1>
-          <p className="page-subtitle">
-            {contactContent.subtitle || "We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, don't hesitate to reach out."}
-          </p>
-        </div>
+        {contactContent.title && (
+          <div className="contact-header">
+            <h1 className="page-title">{contactContent.title}</h1>
+            {contactContent.subtitle && (
+              <p className="page-subtitle">
+                {contactContent.subtitle}
+              </p>
+            )}
+          </div>
+        )}
 
         <div className="contact-content">
           {/* Contact Form */}
@@ -112,46 +120,50 @@ function Contact() {
             <h2>Visit Us</h2>
             
             <div className="info-card">
-              <div className="info-item">
-                <div className="info-icon">📍</div>
-                <div>
-                  <h3>Address</h3>
-                  <p>{contactContent.address || "123 Burger Street\nFood City, FC 12345"}</p>
-                </div>
-              </div>
-
-              <div className="info-item">
-                <div className="info-icon">📞</div>
-                <div>
-                  <h3>Phone</h3>
-                  <p>{contactContent.phone || "(555) 123-BURGER"}</p>
-                </div>
-              </div>
-
-              <div className="info-item">
-                <div className="info-icon">✉️</div>
-                <div>
-                  <h3>Email</h3>
-                  <p>{contactContent.email || "hello@humbleburger.com"}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="hours-card">
-              <h3>Hours of Operation</h3>
-              <div className="hours-list">
-                {(contactContent.hours || [
-                  { days: "Monday - Thursday", time: "11:00 AM - 10:00 PM" },
-                  { days: "Friday - Saturday", time: "11:00 AM - 11:00 PM" },
-                  { days: "Sunday", time: "12:00 PM - 9:00 PM" }
-                ]).map((hour, index) => (
-                  <div key={index} className="hours-item">
-                    <span>{hour.days}</span>
-                    <span>{hour.time}</span>
+              {contactContent.address && (
+                <div className="info-item">
+                  <div className="info-icon">📍</div>
+                  <div>
+                    <h3>Address</h3>
+                    <p>{contactContent.address}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              )}
+
+              {contactContent.phone && (
+                <div className="info-item">
+                  <div className="info-icon">📞</div>
+                  <div>
+                    <h3>Phone</h3>
+                    <p>{contactContent.phone}</p>
+                  </div>
+                </div>
+              )}
+
+              {contactContent.email && (
+                <div className="info-item">
+                  <div className="info-icon">✉️</div>
+                  <div>
+                    <h3>Email</h3>
+                    <p>{contactContent.email}</p>
+                  </div>
+                </div>
+              )}
             </div>
+
+            {contactContent.hours && contactContent.hours.length > 0 && (
+              <div className="hours-card">
+                <h3>Hours of Operation</h3>
+                <div className="hours-list">
+                  {contactContent.hours.map((hour, index) => (
+                    <div key={index} className="hours-item">
+                      <span>{hour.days}</span>
+                      <span>{hour.time}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="social-card">
               <h3>Follow Us</h3>

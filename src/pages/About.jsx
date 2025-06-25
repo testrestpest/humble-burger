@@ -22,40 +22,30 @@ function About() {
   }, [])
 
   if (loading) {
-    return (
-      <div className="about-page">
-        <div className="container">
-          <div className="about-hero">
-            <h1 className="page-title">Loading...</h1>
-          </div>
-        </div>
-      </div>
-    )
+    return <div /> // Prevent flash of loading content
   }
 
   return (
     <div className="about-page">
       <div className="container">
         {/* Hero Section */}
-        <section className="about-hero">
-          <h1 className="page-title">{aboutContent.title || "Our Story"}</h1>
-          {aboutContent.heroText ? (
-            <div 
-              className="hero-text"
-              dangerouslySetInnerHTML={{ __html: aboutContent.heroText }}
-            />
-          ) : (
-            <p className="hero-text">
-              Founded on the belief that great burgers bring people together, Humble Burger started as a small family dream and has grown into a beloved community gathering place.
-            </p>
-          )}
-        </section>
+        {aboutContent.title && (
+          <section className="about-hero">
+            <h1 className="page-title">{aboutContent.title}</h1>
+            {aboutContent.heroText && (
+              <div 
+                className="hero-text"
+                dangerouslySetInnerHTML={{ __html: aboutContent.heroText }}
+              />
+            )}
+          </section>
+        )}
 
         {/* Story Section */}
         <section className="story-section py-16">
           <div className="story-content">
             <div className="story-text">
-              <h2>{aboutContent.storyTitle || "From Humble Beginnings"}</h2>
+              {aboutContent.storyTitle && <h2>{aboutContent.storyTitle}</h2>}
               {aboutContent.storyContent && (
                 <div dangerouslySetInnerHTML={{ 
                   __html: aboutContent.storyContent
@@ -63,44 +53,40 @@ function About() {
               )}
             </div>            <div className="story-image">
               <div className="image-placeholder">
-                {aboutContent.storyImageEmoji || "👩‍🍳"}
-                <p>{aboutContent.storyImageCaption || "Chef Maria Rodriguez"}</p>
+                {aboutContent.storyImageEmoji && aboutContent.storyImageEmoji}
+                {aboutContent.storyImageCaption && <p>{aboutContent.storyImageCaption}</p>}
               </div>
             </div>
           </div>
         </section>
 
         {/* Values Section */}
-        <section className="values-section py-16">
-          <h2 className="section-title text-center mb-8">
-            {aboutContent.valuesTitle || "Our Values"}
-          </h2>
-          <div className="values-grid">
-            {(aboutContent.values || [
-              { icon: "🌱", title: "Sustainability", description: "We partner with local farms and suppliers who share our commitment to sustainable practices and environmental responsibility." },
-              { icon: "🤝", title: "Community", description: "We believe in giving back to our community and supporting local initiatives that make our neighborhood stronger." },
-              { icon: "⭐", title: "Quality", description: "Every ingredient is carefully selected and every burger is made to order, ensuring the highest quality in every bite." },
-              { icon: "❤️", title: "Passion", description: "Our team is passionate about food and hospitality, and it shows in everything we do, from cooking to customer service." }
-            ]).map((value, index) => (
+        {aboutContent.valuesTitle && aboutContent.values && (
+          <section className="values-section py-16">
+            <h2 className="section-title text-center mb-8">
+              {aboutContent.valuesTitle}
+            </h2>
+            <div className="values-grid">
+              {aboutContent.values.map((value, index) => (
               <div key={index} className="value-card">
                 <div className="value-icon">{value.icon}</div>
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
               </div>
-            ))}
-          </div>
-        </section>        {/* Team Section */}
-        <section className="team-section py-16">
-          <div className="container">
-            <h2 className="section-title text-center mb-8">
-              {aboutContent.teamSectionTitle || "Meet Our Team"}
-            </h2>
-            <div className="team-grid">
-              {(aboutContent.teamMembers || [
-                { emoji: "👩‍🍳", name: "Maria Rodriguez", role: "Founder & Head Chef", bio: "Maria's passion for cooking started in her grandmother's kitchen. She brings 15 years of culinary experience to every burger." },
-                { emoji: "👨‍💼", name: "James Thompson", role: "General Manager", bio: "James ensures every customer has an exceptional experience. His attention to detail keeps everything running smoothly." },
-                { emoji: "👩‍🍳", name: "Sarah Kim", role: "Sous Chef", bio: "Sarah's creativity and precision in the kitchen help maintain our high standards and develop new menu items." }
-              ]).map((member, index) => (
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Team Section */}
+        {aboutContent.teamSectionTitle && aboutContent.teamMembers && (
+          <section className="team-section py-16">
+            <div className="container">
+              <h2 className="section-title text-center mb-8">
+                {aboutContent.teamSectionTitle}
+              </h2>
+              <div className="team-grid">
+                {aboutContent.teamMembers.map((member, index) => (
                 <div key={index} className="team-member">
                   <div className="member-image">{member.emoji}</div>
                   <h3>{member.name}</h3>
@@ -111,10 +97,11 @@ function About() {
                     <p className="member-bio">{member.bio}</p>
                   )}
                 </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </div>
     </div>
   )
