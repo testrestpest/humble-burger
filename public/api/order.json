@@ -2,11 +2,11 @@
   {
     "id": "order",
     "attributes": {
-      "title": "How to Get Your Humble Burger",
+      "title": "How to Get Your Burger",
       "takeaway_title": "TAKEAWAY",
       "takeaway_content": "Visit us at Munro Place, Elgin, IV30 4LL. No need to pre-order just come along! View our [opening times](/contact) here.",
       "click_collect_title": "CLICK & COLLECT",
-      "click_collect_content": "You can now order your Humble online! Just pick your food and choose a collection time.",
+      "click_collect_content": "You can now order your food online! Just pick your food and choose a collection time.",
       "click_collect_button_text": "ORDER NOW",
       "click_collect_button_link": "#",
       "delivery_title": "DO YOU DO DELIVERY?",
