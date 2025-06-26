@@ -177,15 +177,15 @@ collections:
           - { label: "Hero Text", name: "heroText", widget: "text", hint: "Introductory text at top of About page" }
           - { label: "Story Title", name: "storyTitle", widget: "string", hint: "Title for the story section" }
           - { label: "Story Content", name: "storyContent", widget: "markdown", hint: "Main story content about your restaurant" }
-          - { label: "Story Image Emoji", name: "storyImageEmoji", widget: "string", hint: "Emoji for story image (e.g., 👩‍🍳)", default: "👩‍🍳" }
-          - { label: "Story Image Caption", name: "storyImageCaption", widget: "string", hint: "Caption under story image (e.g., Chef Maria Rodriguez)", default: "Chef Maria Rodriguez" }
+          - { label: "Story Image", name: "storyImage", widget: "image", hint: "Image for the story section", required: false }
+          - { label: "Story Image Caption", name: "storyImageCaption", widget: "string", hint: "Caption under story image (e.g., Our Founder)", default: "Our Founder" }
           - { label: "Values Title", name: "valuesTitle", widget: "string", hint: "Title for the values section" }
           - label: "Values List"
             name: "values"
             widget: "list"
             hint: "List of your restaurant's core values"
             fields:
-              - { label: "Icon (emoji)", name: "icon", widget: "string", hint: "Use emoji like 🌱, 🤝, ⭐, ❤️" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string", hint: "Use emoji like 🌱, 🤝, ⭐, ❤️", required: false }
               - { label: "Value Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
           - { label: "Team Section Title", name: "teamSectionTitle", widget: "string", hint: "Title for the team section", default: "Meet Our Team" }
@@ -194,7 +194,7 @@ collections:
             widget: "list"
             hint: "List of team members to display"
             fields:
-              - { label: "Image Emoji", name: "emoji", widget: "string", hint: "Emoji representing the person (e.g., 👩‍🍳, 👨‍💼)" }
+              - { label: "Image", name: "image", widget: "image", hint: "Image of the team member", required: false }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role", name: "role", widget: "string", hint: "Job title (e.g., Founder & Head Chef)" }
               - { label: "Bio", name: "bio", widget: "text", hint: "Short biography" }

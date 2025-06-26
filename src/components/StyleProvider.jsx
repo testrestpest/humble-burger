@@ -27,7 +27,19 @@ function StyleProvider({ children }) {
           document.head.appendChild(styleElement)
         }
         
-        // Skip font handling - keeping original fonts
+        // Generate and inject font import
+        const fontImport = generateFontImport(settings)
+        const existingFontLink = document.getElementById('cms-google-fonts')
+        if (existingFontLink) {
+          existingFontLink.remove()
+        }
+        if (fontImport) {
+          const linkElement = document.createElement('link')
+          linkElement.id = 'cms-google-fonts'
+          linkElement.rel = 'stylesheet'
+          linkElement.href = fontImport
+          document.head.appendChild(linkElement)
+        }
         
         setStylesLoaded(true)
       } catch (error) {

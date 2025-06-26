@@ -133,7 +133,7 @@ function Menu() {
           {filteredItems.map(item => (
             <div
               key={item.id}
-              className={`menu-item card ${item.popular ? 'popular' : ''}`}
+              className={`menu-item card ${item.popular ? 'popular' : ''} ${!item.image || !item.image.startsWith('/') ? 'no-image' : ''}`}
               style={{
                 backgroundImage: item.image && item.image.startsWith('/')
                   ? `url(${item.image})`

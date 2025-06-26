@@ -23,15 +23,15 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--body-font, 'Inter'), sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
+  font-family: var(--heading-font, 'Inter'), sans-serif;
+  font-weight: var(--heading-font-weight, 600);
   line-height: 1.3;
 }
 

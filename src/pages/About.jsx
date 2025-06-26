@@ -52,10 +52,12 @@ function About() {
                 }} />
               )}
             </div>            <div className="story-image">
-              <div className="image-placeholder">
-                {aboutContent.storyImageEmoji && aboutContent.storyImageEmoji}
-                {aboutContent.storyImageCaption && <p>{aboutContent.storyImageCaption}</p>}
-              </div>
+              {aboutContent.storyImage ? (
+                <img src={aboutContent.storyImage} alt={aboutContent.storyImageCaption} className="member-image" />
+              ) : (
+                <div className="member-image-placeholder"></div>
+              )}
+              {aboutContent.storyImageCaption && <p>{aboutContent.storyImageCaption}</p>}
             </div>
           </div>
         </section>
@@ -69,7 +71,7 @@ function About() {
             <div className="values-grid">
               {aboutContent.values.map((value, index) => (
               <div key={index} className="value-card">
-                <div className="value-icon">{value.icon}</div>
+                {value.icon && <div className="value-icon">{value.icon}</div>}
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
               </div>
@@ -88,7 +90,11 @@ function About() {
               <div className="team-grid">
                 {aboutContent.teamMembers.map((member, index) => (
                 <div key={index} className="team-member">
-                  <div className="member-image">{member.emoji}</div>
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="member-image" />
+                  ) : (
+                    <div className="member-image-placeholder"></div>
+                  )}
                   <h3>{member.name}</h3>
                   <p className="member-role">{member.role}</p>
                   {member.bio && member.bio.includes('<p>') ? (

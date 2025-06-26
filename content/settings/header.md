@@ -1,6 +1,6 @@
 ---
 showLogoText: false
-logoText: Humble Burger
+logoText: Zaporio
 navItems:
   - label: HOME
     link: /
@@ -10,6 +10,9 @@ navItems:
     enabled: true
   - label: MENU
     link: /menu
+    enabled: true
+  - label: ABOUT
+    link: /about
     enabled: true
   - label: CONTACT
     link: /contact

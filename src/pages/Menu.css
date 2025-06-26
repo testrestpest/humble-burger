@@ -7,10 +7,10 @@
   margin-bottom: 3rem;
 }
 
-.page-title {
+.menu-header h1.page-title {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: black !important; /* Set to black for definitive visibility test */
 }
 
 .page-subtitle {
@@ -94,11 +94,30 @@
   padding: 1.5rem;
 }
 
-/* Force all text in menu items to be white */
+/* Default text color for menu items (white on image) */
 .menu-item .item-name,
 .menu-item .item-description,
 .menu-item .item-price {
   color: white !important; /* Force white text for readability on image */
+}
+
+/* Styling for menu items without an image */
+.menu-item.no-image {
+  background-color: var(--background-card); /* Use card background color */
+  border: 1px solid var(--border-color); /* Add a border */
+}
+
+.menu-item.no-image::before {
+  content: none; /* Remove gradient overlay */
+}
+
+.menu-item.no-image .item-name,
+.menu-item.no-image .item-description {
+  color: var(--text-color) !important; /* Dark text for readability on light background */
+}
+
+.menu-item.no-image .item-price {
+  color: var(--primary-color) !important; /* Keep primary color for price */
 }
 
 .item-name {
