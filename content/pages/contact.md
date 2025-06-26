@@ -1,9 +1,9 @@
 ---
 title: Get in Touch
 subtitle: We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, don't hesitate to reach out.
-address: 123 Burger Street, Food City, FC 12345
+address: Munro Place, Elgin, IV30 4LL
 phone: (555) 123-BURGER
-email: hello@humbleburger.com
+email: hello@zaporio.com
 hours:
   - days: Monday - Thursday
     time: 11:00 AM - 10:00 PM

@@ -1,16 +1,16 @@
 ---
-siteTitle: Humble Burger
-siteDescription: Gourmet burgers made with fresh, locally-sourced ingredients. Visit us for an unforgettable dining experience.
-logoText: Humble Burger
+siteTitle: Zaporio
+siteDescription: Gourmet dining experience with fresh, locally-sourced ingredients. Visit us for an unforgettable meal.
+logoText: Zaporio
 logoEmoji: 🍔
 socialLinks:
   - platform: Instagram
-    url: https://instagram.com/humbleburger
+    url: https://instagram.com/zaporio
     icon: 📱
   - platform: Facebook
-    url: https://facebook.com/humbleburger
+    url: https://facebook.com/zaporio
     icon: 👍
   - platform: Twitter
-    url: https://twitter.com/humbleburger
+    url: https://twitter.com/zaporio
     icon: 🐦
 ---

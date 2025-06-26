@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react'
 import { fetchContent } from '../utils/contentLoader'
 import './Contact.css'
+import { 
+  FaMapMarkerAlt, 
+  FaPhoneAlt, 
+  FaEnvelope
+} from 'react-icons/fa'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -120,35 +125,35 @@ function Contact() {
             <h2>Visit Us</h2>
             
             <div className="info-card">
-              {contactContent.address && (
-                <div className="info-item">
-                  <div className="info-icon">📍</div>
-                  <div>
-                    <h3>Address</h3>
-                    <p>{contactContent.address}</p>
-                  </div>
+            {contactContent.address && (
+              <div className="info-item">
+                <div className="info-icon"><FaMapMarkerAlt /></div>
+                <div>
+                  <h3>Address</h3>
+                  <p>{contactContent.address}</p>
                 </div>
-              )}
+              </div>
+            )}
 
-              {contactContent.phone && (
-                <div className="info-item">
-                  <div className="info-icon">📞</div>
-                  <div>
-                    <h3>Phone</h3>
-                    <p>{contactContent.phone}</p>
-                  </div>
+            {contactContent.phone && (
+              <div className="info-item">
+                <div className="info-icon"><FaPhoneAlt /></div>
+                <div>
+                  <h3>Phone</h3>
+                  <p>{contactContent.phone}</p>
                 </div>
-              )}
+              </div>
+            )}
 
-              {contactContent.email && (
-                <div className="info-item">
-                  <div className="info-icon">✉️</div>
-                  <div>
-                    <h3>Email</h3>
-                    <p>{contactContent.email}</p>
-                  </div>
+            {contactContent.email && (
+              <div className="info-item">
+                <div className="info-icon"><FaEnvelope /></div>
+                <div>
+                  <h3>Email</h3>
+                  <p>{contactContent.email}</p>
                 </div>
-              )}
+              </div>
+            )}
             </div>
 
             {contactContent.hours && contactContent.hours.length > 0 && (
@@ -165,20 +170,25 @@ function Contact() {
               </div>
             )}
 
-            <div className="social-card">
-              <h3>Follow Us</h3>
-              <div className="social-links">
-                <a href="#" className="social-link">
-                  <span>📱</span> Instagram
-                </a>
-                <a href="#" className="social-link">
-                  <span>👍</span> Facebook
-                </a>
-                <a href="#" className="social-link">
-                  <span>🐦</span> Twitter
+            {/* Map Section */}
+            {contactContent.address && (
+              <div className="map-container">
+                <iframe
+                  title="Location Map"
+                  src={`https://www.google.com/maps/embed/v1/place?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(contactContent.address)}`}
+                  allowFullScreen
+                  loading="lazy"
+                />
+                <a 
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(contactContent.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="directions-btn"
+                >
+                  Get Directions
                 </a>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

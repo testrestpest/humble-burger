@@ -1,216 +1,259 @@
 .contact-page {
-  padding: 2rem 0 4rem;
+  padding: 4rem 0;
+  background: #f8f9fa;
 }
 
-.contact-header {
+.contact-page .contact-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.page-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+.contact-page .page-title {
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  color: #212529;
+  font-weight: 700;
 }
 
-.page-subtitle {
-  font-size: 1.125rem;
-  color: var(--text-light);
-  max-width: 600px;
+.contact-page .page-subtitle {
+  font-size: 1.3rem;
+  color: #6c757d;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.contact-form-section h2,
-.contact-info-section h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-color);
-}
-
-/* Form Styles */
-.contact-form {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  font-family: inherit;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
-}
-
-.btn-full {
-  width: 100%;
-}
-
-/* Info Cards */
-.info-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
-  margin-bottom: 2rem;
-}
-
-.info-item {
+.contact-page .contact-content {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.info-item:last-child {
-  margin-bottom: 0;
-}
-
-.info-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.info-item h3 {
-  font-size: 1.125rem;
-  margin-bottom: 0.25rem;
-  color: var(--text-color);
-}
-
-.info-item p {
-  color: var(--text-light);
-  line-height: 1.5;
-}
-
-.hours-card {
+.contact-page .contact-form-section,
+.contact-page .contact-info-section {
+  flex: 1;
+  min-width: 300px;
   background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
-  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hours-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+.contact-page .contact-form-section:hover,
+.contact-page .contact-info-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-.hours-list {
+.contact-page .contact-form-section h2,
+.contact-page .contact-info-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+  color: #212529;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.contact-page .contact-form-section h2::after,
+.contact-page .contact-info-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #e63946;
+  border-radius: 3px;
+}
+
+.contact-page .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem;
 }
 
-.hours-item {
+.contact-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-page .form-group label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.contact-page .form-input {
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: #f8f9fa;
+}
+
+.contact-page .form-input:focus {
+  outline: none;
+  border-color: #e63946;
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+  background: white;
+}
+
+.contact-page textarea.form-input {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-page .btn-full {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact-page .btn-full:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+}
+
+.contact-page .info-card {
+  margin-bottom: 2rem;
+}
+
+.contact-page .info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-page .info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-page .info-icon {
+  color: #e63946;
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.contact-page .info-item h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+  color: #212529;
+}
+
+.contact-page .info-item p {
+  color: #495057;
+  line-height: 1.6;
+}
+
+.contact-page .hours-card {
+  margin-bottom: 2rem;
+}
+
+.contact-page .hours-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: #212529;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.contact-page .hours-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #e63946;
+  border-radius: 2px;
+}
+
+.contact-page .hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-page .hours-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.hours-item:last-child {
+.contact-page .hours-item:last-child {
   border-bottom: none;
 }
 
-.hours-item span:first-child {
+.contact-page .hours-item span:first-child {
   font-weight: 500;
-  color: var(--text-color);
+  color: #212529;
 }
 
-.hours-item span:last-child {
-  color: var(--text-light);
+.contact-page .hours-item span:last-child {
+  color: #6c757d;
 }
 
-.social-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-color);
+.contact-page .map-container {
+  position: relative;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.social-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+.contact-page .map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.contact-page .directions-btn {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: #e63946;
+  color: white;
   text-decoration: none;
-  color: var(--text-light);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.social-link:hover {
-  background: var(--background-light);
-  color: var(--primary-color);
-}
-
-.social-link span {
-  font-size: 1.25rem;
+.contact-page .directions-btn:hover {
+  background: #d62828;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .page-title {
-    font-size: 2.5rem;
+  .contact-page .contact-content {
+    flex-direction: column;
   }
   
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .contact-form {
-    padding: 1.5rem;
-  }
-  
-  .info-card,
-  .hours-card,
-  .social-card {
-    padding: 1.5rem;
+  .contact-page .contact-form-section,
+  .contact-page .contact-info-section {
+    width: 100%;
   }
 }

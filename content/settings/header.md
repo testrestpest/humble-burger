@@ -16,10 +16,10 @@ navItems:
     enabled: true
 socialLinks:
   - platform: Instagram
-    url: https://instagram.com/humbleburger
+    url: https://instagram.com/zaporio
     enabled: true
   - platform: Facebook
-    url: https://facebook.com/humbleburger
+    url: https://facebook.com/zaporio
     enabled: true
   - enabled: true
     platform: X
