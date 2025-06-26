@@ -212,6 +212,11 @@
   }
   .story-image {
     order: -1; /* Move image above text on smaller screens */
+    margin-bottom: 0.25rem; /* Even further reduce space below image */
+  }
+  .story-image img {
+    width: 200px; /* Made even larger for mobile */
+    height: 200px; /* Made even larger for mobile */
   }
 }
 
